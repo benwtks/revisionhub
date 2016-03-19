@@ -1,0 +1,19 @@
+%html
+  %head
+    %title= @title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      .wrapper
+        %h1.logo= link_to "RevisionHub", root_path
+        %nav
+          %ul
+            %li= link_to "Home", root_path
+            %li= link_to "About", root_path
+            - if true
+              %li= link_to "Sign out", root_path
+            - else
+              %li= link_to "Sign in", root_path
+    = yield
