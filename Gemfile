@@ -43,3 +43,4 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'haml', '~> 4.0', '>= 4.0.7'
