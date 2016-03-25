@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
+  get '/dashboard', to: 'subjects#index'
+  get '/subject/:id', to: 'subject#show'
 
+  resources :subjects
 
 
   # The priority is based upon order of creation: first created -> highest priority.

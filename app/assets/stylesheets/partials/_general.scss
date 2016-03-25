@@ -1,3 +1,14 @@
 body {
   background-color: $cream;
 }
+
+.section-wrapper {
+  background-color: $section-background-color;
+  border-radius: $section-border-radius;
+  padding: $section-padding;
+  margin-bottom: $section-bottom-padding;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
