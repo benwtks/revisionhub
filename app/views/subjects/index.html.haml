@@ -1,7 +1,10 @@
 - @title = "RevisionHub: Dashboard"
 
-.wrapper
+.page-wrapper
   - unless @subjects.blank?
     - @subjects.each do |subject|
-      .section-wrapper
-        %p= link_to subject.name + " - " +  subject.teacher, subject_path(subject)
+      %a.section-wrapper{ href: subject_path(subject) }
+        .left
+          %p= subject.name
+        .right
+          %p 13 hours

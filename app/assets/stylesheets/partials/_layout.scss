@@ -1,9 +1,39 @@
 .wrapper {
   width: $page-width;
-}
-
-.wrapper {
   margin: 0 auto;
   overflow-x: hidden;
-  overflow: auto;
+  overflow: visible;
+}
+
+.page-wrapper {
+  @extend .wrapper;
+  padding-top: $header-and-wrapper-top-padding * 2;
+}
+
+@each $class in ("left", "right") {
+  .#{$class} {
+    float: #{$class};
+  }
+}
+
+.section-wrapper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul {
+  nav &, &.subject-options  {
+    list-style: none;
+    li {
+      display: inline-block;
+      padding-left: 50px;
+    }
+  }
+  nav & li {
+    padding-left: 50px;
+  }
+  &.subject-options li {
+    padding-left: 20px;
+  }
 }
