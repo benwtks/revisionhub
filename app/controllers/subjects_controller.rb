@@ -11,10 +11,26 @@ class SubjectsController < ApplicationController
   def edit
   end
 
+  def update
+    if @subject.update(subject_params)
+      redirect_to @subject
+    else
+      render 'new'
+    end
+  end
+
   def new
+    @subject = current_user.subjects.build
   end
 
   def create
+    @subject = current_user.subjects.build(subject_params)
+
+    if @subject.save
+      redirect_to @subject
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -26,5 +42,9 @@ class SubjectsController < ApplicationController
 
   def find_subject
     @subject = Subject.find(Base64.urlsafe_decode64(params[:id]))
+  end
+
+  def subject_params
+    params.require(:subject).permit(:name, :teacher)
   end
 end

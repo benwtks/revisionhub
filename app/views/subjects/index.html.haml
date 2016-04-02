@@ -1,10 +1,10 @@
-- @title = "RevisionHub: Dashboard"
+- @title = "Dashboard"
+- @page_wrapper = true
 
-.page-wrapper
-  - unless @subjects.blank?
-    - @subjects.each do |subject|
-      %a.section-wrapper{ href: subject_path(subject) }
-        .left
-          %p= subject.name
-        .right
-          %p 13 hours
+- unless @subjects.blank?
+  - @subjects.each do |subject|
+    %a.section-wrapper{ href: subject_path(subject) }
+      .left
+        %p= subject.name
+      .right
+        %p 13 hours

@@ -3,17 +3,17 @@ body {
 }
 
 .section-wrapper {
-  background-color: $section-background-color;
+  background-color: $section-background-colour;
   border-radius: $section-border-radius;
   padding: $section-padding;
   margin-bottom: $section-bottom-padding;
-  box-shadow: $section-box-shadow;
+  border: 1px solid #DEE0E2;
 }
 
 a.section-wrapper {
   display: block;
   &:hover {
-    box-shadow: $section-box-shadow-hover;
+    box-shadow: $box-shadow;
   }
 }
 

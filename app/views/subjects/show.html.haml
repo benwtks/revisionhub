@@ -1,11 +1,11 @@
-- @title = "RevisionHub: #{ @subject.name }"
+- @title = "#{ @subject.name }"
+- @page_wrapper = true
+- @single_section_page = true
 
-.page-wrapper
-  .section-wrapper
-    .left
-      %h1= @subject.name
-      %h2= @subject.teacher
-    .right
-      %ul.subject-options
-        %li= link_to "Edit", edit_subject_path
-        %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
+.left
+  %h1= @subject.name
+  %h2= @subject.teacher
+.right
+  %ul.subject-options
+    %li= link_to "Edit", edit_subject_path
+    %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }

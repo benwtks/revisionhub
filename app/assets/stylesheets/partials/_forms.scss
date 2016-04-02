@@ -1,0 +1,14 @@
+.button {
+  background-color: $button-background-colour;
+  border: 0;
+  border-radius: $button-border-radius;
+  color: $button-text-colour;
+}
+
+.string {
+  width: $string-input-width;
+}
+
+.input {
+  margin-bottom: $input-bottom-margin;
+}
