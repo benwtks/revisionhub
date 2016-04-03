@@ -6,6 +6,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
+    @topics = @subject.topics.order("name ASC")
   end
 
   def edit
@@ -41,7 +42,7 @@ class SubjectsController < ApplicationController
   private
 
   def find_subject
-    @subject = Subject.find(Base64.urlsafe_decode64(params[:id]))
+    @subject = Subject.find(params[:id])
   end
 
   def subject_params

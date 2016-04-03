@@ -1,11 +1,24 @@
 - @title = "#{ @subject.name }"
 - @page_wrapper = true
-- @single_section_page = true
 
-.left
-  %h1= @subject.name
-  %h2= @subject.teacher
-.right
-  %ul.subject-options
-    %li= link_to "Edit", edit_subject_path
-    %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
+.section-wrapper
+  .left
+    %h1= @subject.name
+    %h2= @subject.teacher
+  .right
+    %ul.options
+      %li= link_to "Edit", edit_subject_path
+      %li= link_to "Add topic", new_topic_path
+      %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
+.section-wrapper
+  - if @subject.topics.blank?
+    %h3 It doesn't look like you've added any topics yet
+    %p= link_to "Click here to add some topics for this subject", new_topic_path
+  - else
+    - @topics.each do |topic|
+      .left
+        %p= topic.name
+      .right
+        %ul.options
+          %li= link_to "Edit", edit_topic_path(topic)
+          %li= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Are you sure?" }
