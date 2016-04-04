@@ -21,6 +21,10 @@
               %li= link_to "Sign out", root_path
             - else
               %li= link_to "Sign in", root_path
+
+    %p.notice = notice
+    %p.alert = alert
+
     - if @page_wrapper
       .page-wrapper
         - if @single_section_page
