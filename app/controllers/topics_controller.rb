@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   end
 
   def update
-    if @topic.update(subject_params)
+    if @topic.update(topic_params)
       redirect_to @topic.subject
     else
       render 'new'

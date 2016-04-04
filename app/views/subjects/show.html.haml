@@ -3,7 +3,7 @@
 
 .section-wrapper
   .left
-    %h1= @subject.name
+    %h1= @subject.name.capitalize
     %h2= @subject.teacher
   .right
     %ul.options
@@ -17,7 +17,7 @@
   - else
     - @topics.each do |topic|
       .left
-        %p= topic.name
+        %p.bold= topic.name.capitalize
       .right
         %ul.options
           %li= link_to "Edit", edit_topic_path(topic)

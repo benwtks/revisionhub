@@ -5,6 +5,6 @@
   - @subjects.each do |subject|
     %a.section-wrapper{ href: subject_path(subject) }
       .left
-        %p= subject.name
+        %p.important= subject.name.capitalize
       .right
         %p 13 hours

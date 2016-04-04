@@ -1,0 +1,8 @@
+- @title = "Session log"
+- @page_wrapper = true
+
+- unless @sessions.blank?
+  - @sessions.each do |session|
+    %a.section-wrapper.session{ href: subject_path(session.topic.subject) }
+      %p.important= session.topic.subject.name.capitalize
+      %p= session.topic.name.capitalize
