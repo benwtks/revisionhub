@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :students
   root 'pages#home'
   get '/dashboard', to: 'subjects#index'
   get '/log', to: 'sessions#index'
