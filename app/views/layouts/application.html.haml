@@ -18,12 +18,12 @@
             - if student_signed_in?
               %li= link_to "Add Subject", new_subject_path
               %li= link_to "Log a session", new_session_path
-              %li= link_to "Sign out", destroy_student_session_pathh
+              %li= link_to "Sign out", destroy_student_session_path, method: :delete
             - else
               %li= link_to "Sign in", new_student_session_path
 
-    %p.notice = notice
-    %p.alert = alert
+    %p.notice= notice
+    %p.alert= alert
 
     - if @page_wrapper
       .page-wrapper
