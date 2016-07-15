@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :students
-  root 'pages#home'
-  get '/dashboard', to: 'subjects#index'
+  
   get '/log', to: 'sessions#index'
-
   resources :subjects
   resources :topics
   resources :sessions
@@ -12,6 +10,12 @@ Rails.application.routes.draw do
   devise_scope :student do
     match '/sessions/student', to: 'devise/sessions#create', via: :post
   end
+
+  authenticated :student do
+    root 'subjects#index', as: "authenticated_root"
+  end
+
+  root 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

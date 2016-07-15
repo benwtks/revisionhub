@@ -36,7 +36,7 @@ class SubjectsController < ApplicationController
 
   def destroy
     @subject.destroy
-    redirect_to dashboard_path
+    redirect_to root_path
   end
 
   private
