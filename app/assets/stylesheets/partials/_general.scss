@@ -14,11 +14,11 @@ a.section-wrapper {
   display: block;
   &:hover {
     box-shadow: $box-shadow;
+    transform: translateY(-5px);
   }
-}
-
-.section-wrapper, a.section-wrapper {
-  transition: 0.5s box-shadow;
+  &, &:hover{
+    transition: 0.5s all;
+  }
 }
 
 .notice-wrapper, .alert-wrapper {
