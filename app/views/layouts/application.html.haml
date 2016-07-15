@@ -8,6 +8,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    - if notice
+      .notice-wrapper
+        %p.notice= notice
+    - elsif alert
+      .alert-wrapper
+        %p.alert= alert
+
     %header
       .wrapper
         %h1.logo= link_to "RevisionHub", root_path
@@ -22,8 +29,6 @@
             - else
               %li= link_to "Sign in", new_student_session_path
 
-    %p.notice= notice
-    %p.alert= alert
 
     - if @page_wrapper
       .page-wrapper
