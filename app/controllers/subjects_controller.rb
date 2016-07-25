@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
 
   def index
-    @subjects = Subject.order("name ASC")
+    @subjects = current_student.subjects.order("name ASC")
   end
 
   def show
@@ -21,11 +21,11 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject = current_user.subjects.build
+    @subject = current_student.subjects.build
   end
 
   def create
-    @subject = current_user.subjects.build(subject_params)
+    @subject = current_student.subjects.build(subject_params)
 
     if @subject.save
       redirect_to @subject
