@@ -1,7 +1,7 @@
-- @title = "New topic"
+- @title = "New #{@subject.name.camelize(:lower)} topic"
 - @page_wrapper = true
 - @single_section_page = true
 
-%h1 New topic
+%h1 New #{@subject.name.camelize(:lower)} topic
 
 = render 'form'
