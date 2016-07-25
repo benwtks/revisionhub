@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   devise_for :students
 
   get '/log', to: 'sessions#index'
-  resources :subjects
-  resources :topics
   resources :sessions
 
   devise_scope :student do
@@ -17,4 +15,8 @@ Rails.application.routes.draw do
   end
 
   root 'pages#home'
+
+  resources :subjects do
+    resources :topics
+  end
 end

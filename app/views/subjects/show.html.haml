@@ -8,17 +8,18 @@
   .right
     %ul.options
       %li= link_to "Edit", edit_subject_path
-      %li= link_to "Add topic", new_topic_path
+      %li= link_to "Add topic", new_subject_topic_path(@subject)
       %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
-.section-wrapper
-  - if @subject.topics.blank?
+- if @subject.topics.blank?
+  .section-wrapper
     %h3 It doesn't look like you've added any topics yet
-    %p= link_to "Click here to add some topics for this subject", new_topic_path
-  - else
-    - @topics.each do |topic|
+    %p= link_to "Click here to add some topics for this subject", new_subject_topic_path(@subject)
+- else
+  - @topics.each do |topic|
+    .section-wrapper
       .left
         %p.bold= topic.name.capitalize
       .right
         %ul.options
-          %li= link_to "Edit", edit_topic_path(topic)
-          %li= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Are you sure?" }
+          %li= link_to "Edit", edit_subject_topic_path(@subject, topic)
+          %li= link_to "Delete", subject_topic_path(@subject, topic), method: :delete, data: { confirm: "Are you sure?" }

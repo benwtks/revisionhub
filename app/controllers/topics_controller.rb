@@ -1,11 +1,12 @@
 class TopicsController < ApplicationController
-  before_action :find_topic, only: [:show, :edit, :update, :destroy]
+  before_action :find_subject, only: [:edit, :update, :new, :destroy, :create]
+  before_action :find_topic, only: [:edit, :update, :destroy]
 
   def edit
   end
 
   def update
-    if @topic.update(topic_params)
+   if @topic.update(topic_params)
       redirect_to @topic.subject
     else
       render 'new'
@@ -13,11 +14,11 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topic = current_user.topics.build
+    @topic = @subject.topics.build
   end
 
   def create
-    @topic = current_user.topics.build(topic_params)
+    @topic = @subject.topics.build(topic_params)
 
     if @topic.save
       redirect_to @topic.subject
@@ -33,8 +34,12 @@ class TopicsController < ApplicationController
 
   private
 
+  def find_subject
+    @subject = current_student.subjects.find(params[:subject_id])
+  end
+
   def find_topic
-    @topic = Topic.find(params[:id])
+    @topic = @subject.topics.find(params[:id])
   end
 
   def topic_params
