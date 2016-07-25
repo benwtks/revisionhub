@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/kesha-antonov/simple_form.git
+  revision: a1561c930f3be279f3580c2510f2555f2e67a4f4
+  branch: rails-5-0
+  specs:
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -142,9 +151,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    simple_form (3.2.1)
-      actionpack (> 4, < 5.1)
-      activemodel (> 4, < 5.1)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -194,7 +200,7 @@ DEPENDENCIES
   redis (~> 3.0)
   sass-rails (~> 5.0, >= 5.0.5)
   sdoc (~> 0.4.0)
-  simple_form (~> 3.2, >= 3.2.1)
+  simple_form!
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets (= 3.6.3)
