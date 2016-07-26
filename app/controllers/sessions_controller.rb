@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def new
-    @session = current_student.sessions.build
+    @session = Session.new
   end
 
   def create
-    @session = current_student.sessions.build(session_params)
+    @session = Session.new(session_params)
 
     if @session.save
-      redirect_to sessions_path
+      redirect_to root_path
     else
       render 'new'
     end
@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:date, :duration)
+    params.require(:session).permit(:date, :duration, :topic_id)
   end
 end

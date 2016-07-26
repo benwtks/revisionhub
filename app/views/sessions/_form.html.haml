@@ -1,3 +1,4 @@
 = simple_form_for @session do |f|
+  = f.collection_select(:topic_id, Topic.all, :id, :name)
   = f.input :duration
   = f.button :submit
