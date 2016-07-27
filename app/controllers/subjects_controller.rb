@@ -27,7 +27,7 @@ class SubjectsController < ApplicationController
     if @subject.update(subject_params)
       redirect_to @subject, notice: "Subject successfully edited"
     else
-      render 'new'
+      render 'edit'
     end
   end
 

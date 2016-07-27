@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
    if @topic.update(topic_params)
       redirect_to @topic.subject, notice: "Topic successfully edited"
     else
-      render 'new'
+      render 'edit'
     end
   end
 
