@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   def index
-    @sessions = Session.order("date ASC")
+    if student_signed_in?
+      @sessions = Session.order("date ASC")
+    else
+      redirect_to new_student_session_path
+    end
   end
 
   def new
