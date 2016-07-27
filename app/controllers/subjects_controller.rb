@@ -7,25 +7,25 @@ class SubjectsController < ApplicationController
 
   def show
     if !student_signed_in?
-      redirect_to new_student_session_path
+      redirect_to new_student_session_path, alert: "Please login to view subjects"
     elsif @subject.student == current_student
       @topics = @subject.topics.order("name ASC")
     else
-      redirect_to root_path
+      redirect_to root_path, alert: "Subject doesn't belong to you"
     end
   end
 
   def edit
     if !student_signed_in?
-      redirect_to new_student_session_path
+      redirect_to new_student_session_path, alert: "Please login to edit subjects"
     elsif @subject.student != current_student
-      redirect_to root_path
+      redirect_to root_path, alert: "Subject doesn't belong to you"
     end
   end
 
   def update
     if @subject.update(subject_params)
-      redirect_to @subject
+      redirect_to @subject, notice: "Subject successfully edited"
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class SubjectsController < ApplicationController
 
   def new
     unless student_signed_in?
-      redirect_to new_student_session_path
+      redirect_to new_student_session_path, alert: "Please login to create a subject"
     else
       @subject = current_student.subjects.build
     end
@@ -43,7 +43,7 @@ class SubjectsController < ApplicationController
     @subject = current_student.subjects.build(subject_params)
 
     if @subject.save
-      redirect_to @subject
+      redirect_to @subject, notice: "Subject successfully created"
     else
       render 'new'
     end
@@ -51,7 +51,7 @@ class SubjectsController < ApplicationController
 
   def destroy
     @subject.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: "Subject successfully deleted"
   end
 
   private

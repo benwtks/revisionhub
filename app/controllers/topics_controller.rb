@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
 
   def update
    if @topic.update(topic_params)
-      redirect_to @topic.subject
+      redirect_to @topic.subject, notice: "Topic successfully edited"
     else
       render 'new'
     end
@@ -21,7 +21,7 @@ class TopicsController < ApplicationController
     @topic = @subject.topics.build(topic_params)
 
     if @topic.save
-      redirect_to @topic.subject
+      redirect_to @topic.subject, notice: "Topic successfully created"
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: "Topic successfully deleted"
   end
 
   private

@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     if student_signed_in?
       @sessions = Session.order("date ASC")
     else
-      redirect_to new_student_session_path
+      redirect_to new_student_session_path, alert: "Please login to view your revision log"
     end
   end
 
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if student_signed_in?
       @session = Session.new
     else
-      redirect_to new_student_session_path
+      redirect_to new_student_session_path, alert: "Please login to log a revision session"
     end
   end
 
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     @session = Session.new(session_params)
 
     if @session.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Session successfully created"
     else
       render 'new'
     end
