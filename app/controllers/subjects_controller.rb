@@ -32,7 +32,11 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject = current_student.subjects.build
+    unless student_signed_in?
+      redirect_to new_student_session_path
+    else
+      @subject = current_student.subjects.build
+    end
   end
 
   def create
