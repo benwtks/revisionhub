@@ -16,6 +16,11 @@ class SubjectsController < ApplicationController
   end
 
   def edit
+    if !student_signed_in?
+      redirect_to new_student_session_path
+    elsif @subject.student != current_student
+      redirect_to root_path
+    end
   end
 
   def update
