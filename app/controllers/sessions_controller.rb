@@ -4,7 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def new
-    @session = Session.new
+    if student_signed_in?
+      @session = Session.new
+    else
+      redirect_to new_student_session_path
+    end
   end
 
   def create
