@@ -7,6 +7,11 @@ header {
   float: left;
   font-size: 25px; // only temp
   a { color: $bold-colour; } // only temp
+
+  &.center {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 nav {

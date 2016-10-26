@@ -1,16 +1,17 @@
 $background: #f5f8fa;
 $bold-colour: #585961;
 $normal-colour: #66676F;
+$outline-colour: #DEE0E2;
 
 $nav-colour: $bold-colour;
 $section-background-colour: #fff;
 
+$section-wrapper-border-colour: $outline-colour;
+
 $button-background-colour: #0D7ADA;
 $button-text-colour: #fff;
-$button-border-radius: 5px;
-
-$string-input-width: 450px;
-$input-bottom-margin: 25px;
 
 $notice-background-colour: #30B955;
 $alert-background-colour: #dc4e4e;
+
+$string-colour: $outline-colour;

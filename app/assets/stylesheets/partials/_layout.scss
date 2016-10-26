@@ -1,13 +1,24 @@
-.wrapper {
-  width: $page-width;
+.center {
   margin: 0 auto;
   overflow-x: hidden;
   overflow: visible;
 }
 
+.wrapper {
+  @extend .center;
+  width: $page-width;
+}
+
 .page-wrapper {
   @extend .wrapper;
   padding-top: $header-and-wrapper-top-padding * 2;
+
+  &.devise-wrapper {
+    width: 20%;
+    .section-wrapper {
+      padding: 50px;
+    }
+  }
 }
 
 @each $class in ("left", "right") {

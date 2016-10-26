@@ -1,15 +1,33 @@
 .button {
-  padding: 10px;
+  padding: $button-padding;
   background-color: $button-background-colour;
   border: 0;
   border-radius: $button-border-radius;
   color: $button-text-colour;
 }
 
-.string {
-  width: $string-input-width;
+input {
+  width: $input-width;
+  display: block;
 }
 
 .input {
-  margin-bottom: $input-bottom-margin;
+  margin-bottom: $input-wrapper-bottom-margin;
+}
+
+.boolean {
+  width: initial;
+  display: inline-block;
+  margin-right: $boolean-right-margin;
+}
+
+label:not(.boolean) {
+  display: block;
+  padding-bottom: $label-padding-bottom;
+}
+
+.string, input.password {
+  border-radius: $string-border-radius;
+  border: 1px solid $string-colour;
+  padding: $string-padding;
 }
