@@ -8,6 +8,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    - if @page_wrapper == nil
+      - @page_wrapper = true
+
+    - if @devise_page || @form
+      - @single_section_page = true
+      - @page_wrapper = false
+
+    - if @page_wrapper || @devise_page || @form
+      - @wrapper = true
+
     - if notice
       .notice-wrapper
         %p.notice= notice
@@ -31,8 +41,8 @@
                 %li= link_to "Sign in", new_student_session_path
 
 
-    - if @page_wrapper
-      .page-wrapper{class: ("devise-wrapper" if @devise_page)}
+    - if @wrapper
+      %div{class: [("devise-wrapper" if @devise_page), ("general-form-wrapper" if @form), ("page-wrapper" if @page_wrapper)]}
         - if @single_section_page
           .section-wrapper
             = yield

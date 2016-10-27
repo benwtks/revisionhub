@@ -1,7 +1,9 @@
-$background: #f5f8fa;
+$pale-blue: #f5f8fa;
 $bold-colour: #585961;
 $normal-colour: #66676F;
 $outline-colour: #DEE0E2;
+
+$background: $pale-blue;
 
 $nav-colour: $bold-colour;
 $section-background-colour: #fff;
@@ -15,3 +17,5 @@ $notice-background-colour: #30B955;
 $alert-background-colour: #dc4e4e;
 
 $string-colour: $outline-colour;
+
+$select-background-colour: $pale-blue;

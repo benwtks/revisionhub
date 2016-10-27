@@ -11,13 +11,24 @@
 
 .page-wrapper {
   @extend .wrapper;
-  padding-top: $header-and-wrapper-top-padding * 2;
+  padding-top: $page-wrapper-padding-top;
+}
 
-  &.devise-wrapper {
-    width: 20%;
-    .section-wrapper {
-      padding: 50px;
-    }
+.devise-wrapper {
+  @extend .page-wrapper;
+  width: $devise-width;
+
+  .section-wrapper {
+    padding: $devise-section-padding;
+  }
+}
+
+.general-form-wrapper {
+  @extend .page-wrapper;
+  width: $general-form-width;
+
+  .section-wrapper {
+    padding: $general-form-padding;
   }
 }
 

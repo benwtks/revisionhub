@@ -1,4 +1,8 @@
 = simple_form_for @session do |f|
-  = f.collection_select(:topic_id, Topic.all, :id, :name)
-  = f.input :duration
+  .form-divider
+    = f.label :topic_id, class: "inline"
+    = f.collection_select(:topic_id, Topic.all, :id, :name)
+  .form-divider
+    = f.label :duration, class: "inline"
+    = f.input :duration, label: false
   = f.button :submit

@@ -6,13 +6,13 @@
   color: $button-text-colour;
 }
 
-input {
+input, textarea {
   width: $input-width;
   display: block;
 }
 
-.input {
-  margin-bottom: $input-wrapper-bottom-margin;
+.input, .form-divider {
+  margin-bottom: $form-section-bottom-margin;
 }
 
 .boolean {
@@ -21,13 +21,29 @@ input {
   margin-right: $boolean-right-margin;
 }
 
-label:not(.boolean) {
+label:not(.boolean):not(.inline) {
   display: block;
   padding-bottom: $label-padding-bottom;
 }
 
-.string, input.password {
+.string:not(div):not(label), input.password, textarea, select {
   border-radius: $string-border-radius;
   border: 1px solid $string-colour;
   padding: $string-padding;
+}
+
+textarea {
+  height: $textarea-height;
+}
+
+select {
+  background-color: $select-background-colour;
+}
+
+abbr[title] {
+  border-bottom: 0px;
+}
+
+.input.time {
+  display: inline-block;
 }
