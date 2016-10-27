@@ -22,6 +22,7 @@
       .notice-wrapper
         %p.notice= notice
     - elsif alert
+      - @alert = true
       .alert-wrapper
         %p.alert= alert
 
@@ -44,7 +45,7 @@
     - if @wrapper
       %div{class: [("devise-wrapper" if @devise_page), ("general-form-wrapper" if @form), ("page-wrapper" if @page_wrapper)]}
         - if @single_section_page
-          .section-wrapper
+          .section-wrapper.animated{class: [("flipInX" if @devise_page unless @alert), ("wobble" if @alert)]}
             = yield
         - else
           = yield
