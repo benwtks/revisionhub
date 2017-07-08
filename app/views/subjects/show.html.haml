@@ -12,7 +12,6 @@
 - if @subject.topics.blank?
   .section-wrapper
     %h3 It doesn't look like you've added any topics yet
-    %p= link_to "Click here to add some topics for this subject", new_subject_topic_path(@subject)
 - else
   - @topics.each do |topic|
     .section-wrapper
