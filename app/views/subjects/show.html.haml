@@ -16,7 +16,7 @@
   - @topics.each do |topic|
     .section-wrapper
       .left
-        %p.bold= topic.name.capitalize
+        %p= topic.name.capitalize
       .right
         %ul.options
           %li= link_to "Edit", edit_subject_topic_path(@subject, topic)

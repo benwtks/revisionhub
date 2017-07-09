@@ -1,22 +1,20 @@
+.bold, .important, h1, h2, h3, h4, h5, h6 {
+  color: $bold-colour;
+}
+
 h1 {
   font-size: $heading-font-size;
+  color: $h1-colour;
 }
 
 h2 {
   font-size: $second-level-heading-font-size;
 }
 
-.bold, .important, h1, h2, h3, h4, h5, h6 {
-  color: $bold-colour;
-}
-
-.bold {
-  font-weight: 600;
-}
-
 body {
   color: $normal-colour;
   font-family: $body-font-family;
+  font-weight: 600;
 }
 
 a {
