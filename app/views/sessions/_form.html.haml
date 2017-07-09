@@ -3,6 +3,9 @@
     = f.label :topic_id, class: "inline"
     = f.collection_select(:topic_id, Topic.all, :id, :name)
   .form-divider
-    = f.label :duration, class: "inline"
-    = f.input :duration, label: false
+    = f.label :date, class: "inline"
+    = f.date_select :date, as: :date,
+      discard_year: true,
+      order: [:day, :month],
+      label: false
   = f.button :submit
