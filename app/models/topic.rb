@@ -5,7 +5,4 @@ class Topic < ApplicationRecord
                    uniqueness: { scope: "subject_id" },
                    length: { in: 5..30 }
 
-  def name_with_subject_name
-    return "#{subject.name} - #{name}"
-  end
 end
