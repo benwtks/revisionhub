@@ -1,4 +1,4 @@
 = simple_form_for @subject do |f|
-  = f.input :name
-  = f.input :teacher
+  = f.input :name, label: false, placeholder: "Subject name"
+  = f.input :teacher, label: false, placeholder: "Teacher's name"
   = f.button :submit
