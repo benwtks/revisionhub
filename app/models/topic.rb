@@ -4,4 +4,7 @@ class Topic < ApplicationRecord
   validates :name, presence: true,
                    uniqueness: { scope: "subject_id" },
                    length: { in: 5..30 }
+
+  validates :description, presence: true,
+                          length: { in: 5..200 }
 end

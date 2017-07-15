@@ -53,7 +53,7 @@ end
 
 gem 'haml', '~> 4.0', '>= 4.0.7'
 # gem 'simple_form', '~> 3.2', '>= 3.2.1'
-gem 'simple_form', github: 'kesha-antonov/simple_form', branch: 'rails-5-0' # required to fix temp issue
+gem 'simple_form'
 gem "devise", '~> 4.2.0'
 
 # required to fix temp issue with certain gems (such as sass-rails)

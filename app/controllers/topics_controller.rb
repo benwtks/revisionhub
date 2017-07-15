@@ -12,9 +12,9 @@ class TopicsController < ApplicationController
     # instead of being redirected to the home page.
 
     if !student_signed_in?
-      redirect_to new_student_session_path
-    elsif current_student != Student.find(@subject.student)
-      redirect_to root_path
+      redirect_to new_student_session_path, alert: "Please login to edit topics"
+    elsif @subject.student != current_student
+      redirect_to root_path, alert: "Subject doesn't belong to you"
     end
   end
 
@@ -48,7 +48,7 @@ class TopicsController < ApplicationController
   private
 
   def find_subject
-    @subject = current_student.subjects.find(params[:subject_id])
+    @subject = Subject.find(params[:subject_id])
   end
 
   def find_topic

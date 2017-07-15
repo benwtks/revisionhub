@@ -5,4 +5,6 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :subjects
+
+  validates :email, length: { in: 5..200 }
 end
