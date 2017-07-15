@@ -27,7 +27,13 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topic = @subject.topics.build
+    if !student_signed_in?
+      redirect_to new_student_session_path, alert: "Please login to add topics"
+    elsif @subject.student == current_student
+      @topic = @subject.topics.build
+    else
+      redirect_to root_path, alert: "Subject doesn't belong to you"
+    end
   end
 
   def create
