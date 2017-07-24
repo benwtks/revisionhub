@@ -1,4 +1,4 @@
-.button {
+.btn, .button {
   padding: $button-padding;
   background-color: $button-background-colour;
   border: 0;
@@ -53,7 +53,7 @@ input.string:focus, input.password:focus, textarea:focus, select:focus {
   border:1px solid $focus-colour;
 }
 
-input.button:focus {
+input.button:focus, input.btn:focus {
   outline: none !important;
   border: 0;
 }
