@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def index
     if student_signed_in?
-      @sessions = Session.order("date ASC")
+      @sessions = current_student.sessions.order("date ASC")
     else
       redirect_to new_student_session_path, alert: "Please login to view your revision log"
     end
@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   def create
     @session = Session.new(session_params)
+    #@session[:student_id] = current_student.id
 
     if @session.save
       redirect_to root_path, notice: "Session successfully created"

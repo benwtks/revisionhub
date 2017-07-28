@@ -6,6 +6,7 @@ class Student < ApplicationRecord
 
   has_many :subjects
   has_many :topics
+  has_many :sessions
 
   validates :email, length: { in: 5..200 }
 end
