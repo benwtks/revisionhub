@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
   def create
     @session = Session.new(session_params)
-    #@session[:student_id] = current_student.id
+    @session[:student_id] = current_student.id
 
     if @session.save
       redirect_to root_path, notice: "Session successfully created"
