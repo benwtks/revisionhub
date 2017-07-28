@@ -10,16 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709162035) do
+ActiveRecord::Schema.define(version: 20170718185336) do
 
-  create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "sessions", force: :cascade do |t|
     t.integer  "topic_id"
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "student_id"
+    t.index ["student_id"], name: "index_sessions_on_student_id", using: :btree
   end
 
-  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "students", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -36,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170709162035) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "subjects", force: :cascade do |t|
     t.string   "teacher"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,12 +49,14 @@ ActiveRecord::Schema.define(version: 20170709162035) do
     t.integer  "student_id"
   end
 
-  create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "topics", force: :cascade do |t|
     t.string   "name"
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "subject_id"
+    t.integer  "student_id"
   end
 
+  add_foreign_key "sessions", "students"
 end
