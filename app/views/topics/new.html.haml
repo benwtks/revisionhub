@@ -1,6 +1,6 @@
-- @title = "New #{@subject.name.camelize(:lower)} topic"
+- @title = new_topic_heading(@subject)
 - @form = true
 
-%h1 New #{@subject.name.split.map(&:capitalize).join(' ')} Topic
+%h1= new_topic_heading(@subject)
 
 = render 'form'
