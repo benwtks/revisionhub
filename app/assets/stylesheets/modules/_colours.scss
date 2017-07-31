@@ -1,8 +1,10 @@
 $pale-blue: #f5f8fa;
 $red: #ff4747;
+$grey: #DEE0E2;
 $bold-colour: #585961;
 $normal-colour: #66676F;
-$outline-colour: #DEE0E2;
+
+$outline-colour: $grey;
 
 $logo-colour: $red;
 
@@ -19,10 +21,16 @@ $button-text-colour: #fff;
 $notice-background-colour: #30B955;
 $alert-background-colour: #dc4e4e;
 
-$string-colour: $outline-colour;
+$string-colour: $grey;
 
 $select-background-colour: $pale-blue;
 
 $h1-colour: $red;
+
+$timeline-h2-colour: $red;
+$timeline-colour: $grey;
+$session-colour: $red;
+$session-background-colour: #fff;
+$session-border-colour: $outline-colour;
 
 $focus-colour: #ffb4b4;

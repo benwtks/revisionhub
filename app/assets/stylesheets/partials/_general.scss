@@ -3,10 +3,10 @@ body {
 }
 
 .section-wrapper {
-  background-color: $section-background-colour;
-  border-radius: $section-border-radius;
   padding: $section-padding;
   margin-bottom: $section-bottom-padding;
+  background-color: $section-background-colour;
+  border-radius: $section-border-radius;
   border: 1px solid $section-wrapper-border-colour;
 }
 
@@ -20,6 +20,7 @@ a.section-wrapper {
     transition: 0.5s all;
   }
 }
+
 
 .notice-wrapper, .alert-wrapper {
   position: absolute;

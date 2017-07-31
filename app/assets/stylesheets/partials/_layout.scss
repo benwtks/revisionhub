@@ -12,6 +12,7 @@
 .page-wrapper {
   @extend .wrapper;
   padding-top: $page-wrapper-padding-top;
+  position: relative;
 }
 
 .devise-wrapper {

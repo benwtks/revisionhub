@@ -1,0 +1,41 @@
+.session {
+  margin-bottom: $session-bottom-padding;
+  background-color: $session-background-colour;
+  border: 1px solid $session-border-colour;
+  border-radius: $session-border-radius;
+  padding: $session-padding;
+}
+
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 30;
+  left: 40px;
+  height: 100%;
+  width: $timeline-width;
+  background: $timeline-colour;
+  margin-top: 50px;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.session::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 25px;
+  background-color: $session-colour;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 6px solid $session-background-colour;
+}
+
+.session::before, .session-details {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.session-details {
+  margin-left: 50px;
+}
