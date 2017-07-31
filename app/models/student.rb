@@ -9,4 +9,8 @@ class Student < ApplicationRecord
   has_many :sessions
 
   validates :email, length: { in: 5..200 }
+
+  def name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end
