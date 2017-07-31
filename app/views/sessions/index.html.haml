@@ -1,7 +1,10 @@
 - @title = "Session log"
+- @page_wrapper = false
 
-- unless @sessions.blank?
-  - @sessions.each do |session|
-    %a.timeline-wrapper{ href: session_subject_path(session) }
-      %p= session.date
-      %h2= session.name
+.timeline-wrapper
+  - unless @sessions.blank?
+    - @sessions.each do |session|
+      .session
+        .session-details
+          %p= session_date(session)
+          %h2= session_link(session)
