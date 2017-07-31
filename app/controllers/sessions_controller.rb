@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def index
     if student_signed_in?
-      @sessions = current_student.sessions.order("date ASC")
+      @sessions = current_student.sessions.order("date DESC")
     else
       redirect_to new_student_session_path, alert: "Please login to view your revision log"
     end
