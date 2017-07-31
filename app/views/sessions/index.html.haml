@@ -2,5 +2,6 @@
 
 - unless @sessions.blank?
   - @sessions.each do |session|
-    %a.section-wrapper.session{ href: subject_path(session.topic.subject) }
-      %p= session.name
+    %a.timeline-wrapper{ href: session_subject_path(session) }
+      %p= session.date
+      %h2= session.name
