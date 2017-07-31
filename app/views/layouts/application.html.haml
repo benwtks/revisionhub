@@ -32,10 +32,13 @@
         - unless @devise_page
           %nav
             %ul
-              %li= link_to "Home", root_path
-              %li= link_to "About", root_path
+              - unless student_signed_in?
+                %li= link_to "Home", root_path
+                %li= link_to "About", root_path
               - if student_signed_in?
+                %li= link_to "Dashboard", root_path
                 %li= link_to "Add Subject", new_subject_path
+                %li= link_to "Sessions", sessions_path
                 %li= link_to "Log a session", new_session_path
                 %li= link_to "Sign out", destroy_student_session_path, method: :delete
               - else
