@@ -18,6 +18,32 @@ nav {
   float: right;
 }
 
-nav a {
+nav li {
+  margin-left: 50px;
   color: $nav-colour;
+  & a:hover {
+    color: $nav-hover-colour;
+  }
+}
+
+nav li a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: $background;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+nav li a:hover::after {
+  margin-top: 0;
+  background-color: $nav-underline-colour;
+}
+
+nav li a,
+nav li a:hover,
+nav li a::after,
+nav li a:hover::after {
+  transition: all 0.2s;
 }
