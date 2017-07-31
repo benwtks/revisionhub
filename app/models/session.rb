@@ -5,4 +5,8 @@ class Session < ApplicationRecord
   def name
     "#{topic.subject.name.capitalize}: #{topic.name.capitalize}"
   end
+
+  def subject
+    topic.subject
+  end
 end
