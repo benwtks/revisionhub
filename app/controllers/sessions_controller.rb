@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
   def new
     if student_signed_in?
       @session = Session.new
+      @topics = current_student.topics
     else
       redirect_to new_student_session_path, alert: "Please login to log a revision session"
     end
