@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/log', to: 'sessions#index'
   resources :sessions
+  resources :subject_tags
+  resources :topic_tags
 
   devise_scope :student do
     match '/sessions/student', to: 'devise/sessions#create', via: :post
