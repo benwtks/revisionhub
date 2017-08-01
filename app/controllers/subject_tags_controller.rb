@@ -3,7 +3,8 @@ class SubjectTagsController < ApplicationController
     if student_signed_in?
       @subject_tag = SubjectTag.new
     else
-      redirect_to new_student_session_path, alert: "Please login to add subject tags"
+      redirect_to new_subject_tag_path, alert: "Please login to add subject tags"
+    end
   end
 
   def create
