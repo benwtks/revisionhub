@@ -1,0 +1,2 @@
+module SubjectTagsHelper
+end

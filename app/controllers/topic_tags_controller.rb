@@ -1,0 +1,2 @@
+class TopicTagsController < ApplicationController
+end
