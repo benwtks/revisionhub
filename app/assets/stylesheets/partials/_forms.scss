@@ -6,9 +6,13 @@
   color: $button-text-colour;
 }
 
-input, textarea {
+input:not(.check_boxes), textarea {
   width: $input-width;
   display: block;
+}
+
+input.check_boxes {
+  margin-right: 5px;
 }
 
 .input, .form-divider {

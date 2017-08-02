@@ -1,5 +1,6 @@
 = simple_form_for @subject do |f|
   = f.input :name, label: false, placeholder: "Subject name"
   = f.input :teacher, label: false, placeholder: "Teacher's name"
-  = f.association :subjectTags, as: :check_boxes, collection: @subject_tags
+  = f.label :subjectTags, "Subject tags"
+  = f.association :subjectTags, label: false, as: :check_boxes, collection: @subject_tags
   = f.button :submit
