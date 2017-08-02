@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802163936) do
+ActiveRecord::Schema.define(version: 20170802164739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,11 +76,11 @@ ActiveRecord::Schema.define(version: 20170802163936) do
 
   create_table "topic_tags_topics", id: false, force: :cascade do |t|
     t.integer  "topic_id"
-    t.integer  "topic_tag_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "topicTag_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["topicTag_id"], name: "index_topic_tags_topics_on_topicTag_id", using: :btree
     t.index ["topic_id"], name: "index_topic_tags_topics_on_topic_id", using: :btree
-    t.index ["topic_tag_id"], name: "index_topic_tags_topics_on_topic_tag_id", using: :btree
   end
 
   create_table "topics", force: :cascade do |t|
