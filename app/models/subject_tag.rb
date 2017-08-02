@@ -1,4 +1,3 @@
 class SubjectTag < ApplicationRecord
-  belongs_to :subject
-  belongs_to :student
+  has_and_belongs_to_many :subjects
 end
