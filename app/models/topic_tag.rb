@@ -1,4 +1,3 @@
 class TopicTag < ApplicationRecord
-  belongs_to :topic
-  belongs_to :student
+  has_and_belongs_to_many :topics
 end
