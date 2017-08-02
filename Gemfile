@@ -60,3 +60,5 @@ gem "devise", '~> 4.2.0'
 
 # required to fix temp issue with certain gems (such as sass-rails)
 gem 'sprockets', '3.6.3'
+
+gem 'to_words'

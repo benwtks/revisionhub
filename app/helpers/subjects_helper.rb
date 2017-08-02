@@ -10,7 +10,7 @@ module SubjectsHelper
     elsif i == 2
       s = "twice"
     else
-      s = "#{i} times"
+      s = "#{i.to_words} times"
     end
     
     return "Revised #{s}"
