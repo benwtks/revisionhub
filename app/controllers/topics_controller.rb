@@ -23,6 +23,7 @@ class TopicsController < ApplicationController
       redirect_to new_student_session_path, alert: "Please login to add topics"
     elsif @subject.student == current_student
       @topic = @subject.topics.build
+      @topic_tags = current_student.topicTags
     else
       redirect_to root_path, alert: "Subject doesn't belong to you"
     end
@@ -55,6 +56,6 @@ class TopicsController < ApplicationController
   end
 
   def topic_params
-    params.require(:topic).permit(:name, :description)
+    params.require(:topic).permit(:name, :description, {:topicTag_ids => []})
   end
 end

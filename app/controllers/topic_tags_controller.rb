@@ -21,6 +21,6 @@ class TopicTagsController < ApplicationController
   private
 
   def topic_tag_params
-    params.requie(:topic_tag).permit(:name)
+    params.require(:topic_tag).permit(:name)
   end
 end

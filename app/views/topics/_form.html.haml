@@ -1,4 +1,5 @@
 = simple_form_for [@subject, @topic] do |f|
   = f.input :name, label: false, placeholder: "Topic name"
   = f.input :description, label: false, placeholder: "Description of the topic"
+  = f.association :topicTags, as: :check_boxes, collection: @topic_tags
   = f.button :submit
