@@ -7,6 +7,8 @@ class TopicsController < ApplicationController
       redirect_to new_student_session_path, alert: "Please login to edit topics"
     elsif @subject.student != current_student
       redirect_to root_path, alert: "Subject doesn't belong to you"
+    elsif @subject.student == current_student
+      @topic_tags = current_student.subjectTags
     end
   end
 
