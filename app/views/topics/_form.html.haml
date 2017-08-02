@@ -1,6 +1,8 @@
 = simple_form_for [@subject, @topic] do |f|
   = f.input :name, label: false, placeholder: "Topic name"
   = f.input :description, label: false, placeholder: "Description of the topic"
-  = f.label :TopicTags, "Topic tags"
-  = f.association :topicTags, label: false, as: :check_boxes, collection: @topic_tags
+  %h2 Topic tags
+  - unless @topic_tags.empty?
+    = f.association :topicTags, label: false, as: :check_boxes, collection: @topic_tags
+  = link_to "Add topic tags", new_topic_tag_path, class: "form", target: :_blank
   = f.button :submit

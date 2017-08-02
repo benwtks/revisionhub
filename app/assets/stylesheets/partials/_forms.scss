@@ -25,6 +25,21 @@ input.check_boxes {
   margin-right: $boolean-right-margin;
 }
 
+a.form {
+  display: block;
+  margin-bottom: 20px;
+  &:hover {
+    color: $form-link-colour;
+  }
+  &, &:hover {
+    transition: color 0.2s;
+  }
+}
+
+div.check_boxes {
+  margin: 0;
+}
+
 label:not(.boolean):not(.inline) {
   display: block;
   padding-bottom: $label-padding-bottom;
