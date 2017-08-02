@@ -20,6 +20,8 @@ class SubjectsController < ApplicationController
       redirect_to new_student_session_path, alert: "Please login to edit subjects"
     elsif @subject.student != current_student
       redirect_to root_path, alert: "Subject doesn't belong to you"
+    elsif @subject.student == current_student
+      @subject_tags = current_student.subjectTags
     end
   end
 
