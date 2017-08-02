@@ -44,7 +44,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic.destroy
-    redirect_to root_path, notice: "Topic successfully deleted"
+    redirect_to @subject, notice: "Topic successfully deleted"
   end
 
   private
