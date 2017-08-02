@@ -62,6 +62,6 @@ class SubjectsController < ApplicationController
   end
 
   def subject_params
-    params.require(:subject).permit(:name, :teacher)
+    params.require(:subject).permit(:name, :teacher, {:subjectTag_ids => []})
   end
 end
