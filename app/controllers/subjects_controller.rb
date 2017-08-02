@@ -36,6 +36,7 @@ class SubjectsController < ApplicationController
       redirect_to new_student_session_path, alert: "Please login to create a subject"
     else
       @subject = current_student.subjects.build
+      @subject_tags = current_student.subjectTags
     end
   end
 
