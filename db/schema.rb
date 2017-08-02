@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802163156) do
+ActiveRecord::Schema.define(version: 20170802163936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 20170802163156) do
 
   create_table "subject_tags_subjects", id: false, force: :cascade do |t|
     t.integer  "subject_id"
-    t.integer  "subject_tag_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "subjectTag_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["subjectTag_id"], name: "index_subject_tags_subjects_on_subjectTag_id", using: :btree
     t.index ["subject_id"], name: "index_subject_tags_subjects_on_subject_id", using: :btree
-    t.index ["subject_tag_id"], name: "index_subject_tags_subjects_on_subject_tag_id", using: :btree
   end
 
   create_table "subjects", force: :cascade do |t|
