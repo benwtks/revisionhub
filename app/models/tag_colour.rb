@@ -1,0 +1,2 @@
+class TagColour < ApplicationRecord
+end
