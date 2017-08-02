@@ -1,6 +1,7 @@
 class TopicTagsController < ApplicationController
   def new
     if student_signed_in?
+      @tag_colours = TagColour.all
       @topic_tag = TopicTag.new
     else
       redirect_to new_topic_tag_path, alert: "Please login to add topic tags"
@@ -21,6 +22,6 @@ class TopicTagsController < ApplicationController
   private
 
   def topic_tag_params
-    params.require(:topic_tag).permit(:name)
+    params.require(:topic_tag).permit(:name, :tagColour_id)
   end
 end
