@@ -1,3 +1,4 @@
 = simple_form_for @subject_tag do |f|
   = f.input :name, label: false, placeholder: "Subject tag name"
+  = f.collection_select(:tagColour_id, @tag_colours, :id, :colour)
   = f.button :submit
