@@ -11,7 +11,11 @@ input:not(.check_boxes), textarea {
   display: block;
 }
 
-input.check_boxes {
+.inline, .input.select {
+  display: inline-block;
+}
+
+input.check_boxes{
   margin-right: 5px;
 }
 
@@ -28,6 +32,7 @@ input.check_boxes {
 a.form {
   display: block;
   margin-bottom: 20px;
+  width: 125px;
   &:hover {
     color: $form-link-colour;
   }

@@ -45,23 +45,29 @@ a.section-wrapper {
 }
 
 .tag {
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    border-radius: 20px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  border-radius: 20px;
+  position: relative;
+  border: 1px solid white;
 }
 
-p, span {
-    vertical-align: middle;
-}
-p.important {
-    display: inline-block;
+.name {
+  margin-right: 10px;
 }
 
-//@include tag-colour($red-tag, $blue-tag, $purple-tag, $orange-tag, $green-tag, $yellow-tag)
+.name, .tag {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// What I'd like to have: @include tag-colours(red, blue, purple, orange, green, yellow)
+
 @include tag-colour(blue, $blue-tag);
 @include tag-colour(red, $red-tag);
+@include tag-colour(purple, $purple-tag);
+@include tag-colour(green, $green-tag);
+@include tag-colour(orange, $orange-tag);
+@include tag-colour(yellow, $yellow-tag);
