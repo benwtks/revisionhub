@@ -43,3 +43,25 @@ a.section-wrapper {
 .notice-wrapper {
   background-color: $notice-background-colour;
 }
+
+.tag {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid white;
+}
+
+p, span {
+    vertical-align: middle;
+}
+p.important {
+    display: inline-block;
+}
+
+//@include tag-colour($red-tag, $blue-tag, $purple-tag, $orange-tag, $green-tag, $yellow-tag)
+@include tag-colour(blue, $blue-tag);
+@include tag-colour(red, $red-tag);

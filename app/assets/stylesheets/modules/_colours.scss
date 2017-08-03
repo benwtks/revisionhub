@@ -4,6 +4,20 @@ $grey: #DEE0E2;
 $bold-colour: #585961;
 $normal-colour: #66676F;
 
+$red-tag: #EA6E64;
+$blue-tag: #66B7EF;
+$purple-tag: #C68DDC;
+$orange-tag: #ECAA5D;
+$green-tag: #84CA64;
+$yellow-tag: #EED065;
+
+
+@mixin tag-colour($colour, $colour-tag){
+  .tag.#{$colour}{
+    background-color: $colour-tag;
+  }
+}
+
 $outline-colour: $grey;
 
 $logo-colour: $red;
