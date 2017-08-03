@@ -2,7 +2,10 @@
 
 .section-wrapper
   .left
-    %h1= @subject.name.capitalize
+    %h1.name= @subject.name.capitalize
+    - unless @subject.subjectTags.empty?
+      - @subject.subjectTags.each do |t|
+        %span.tag{class: t.tagColour.colour.camelize(:lower)}= t.name
     %h2= @subject.teacher
   .right
     %ul.options
