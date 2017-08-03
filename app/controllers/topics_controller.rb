@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
     elsif @subject.student != current_student
       redirect_to root_path, alert: "Subject doesn't belong to you"
     elsif @subject.student == current_student
-      @topic_tags = current_student.subjectTags
+      @topic_tags = current_student.topicTags
     end
   end
 
