@@ -1,0 +1,5 @@
+class AddTagColourIdToSubjectTags2 < ActiveRecord::Migration[5.0]
+  def change
+    add_column :subject_tags, :tagColour_id, :integer
+  end
+end
