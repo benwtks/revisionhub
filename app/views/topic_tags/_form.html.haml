@@ -2,5 +2,5 @@
   = f.input :name, label: false, placeholder: "Topic tag name"
   .form-divider
     = f.label :tagColour_id, "Tag colour:", class: "inline"
-    = f.collection_select(:tagColour_id, @tag_colours, :id, :colour)
+    = f.association :tagColour, label_method: :colour, label: false, selected: TagColour.first
   = f.button :submit

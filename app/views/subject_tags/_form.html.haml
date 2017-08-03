@@ -1,6 +1,6 @@
 = simple_form_for @subject_tag do |f|
   = f.input :name, label: false, placeholder: "Subject tag name"
   .form-divider
-    = f.label :tagColour_id, "Tag colour:", class: "inline"
-    = f.collection_select(:tagColour_id, @tag_colours, :id, :colour)
+    = f.label :tagColour, "Tag colour:", class: "inline"
+    = f.association :tagColour, label_method: :colour, label: false, selected: TagColour.first
   = f.button :submit
