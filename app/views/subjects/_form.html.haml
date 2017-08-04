@@ -2,7 +2,6 @@
   = f.input :name, label: false, placeholder: "Subject name"
   = f.input :teacher, label: false, placeholder: "Teacher's name"
   %h2 Subject tags
-  - unless @subject_tags.empty?
-    = f.association :subjectTags, label: false, as: :check_boxes, collection: @subject_tags
+  = f.association :subjectTags, label: false, as: :check_boxes, collection: @subject_tags
   = link_to "Add subject tags", new_subject_tag_path, class: "form", target: :_blank
   = f.button :submit
