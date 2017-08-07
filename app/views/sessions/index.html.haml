@@ -6,4 +6,5 @@
       .session
         .session-details
           %p= session_date(session)
-          %h2= session_link(session)
+          %h2.name= session_link(session)
+          = render 'tags', tags: session.topic.topicTags

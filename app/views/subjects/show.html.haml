@@ -3,9 +3,7 @@
 .section-wrapper
   .left
     %h1.name= @subject.name.capitalize
-    - unless @subject.subjectTags.empty?
-      - @subject.subjectTags.each do |t|
-        %span.tag{class: t.tagColour.colour.camelize(:lower)}= t.name
+    = render "tags", tags: @subject.subjectTags
     %h2= @subject.teacher
   .right
     %ul.options
@@ -19,7 +17,8 @@
   - @topics.each do |topic|
     .section-wrapper
       .left
-        %p= topic.name.capitalize
+        %p.name= topic.name.capitalize
+        = render "tags", tags: topic.topicTags
       .right
         %ul.options
           %li= link_to "Edit", edit_subject_topic_path(@subject, topic)

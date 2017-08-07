@@ -5,8 +5,6 @@
     %a.section-wrapper{ href: subject_path(subject) }
       .left
         %p.important.name= subject.name.capitalize
-        - unless subject.subjectTags.empty?
-          - subject.subjectTags.each do |t|
-            %span.tag{class: t.tagColour.colour.camelize(:lower)}= t.name
+        = render "tags", tags: subject.subjectTags
       .right
         %p= no_sessions(subject)
