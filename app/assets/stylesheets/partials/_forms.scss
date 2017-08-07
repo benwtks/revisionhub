@@ -33,12 +33,6 @@ a.form {
   display: block;
   margin-bottom: 20px;
   width: 125px;
-  &:hover {
-    color: $form-link-colour;
-  }
-  &, &:hover {
-    transition: color 0.2s;
-  }
 }
 
 div.check_boxes {

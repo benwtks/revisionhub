@@ -21,6 +21,15 @@ a.section-wrapper {
   }
 }
 
+a:not(.section-wrapper) {
+  &:hover {
+    color: $link-colour;
+  }
+  &, &:hover {
+    transition: color 0.2s;
+  }
+}
+
 .notice-wrapper, .alert-wrapper {
   position: absolute;
   top: 0;
