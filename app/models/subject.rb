@@ -7,4 +7,13 @@ class Subject < ApplicationRecord
                    uniqueness: { scope: "student_id" }
   validates :teacher, presence: true,
                       length: { in: 5..50 }
+
+  def session_count
+    i = 0
+    topics.each do |topic|
+      i += topic.sessions.count
+    end
+
+    return i
+  end
 end
