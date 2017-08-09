@@ -48,7 +48,7 @@
     - if @wrapper
       %div{class: [("devise-wrapper" if @devise_page), ("general-form-wrapper" if @form), ("page-wrapper" if @page_wrapper)]}
         - if @single_section_page
-          .section-wrapper.animated{class: [("flipInX" if @devise_page unless @alert), ("wobble" if @alert)]}
+          .section-wrapper.animated{class: [("flipInX" if @devise_page unless @alert), ("wobble" if @devise_page && @alert)]}
             = yield
         - else
           = yield
