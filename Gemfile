@@ -62,6 +62,3 @@ gem 'sprockets', '3.6.3'
 
 # For natural language
 gem 'to_words'
-
-# For WYSIWYG editors
-gem 'trix'
