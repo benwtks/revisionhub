@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  before_filter :authenticate_student!
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
   before_action :find_subject_tags, only: [:edit, :update, :create, :new]
 
@@ -7,9 +8,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    if !student_signed_in?
-      redirect_to new_student_session_path, alert: "Please login to view subjects"
-    elsif @subject.student == current_student
+    if @subject.student == current_student
       @topics = @subject.topics.order("name ASC")
     else
       redirect_to root_path, alert: "Subject doesn't belong to you"
@@ -17,9 +16,7 @@ class SubjectsController < ApplicationController
   end
 
   def edit
-    if !student_signed_in?
-      redirect_to new_student_session_path, alert: "Please login to edit subjects"
-    elsif @subject.student != current_student
+    if @subject.student != current_student
       redirect_to root_path, alert: "Subject doesn't belong to you"
     end
   end
@@ -33,11 +30,7 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    unless student_signed_in?
-      redirect_to new_student_session_path, alert: "Please login to create a subject"
-    else
-      @subject = current_student.subjects.build
-    end
+    @subject = current_student.subjects.build
   end
 
   def create

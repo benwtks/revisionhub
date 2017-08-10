@@ -1,11 +1,9 @@
 class TopicTagsController < ApplicationController
+  before_filter :authenticate_student!
+
   def new
-    if student_signed_in?
-      @tag_colours = TagColour.all
-      @topic_tag = TopicTag.new
-    else
-      redirect_to new_topic_tag_path, alert: "Please login to add topic tags"
-    end
+    @tag_colours = TagColour.all
+    @topic_tag = TopicTag.new
   end
 
   def create

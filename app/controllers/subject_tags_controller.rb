@@ -1,11 +1,9 @@
 class SubjectTagsController < ApplicationController
+  before_filter :authenticate_student!
+
   def new
-    if student_signed_in?
-      @tag_colours = TagColour.all
-      @subject_tag = SubjectTag.new
-    else
-      redirect_to new_subject_tag_path, alert: "Please login to add subject tags"
-    end
+    @tag_colours = TagColour.all
+    @subject_tag = SubjectTag.new
   end
 
   def create

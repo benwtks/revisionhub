@@ -1,12 +1,11 @@
 class TopicsController < ApplicationController
+  before_filter :authenticate_student!
   before_action :find_subject, only: [:edit, :update, :new, :destroy, :create]
   before_action :find_topic, only: [:edit, :update, :destroy]
   before_action :find_topic_tags, only: [:edit, :update, :create, :new]
 
   def edit
-    if !student_signed_in?
-      redirect_to new_student_session_path, alert: "Please login to edit topics"
-    elsif @subject.student != current_student
+    if @subject.student != current_student
       redirect_to root_path, alert: "Subject doesn't belong to you"
     end
   end
@@ -20,9 +19,7 @@ class TopicsController < ApplicationController
   end
 
   def new
-    if !student_signed_in?
-      redirect_to new_student_session_path, alert: "Please login to add topics"
-    elsif @subject.student == current_student
+    if @subject.student == current_student
       @topic = @subject.topics.build
     else
       redirect_to root_path, alert: "Subject doesn't belong to you"
