@@ -9,14 +9,14 @@ class SessionsController < ApplicationController
     end
   end
 
-  def new 
+  def new
     @topics = current_student.topics
 
     if @topics.blank?
       redirect_to root_path, alert: "You need to add topics to log revision sessions"
     else
       @session = Session.new
-    end 
+    end
   end
 
   def create
