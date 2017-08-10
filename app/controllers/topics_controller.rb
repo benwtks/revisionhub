@@ -16,6 +16,7 @@ class TopicsController < ApplicationController
    if @topic.update(topic_params)
       redirect_to @topic.subject, notice: "Topic successfully edited"
     else
+      @topic_tags = current_student.topicTags
       render 'edit'
     end
   end
@@ -38,6 +39,7 @@ class TopicsController < ApplicationController
     if @topic.save
       redirect_to @topic.subject, notice: "Topic successfully created"
     else
+      @topic_tags = current_student.topicTags
       render 'new'
     end
   end
