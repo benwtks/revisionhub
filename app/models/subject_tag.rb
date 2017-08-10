@@ -3,5 +3,6 @@ class SubjectTag < ApplicationRecord
   belongs_to :student
   belongs_to :tagColour
 
-  validates :name, presence: true
+  validates :name, presence: true,
+                   length: { in: 2..20 }
 end
