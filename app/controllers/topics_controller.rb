@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   before_action :find_topic, only: [:edit, :update, :destroy]
   before_action :find_topic_tags, only: [:edit, :update, :create, :new]
 
-  before_action only: [:edit, :new] do |c|
+  before_action only: [:update, :destroy, :edit, :new] do |c|
     c.authenticate_subject_rights @subject
   end
 
