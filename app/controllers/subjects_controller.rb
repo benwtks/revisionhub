@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
   before_action :find_subject_tags, only: [:edit, :update, :create, :new]
 
-  before_action only: [:show, :edit] do |c|
+  before_action only: [:show, :update, :destroy, :edit] do |c|
     c.authenticate_subject_rights @subject
   end
 
