@@ -1,5 +1,5 @@
 class TopicTagsController < ApplicationController
-  before_filter :authenticate_student!
+  before_action :authenticate_student!
 
   def new
     @tag_colours = TagColour.all

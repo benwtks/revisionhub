@@ -4,10 +4,11 @@ class TopicsController < ApplicationController
   before_action :find_topic, only: [:edit, :update, :destroy]
   before_action :find_topic_tags, only: [:edit, :update, :create, :new]
 
+  before_action only: [:edit, :new] do |c|
+    c.authenticate_subject_rights @subject
+  end
+
   def edit
-    if @subject.student != current_student
-      redirect_to root_path, alert: "Subject doesn't belong to you"
-    end
   end
 
   def update
@@ -19,11 +20,7 @@ class TopicsController < ApplicationController
   end
 
   def new
-    if @subject.student == current_student
-      @topic = @subject.topics.build
-    else
-      redirect_to root_path, alert: "Subject doesn't belong to you"
-    end
+    @topic = @subject.topics.build
   end
 
   def create

@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     root_path
   end
+
+  protected
+
+  def authenticate_subject_rights(subject)
+    unless subject.student == current_student
+      redirect_to root_path, alert: "Subject doesn't belong to you"
+    end
+  end
 end

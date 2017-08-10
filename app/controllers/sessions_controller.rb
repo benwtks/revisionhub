@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :authenticate_student!
+  before_action :authenticate_student!
 
   def index
     @sessions = current_student.sessions.order("date DESC, created_at DESC")

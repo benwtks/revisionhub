@@ -1,24 +1,21 @@
 class SubjectsController < ApplicationController
-  before_filter :authenticate_student!
+  before_action :authenticate_student!
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
   before_action :find_subject_tags, only: [:edit, :update, :create, :new]
+
+  before_action only: [:show, :edit] do |c|
+    c.authenticate_subject_rights @subject
+  end
 
   def index
     @subjects = current_student.subjects.order("name ASC")
   end
 
   def show
-    if @subject.student == current_student
-      @topics = @subject.topics.order("name ASC")
-    else
-      redirect_to root_path, alert: "Subject doesn't belong to you"
-    end
+    @topics = @subject.topics.order("name ASC")
   end
 
   def edit
-    if @subject.student != current_student
-      redirect_to root_path, alert: "Subject doesn't belong to you"
-    end
   end
 
   def update
