@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810213638) do
+ActiveRecord::Schema.define(version: 20170810214958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,15 +85,15 @@ ActiveRecord::Schema.define(version: 20170810213638) do
   end
 
   create_table "topic_tags_topics", id: false, force: :cascade do |t|
-    t.integer  "topic_id"
     t.integer  "topicTag_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.uuid     "topic_id"
     t.index ["topicTag_id"], name: "index_topic_tags_topics_on_topicTag_id", using: :btree
     t.index ["topic_id"], name: "index_topic_tags_topics_on_topic_id", using: :btree
   end
 
-  create_table "topics", force: :cascade do |t|
+  create_table "topics", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
