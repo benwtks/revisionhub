@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810181843) do
+ActiveRecord::Schema.define(version: 20170810213638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
   create_table "sessions", force: :cascade do |t|
     t.integer  "topic_id"
@@ -53,15 +54,15 @@ ActiveRecord::Schema.define(version: 20170810181843) do
   end
 
   create_table "subject_tags_subjects", id: false, force: :cascade do |t|
-    t.integer  "subject_id"
     t.integer  "subjectTag_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.uuid     "subject_id"
     t.index ["subjectTag_id"], name: "index_subject_tags_subjects_on_subjectTag_id", using: :btree
     t.index ["subject_id"], name: "index_subject_tags_subjects_on_subject_id", using: :btree
   end
 
-  create_table "subjects", force: :cascade do |t|
+  create_table "subjects", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "teacher"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -8,6 +8,8 @@ class Subject < ApplicationRecord
   validates :teacher, presence: true,
                       length: { in: 5..50 }
 
+  default_scope -> { order("created_at ASC") }
+
   def session_count
     i = 0
     topics.each do |topic|
