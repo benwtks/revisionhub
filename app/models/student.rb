@@ -11,6 +11,7 @@ class Student < ApplicationRecord
   has_many :topicTags
 
   validates :email, length: { in: 5..200 }
+  validates :username, uniqueness: true
 
   def name
     "#{first_name.capitalize} #{last_name.capitalize}"
