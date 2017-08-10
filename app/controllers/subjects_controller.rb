@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
+  before_action :find_subject_tags, only: [:edit, :update, :create, :new]
 
   def index
     @subjects = current_student.subjects.order("name ASC")
@@ -20,8 +21,6 @@ class SubjectsController < ApplicationController
       redirect_to new_student_session_path, alert: "Please login to edit subjects"
     elsif @subject.student != current_student
       redirect_to root_path, alert: "Subject doesn't belong to you"
-    elsif @subject.student == current_student
-      @subject_tags = current_student.subjectTags
     end
   end
 
@@ -29,7 +28,6 @@ class SubjectsController < ApplicationController
     if @subject.update(subject_params)
       redirect_to @subject, notice: "Subject successfully edited"
     else
-      @subject_tags = current_student.subjectTags
       render 'edit'
     end
   end
@@ -39,7 +37,6 @@ class SubjectsController < ApplicationController
       redirect_to new_student_session_path, alert: "Please login to create a subject"
     else
       @subject = current_student.subjects.build
-      @subject_tags = current_student.subjectTags
     end
   end
 
@@ -49,7 +46,6 @@ class SubjectsController < ApplicationController
     if @subject.save
       redirect_to @subject, notice: "Subject successfully created"
     else
-      @subject_tags = current_student.subjectTags
       render 'new'
     end
   end
@@ -63,6 +59,10 @@ class SubjectsController < ApplicationController
 
   def find_subject
     @subject = Subject.find(params[:id])
+  end
+
+  def find_subject_tags
+    @subject_tags = current_student.subjectTags
   end
 
   def subject_params
