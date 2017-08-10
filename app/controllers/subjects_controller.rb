@@ -29,6 +29,7 @@ class SubjectsController < ApplicationController
     if @subject.update(subject_params)
       redirect_to @subject, notice: "Subject successfully edited"
     else
+      @subject_tags = current_student.subjectTags
       render 'edit'
     end
   end
@@ -48,6 +49,7 @@ class SubjectsController < ApplicationController
     if @subject.save
       redirect_to @subject, notice: "Subject successfully created"
     else
+      @subject_tags = current_student.subjectTags
       render 'new'
     end
   end
