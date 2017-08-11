@@ -39,7 +39,9 @@
   }
 }
 
-.section-wrapper:after {
+.section-wrapper:after,
+.subject-wrapper:after,
+.subject-section-wrapper:after {
   content: "";
   clear: both;
   display: block;
@@ -52,14 +54,28 @@ ul {
       display: inline-block;
     }
   }
-  &.subject-options li {
-    padding-left: 20px;
+  &.options {
+    padding-left: 0;
   }
 }
 
 ul.options li {
-  margin-right: 15px;
+  margin-right: 15px; 
   &:last-of-type {
     margin-right: 0;
   }
+}
+
+.topic-data {
+  padding: 10px;
+  border: 1px solid $border-colour;
+  border-radius: 10px;
+}
+
+.topic-data-wrapper p {
+  margin-right: 10px;
+}
+
+.topic-data-wrapper p, .topic-data {
+  display: inline-block;
 }

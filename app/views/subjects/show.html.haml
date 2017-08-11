@@ -1,25 +1,32 @@
 - @title = "#{ @subject.name.capitalize }"
 
-.section-wrapper
-  .left
-    %h1.name= @subject.name.capitalize
-    = render "tags", tags: @subject.subjectTags
-    %h2= @subject.teacher
-  .right
-    %ul.options
-      %li= link_to "Edit", edit_subject_path
-      %li= link_to "Add topic", new_subject_topic_path(@subject)
-      %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
-- if @subject.topics.blank?
-  .section-wrapper
-    %h3 It doesn't look like you've added any topics yet
-- else
-  - @topics.each do |topic|
-    .section-wrapper
-      .left
-        %p.name= topic.name.capitalize
-        = render "tags", tags: topic.topicTags
-      .right
-        %ul.options
-          %li= link_to "Edit", edit_subject_topic_path(@subject, topic)
-          %li= link_to "Delete", subject_topic_path(@subject, topic), method: :delete, data: { confirm: "Are you sure?" }
+.subject-wrapper
+  .subject-section-wrapper
+    .left
+      %h1.name= @subject.name.capitalize
+      = render "tags", tags: @subject.subjectTags
+      %h2= @subject.teacher
+    .right
+      %ul.options
+        %li= link_to "Edit", edit_subject_path
+        %li= link_to "Add topic", new_subject_topic_path(@subject)
+        %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
+  - if @subject.topics.blank?
+    .subject-section-wrapper
+      %h3 It doesn't look like you've added any topics yet
+  - else
+    - @topics.each do |topic|
+      .subject-section-wrapper
+        .left
+          %p.name= topic.name.capitalize
+          = render "tags", tags: topic.topicTags
+          %ul.options
+            %li= link_to "Edit", edit_subject_topic_path(@subject, topic)
+            %li= link_to "Delete", subject_topic_path(@subject, topic), method: :delete, data: { confirm: "Are you sure?" }
+        .right
+          .topic-data-wrapper
+            %p Sessions revised:
+            %span.topic-data= topic.sessions.count
+          .topic-data-wrapper
+            %p Percentage:
+            %span.topic-data= topic.session_percentage

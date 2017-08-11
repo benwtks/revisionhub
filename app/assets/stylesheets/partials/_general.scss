@@ -3,11 +3,21 @@ body {
 }
 
 .section-wrapper {
-  padding: $section-padding;
   margin-bottom: $section-bottom-padding;
+}
+
+.subject-wrapper, .section-wrapper {
   background-color: $section-background-colour;
-  border-radius: $section-border-radius;
-  border: 1px solid $section-wrapper-border-colour;
+  border-radius: $border-radius;
+  border: 1px solid $border-colour;
+}
+
+.subject-section-wrapper, .section-wrapper {
+  padding: $section-padding;
+}
+
+.subject-section-wrapper:not(:last-of-type) {
+  border-bottom: 1px solid $border-colour;
 }
 
 a.section-wrapper {
