@@ -54,6 +54,6 @@ class TopicsController < ApplicationController
   end
 
   def topic_params
-    params.require(:topic).permit(:name, :description, {topicTag_ids: []})
+    params.require(:topic).permit(:name, {topicTag_ids: []})
   end
 end
