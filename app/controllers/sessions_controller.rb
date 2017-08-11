@@ -1,9 +1,8 @@
 class SessionsController < ApplicationController
   before_action :authenticate_student!
+  before_action :find_sessions, only: [:index, :create]
 
   def index
-    @sessions = current_student.sessions.order("date DESC, created_at DESC")
-
     if @sessions.empty?
       redirect_to new_session_path, alert: "Add sessions to view your revision timeline"
     end
@@ -24,7 +23,7 @@ class SessionsController < ApplicationController
     @session[:student_id] = current_student.id
 
     if @session.save
-      redirect_to root_path, notice: "Session successfully created"
+      render 'index', notice: "Session successfully created"
     else
       render 'new'
     end
@@ -34,5 +33,9 @@ class SessionsController < ApplicationController
 
   def session_params
     params.require(:session).permit(:date, :duration, :topic_id)
+  end
+
+  def find_sessions
+    @sessions = current_student.sessions.order("date DESC, created_at DESC")
   end
 end

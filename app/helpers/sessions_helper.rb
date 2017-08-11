@@ -1,6 +1,10 @@
 module SessionsHelper
+  def session_name(session)
+    "#{session.topic.subject.name.capitalize}: #{session.topic.name.capitalize}"
+  end
+
   def session_subject_path(session)
-    subject_path(session.subject)
+    subject_path(session.topic.subject)
   end
 
   def session_date(session)
@@ -8,6 +12,6 @@ module SessionsHelper
   end
 
   def session_link(session)
-    link_to session.name, session_subject_path(session)
+    link_to session_name(session), session_subject_path(session)
   end
 end
