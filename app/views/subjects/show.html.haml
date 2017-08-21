@@ -5,9 +5,10 @@
     .left
       %h1.name= @subject.name.capitalize
       = render "tags", tags: @subject.subjectTags
-      %h2= @subject.teacher
+      %h3= @subject.teacher
     .right
       %ul.options
+        %li= link_to "Log a session", new_session_path
         %li= link_to "Edit", edit_subject_path
         %li= link_to "Add topic", new_subject_topic_path(@subject)
         %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
@@ -18,7 +19,7 @@
     - @topics.each do |topic|
       .subject-section-wrapper
         .left
-          %p.name= topic.name.capitalize
+          %h2.name= topic.name.capitalize
           = render "tags", tags: topic.topicTags
           %ul.options
             %li= link_to "Edit", edit_subject_topic_path(@subject, topic)

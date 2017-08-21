@@ -6,13 +6,17 @@ body {
   margin-bottom: $section-bottom-padding;
 }
 
+.subject-section-wrapper {
+  padding: $subject-section-wrapper-padding;
+}
+
 .subject-wrapper, .section-wrapper {
   background-color: $section-background-colour;
   border-radius: $border-radius;
   border: 1px solid $border-colour;
 }
 
-.subject-section-wrapper, .section-wrapper {
+.section-wrapper {
   padding: $section-padding;
 }
 

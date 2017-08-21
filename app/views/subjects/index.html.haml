@@ -1,5 +1,9 @@
 - @title = "Dashboard"
 
+.greeting
+  %h1= greeting(@name)
+  %p Here's your subjects
+
 - unless @subjects.blank?
   - @subjects.each do |subject|
     %a.section-wrapper{ href: subject_path(subject) }
