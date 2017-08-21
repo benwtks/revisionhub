@@ -1,14 +1,13 @@
 class TopicTagsController < ApplicationController
   before_action :authenticate_student!
+  before_action :find_tag_colours, only: :new
 
   def new
-    @tag_colours = TagColour.all
-    @topic_tag = TopicTag.new
+    @topic_tag = current_student.topicTags.build
   end
 
   def create
-    @topic_tag = TopicTag.new(topic_tag_params)
-    @topic_tag[:student_id] = current_student.id
+    @topic_tag = current_student.topicTags.build(topic_tag_params)
 
     if @topic_tag.save
       redirect_to root_path, notice: "Topic tag successfully created"

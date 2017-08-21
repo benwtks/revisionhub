@@ -9,6 +9,7 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = current_student.subjects.order("name ASC")
+    @name = current_student.first_name
   end
 
   def show

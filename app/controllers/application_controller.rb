@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: "Subject doesn't belong to you"
     end
   end
+
+  def find_tag_colours
+    @tag_colours = TagColour.all
+  end
 end

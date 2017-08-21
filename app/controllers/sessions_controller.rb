@@ -14,13 +14,12 @@ class SessionsController < ApplicationController
     if @topics.blank?
       redirect_to root_path, alert: "You need to add topics to log revision sessions"
     else
-      @session = Session.new
+      @session = current_student.sessions.build
     end
   end
 
   def create
-    @session = Session.new(session_params)
-    @session[:student_id] = current_student.id
+    @session = current_student.sessions.build(session_params)
 
     if @session.save
       render 'index', notice: "Session successfully created"
@@ -36,6 +35,6 @@ class SessionsController < ApplicationController
   end
 
   def find_sessions
-    @sessions = current_student.sessions.order("date DESC, created_at DESC")
+    @sessions = current_student.sessions
   end
 end

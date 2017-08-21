@@ -1,14 +1,13 @@
 class SubjectTagsController < ApplicationController
   before_action :authenticate_student!
+  before_action :find_tag_colours, only: :new
 
   def new
-    @tag_colours = TagColour.all
-    @subject_tag = SubjectTag.new
+    @subject_tag = current_student.subjectTags.build
   end
 
   def create
-    @subject_tag = SubjectTag.new(subject_tag_params)
-    @subject_tag[:student_id] = current_student.id
+    @subject_tag = current_student.subjectTags.build(subject_tag_params)
 
     if @subject_tag.save
       redirect_to root_path, notice: "Subject tag successfully created"
