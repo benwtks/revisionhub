@@ -14,7 +14,7 @@ module SubjectsHelper
       return "morning"
     elsif noon.upto(five_pm).include?(current_time)
       return "afternoon"
-    elsif eight_pm.upto(midnight + 1.day).include?(current_time)
+    elsif five_pm.upto(midnight + 1.day).include?(current_time)
       return "evening"
     end
   end
