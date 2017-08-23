@@ -1,8 +1,8 @@
 .session {
   margin-bottom: $session-bottom-padding;
   background-color: $session-background-colour;
-  border: 1px solid $session-border-colour;
-  border-radius: $session-border-radius;
+  border: $border;
+  border-radius: $border-radius;
   padding: $session-padding;
 }
 

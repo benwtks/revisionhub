@@ -8,6 +8,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    - if @home
+      - @page_wrapper = false
+
     - if @page_wrapper == nil
       - @page_wrapper = true
 
@@ -26,24 +29,9 @@
       .alert-wrapper
         %p.alert= alert
 
-    %header
-      .wrapper
-        %h1.logo{class: ("center" if @devise_page)}= link_to "RevisionHub", root_path
-        - unless @devise_page
-          %nav
-            %ul
-              - unless student_signed_in?
-                %li= link_to "Home", root_path
-                %li= link_to "About", root_path
-              - if student_signed_in?
-                %li= link_to "Dashboard", root_path
-                %li= link_to "Add Subject", new_subject_path
-                %li= link_to "Sessions", sessions_path
-                %li= link_to "Log a session", new_session_path
-                %li= link_to "Sign out", destroy_student_session_path, method: :delete
-              - else
-                %li= link_to "Sign in", new_student_session_path
-
+    - unless @home
+      %header
+        = render 'nav-bar'
 
     - if @wrapper
       %div{class: [("devise-wrapper" if @devise_page), ("general-form-wrapper" if @form), ("page-wrapper" if @page_wrapper)]}

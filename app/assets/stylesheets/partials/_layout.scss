@@ -1,22 +1,23 @@
-.center {
+.center,
+.wrapper,
+.devise-wrapper,
+.general-form-wrapper,
+.page-wrapper {
   margin: 0 auto;
   overflow-x: hidden;
   overflow: visible;
 }
 
-.wrapper {
-  @extend .center;
+.page-wrapper, .wrapper {
   width: $page-width;
 }
 
-.page-wrapper {
-  @extend .wrapper;
-  padding-top: $page-wrapper-padding-top;
+.page-wrapper, .devise-wrapper, .general-form-wrapper {
+  padding-top: $wrapper-padding-top;
   position: relative;
 }
 
 .devise-wrapper {
-  @extend .page-wrapper;
   width: $devise-width;
 
   .section-wrapper {
@@ -25,7 +26,6 @@
 }
 
 .general-form-wrapper {
-  @extend .page-wrapper;
   width: $general-form-width;
 
   .section-wrapper {
@@ -60,7 +60,7 @@ ul {
 }
 
 ul.options li {
-  margin-right: 15px; 
+  margin-right: 15px;
   &:last-of-type {
     margin-right: 0;
   }
@@ -68,7 +68,7 @@ ul.options li {
 
 .topic-data {
   padding: 10px;
-  border: 1px solid $border-colour;
+  border: $border;
   border-radius: 10px;
 }
 
@@ -82,4 +82,32 @@ ul.options li {
 
 .greeting {
   margin-bottom: 100px;
+}
+
+@media (max-width: 1560px) {
+  .page-wrapper, .wrapper, .devise-wrapper, .general-form-wrapper {
+    width: $page-width-small-viewport;
+  }
+
+  .devise-wrapper, .general-form-wrapper {
+    width: $form-width-small-viewport;
+  }
+}
+
+@media (max-width: 1050px) {
+  .left, .right {
+    float: none;
+  }
+}
+
+@media (max-width: 1070px) {
+  .greeting {
+    text-align: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .devise-wrapper, .general-form-wrapper {
+    width: $page-width-small-viewport;
+  }
 }

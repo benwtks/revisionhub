@@ -46,7 +46,7 @@ label:not(.boolean):not(.inline) {
 
 .string:not(div):not(label), input.password, textarea, select {
   border-radius: $string-border-radius;
-  border: 1px solid $string-colour;
+  border: $border;
   padding: $string-padding;
 }
 
