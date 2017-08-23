@@ -1,6 +1,8 @@
 $page-width: 60%;
+$page-width-small-viewport: 80%;
 $devise-width: 20%;
 $general-form-width: 30%;
+$form-width-small-viewport: 50%;
 
 $section-padding: 15px;
 $devise-section-padding: 50px;
@@ -12,7 +14,7 @@ $section-bottom-padding: 50px;
 $header-line-height: 44px;
 $header-and-wrapper-top-padding: 50px;
 
-$page-wrapper-padding-top: $header-and-wrapper-top-padding * 2;
+$wrapper-padding-top: 150px;
 
 $input-width: 100%;
 $form-section-bottom-margin: 25px;
@@ -26,3 +28,5 @@ $textarea-height: 200px;
 $timeline-width: 4px;
 $session-bottom-padding: 50px;
 $session-padding: 15px 0 15px 0;
+
+$hero-text-padding: 200px 0;
