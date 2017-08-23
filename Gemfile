@@ -62,3 +62,6 @@ gem 'sprockets', '3.6.3'
 
 # For natural language
 gem 'to_words'
+
+# specifying ruby version to keep heroku happy
+ruby "2.3.1"
