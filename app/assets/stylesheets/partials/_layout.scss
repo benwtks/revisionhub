@@ -120,3 +120,9 @@ ul.options li {
     width: $page-width-small-viewport;
   }
 }
+
+@media (min-width: $fixed-page-width-point) {
+  .page-wrapper, .wrapper {
+    width: $page-width-massive-viewport;
+  }
+}
