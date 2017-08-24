@@ -106,14 +106,16 @@ ul.options li {
   .greeting {
     text-align: center;
   }
-
-  .general-form-wrapper {
-    width: $page-width-small-viewport;
-  }
 }
 
 @media (max-width: $devise-width-resize-point) {
   .devise-wrapper {
+    width: $page-width-small-viewport;
+  }
+}
+
+@media (max-width: $general-form-width-resize-point) {
+  .general-form-wrapper {
     width: $page-width-small-viewport;
   }
 }
