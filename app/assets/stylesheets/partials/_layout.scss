@@ -10,6 +10,7 @@
 
 .page-wrapper, .wrapper {
   width: $page-width;
+  transition: width 0.2s;
 }
 
 .page-wrapper, .devise-wrapper, .general-form-wrapper {
