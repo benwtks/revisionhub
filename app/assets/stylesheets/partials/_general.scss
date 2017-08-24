@@ -77,21 +77,24 @@ a:not(.section-wrapper) {
   color: white;
   border-radius: 20px;
   position: relative;
+  display: inline-block;
 }
 
 .name {
   margin-right: 10px;
 }
 
-.name, .tag {
+.name, .tags {
   display: inline-block;
   vertical-align: middle;
 }
 
 @media (max-width: 875px) {
-  .tag {
+  .tags {
     display: block;
-    margin-bottom: 20px;
+    &, .tag {
+      margin-bottom: 20px;
+    }
   }
 }
 
