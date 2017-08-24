@@ -13,7 +13,7 @@
 }
 
 .page-wrapper, .devise-wrapper, .general-form-wrapper {
-  padding-top: $wrapper-padding-top;
+  padding: $wrapper-padding-top 0 50px 0;
   position: relative;
 }
 
@@ -84,13 +84,9 @@ ul.options li {
   margin-bottom: 100px;
 }
 
-@media (max-width: 1560px) {
-  .page-wrapper, .wrapper, .devise-wrapper, .general-form-wrapper {
+@media (max-width: 1360px) {
+  .page-wrapper, .wrapper, .general-form-wrapper {
     width: $page-width-small-viewport;
-  }
-
-  .devise-wrapper, .general-form-wrapper {
-    width: $form-width-small-viewport;
   }
 }
 
@@ -103,11 +99,5 @@ ul.options li {
 @media (max-width: 1070px) {
   .greeting {
     text-align: center;
-  }
-}
-
-@media (max-width: 850px) {
-  .devise-wrapper, .general-form-wrapper {
-    width: $page-width-small-viewport;
   }
 }
