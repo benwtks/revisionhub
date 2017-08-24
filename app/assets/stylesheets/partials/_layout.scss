@@ -111,3 +111,9 @@ ul.options li {
     width: $page-width-small-viewport;
   }
 }
+
+@media (max-width: $devise-width-resize-point) {
+  .devise-wrapper {
+    width: $page-width-small-viewport;
+  }
+}

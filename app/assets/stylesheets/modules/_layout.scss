@@ -1,8 +1,10 @@
 $page-width: 60%;
 $page-width-medium-viewport: 65%;
 $page-width-small-viewport: 80%;
-$devise-width: 370px;
+$devise-width: 450px;
 $general-form-width: 770px;
+
+$devise-width-resize-point: $devise-width / ($page-width-small-viewport / 100%);
 
 $section-padding: 15px;
 $devise-section-padding: 50px;

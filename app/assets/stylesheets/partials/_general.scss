@@ -70,6 +70,10 @@ a:not(.section-wrapper) {
   background-color: $notice-background-colour;
 }
 
+.tags {
+  margin-bottom: -20px;
+}
+
 .tag {
   padding: 5px;
   padding-left: 10px;
