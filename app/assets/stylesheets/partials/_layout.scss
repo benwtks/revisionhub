@@ -84,8 +84,14 @@ ul.options li {
   margin-bottom: 100px;
 }
 
+@media (max-width: 1440px) {
+  .page-wrapper, .wrapper, {
+    width: $page-width-medium-viewport;
+  }
+}
+
 @media (max-width: 1360px) {
-  .page-wrapper, .wrapper, .general-form-wrapper {
+  .page-wrapper, .wrapper {
     width: $page-width-small-viewport;
   }
 }
@@ -99,5 +105,9 @@ ul.options li {
 @media (max-width: 1070px) {
   .greeting {
     text-align: center;
+  }
+
+  .general-form-wrapper {
+    width: $page-width-small-viewport;
   }
 }

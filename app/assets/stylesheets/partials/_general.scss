@@ -77,7 +77,12 @@ a:not(.section-wrapper) {
   color: white;
   border-radius: 20px;
   position: relative;
+  margin-bottom: 20px;
   display: inline-block;
+}
+
+.tag, .name {
+  vertical-align: super;
 }
 
 .name {
@@ -86,16 +91,6 @@ a:not(.section-wrapper) {
 
 .name, .tags {
   display: inline-block;
-  vertical-align: middle;
-}
-
-@media (max-width: 875px) {
-  .tags {
-    display: block;
-    &, .tag {
-      margin-bottom: 20px;
-    }
-  }
 }
 
 // What I'd like to have: @include tag-colours(red, blue, purple, orange, green, yellow)
