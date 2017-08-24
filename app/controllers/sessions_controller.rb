@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def index
     if @sessions.empty?
-      redirect_to new_session_path, alert: "Add sessions to view your revision timeline"
+      redirect_to new_session_path
     end
   end
 
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     @topics = current_student.topics
 
     if @topics.blank?
-      redirect_to root_path, alert: "You need to add topics to log revision sessions"
+      redirect_to root_path
     else
       @session = current_student.sessions.build
     end

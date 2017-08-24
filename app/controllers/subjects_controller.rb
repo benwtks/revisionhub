@@ -10,6 +10,10 @@ class SubjectsController < ApplicationController
   def index
     @subjects = current_student.subjects.order("name ASC")
     @name = current_student.first_name
+
+    if @subjects.blank?
+      redirect_to new_subject_path
+    end
   end
 
   def show
