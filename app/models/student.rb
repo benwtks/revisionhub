@@ -21,7 +21,7 @@ class Student < ApplicationRecord
   validates :first_name, :last_name ,presence: true,
                                      length: { in: 3..10 }
   validates_format_of :first_name, :last_name, with: /^[a-zA-Z]*$/, multiline: true
-  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
+  validates_format_of :username, with: /^[a-z0-9_\.]*$/, multiline: true
   validate :validate_username
 
   # Virtual attribute for authenticating by either username or email
