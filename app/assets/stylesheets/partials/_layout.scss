@@ -108,7 +108,7 @@ ul.options li {
 }
 
 @media (max-width: 1050px) {
-  .left, .right {
+  .left:not(.link-wrapper.left), .right:not(.link-wrapper.right) {
     float: none;
   }
 }
