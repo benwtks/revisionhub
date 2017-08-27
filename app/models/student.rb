@@ -38,7 +38,7 @@ class Student < ApplicationRecord
   end
 
   def validate_username
-    if User.where(email: username).exists?
+    if Student.where(email: username).exists?
       errors.add(:username, :invalid)
     end
 end
