@@ -7,3 +7,6 @@
       %p= session_date(session)
       %h2.name= session_link(session)
       = render 'tags', tags: session.topic.topicTags
+      %ul.options
+        %li= link_to "Edit", edit_session_path(session)
+        %li= link_to "Delete", session_path(session), method: :delete, data: { confirm: "Are you sure?" }

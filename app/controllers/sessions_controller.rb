@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   before_action :authenticate_student!
   before_action :find_sessions, only: [:index, :create]
+  before_action :find_session, only: [:edit, :update, :destroy]
+  before_action :find_topics, only: [:edit, :update, :new, :create]
 
   def index
     if @sessions.empty?
@@ -8,9 +10,18 @@ class SessionsController < ApplicationController
     end
   end
 
-  def new
-    @topics = current_student.topics
+  def edit
+  end
 
+  def update
+    if @session.update(session_params)
+      redirect_to sessions_path, notice: "Session successfully edited"
+    else
+      render 'edit'
+    end
+  end
+
+  def new
     if @topics.blank?
       redirect_to root_path
     else
@@ -28,6 +39,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    @session.destroy
+    redirect_to sessions_path, notice: "Session successfully deleted"
+  end
+
   private
 
   def session_params
@@ -36,5 +52,13 @@ class SessionsController < ApplicationController
 
   def find_sessions
     @sessions = current_student.sessions
+  end
+
+  def find_session
+    @session = Session.find(params[:id])
+  end
+
+  def find_topics
+    @topics = current_student.topics
   end
 end
