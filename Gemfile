@@ -65,3 +65,5 @@ gem 'to_words'
 
 # specifying ruby version to keep heroku happy
 ruby "2.3.1"
+
+gem "recaptcha", require: "recaptcha/rails"
