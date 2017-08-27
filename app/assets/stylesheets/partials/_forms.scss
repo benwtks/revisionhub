@@ -96,3 +96,17 @@ input.button:focus, input.btn:focus {
     box-sizing: border-box;
   }
 }
+
+@media (max-width: 1055px) {
+  .link-wrapper.left, .link-wrapper.right {
+    width: 100%;
+    float: none;
+  }
+
+@media (max-width: 470px) {
+  .g-recaptcha {
+    transform: scale(0.77);
+    transform-origin: 0;
+  }
+}
+}
