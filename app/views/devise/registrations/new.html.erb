@@ -14,8 +14,6 @@
       <%= f.input :email, required: true, label: false, placeholder: "Email address" %>
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "Password" %>
       <%= f.input :password_confirmation, required: true, label: false, placeholder: "Confirm password" %>
-      <%= flash[:recaptcha_error] %>
-      <%= recaptcha_tags %>
     </div>
 
     <div class="form-actions">
@@ -25,6 +23,6 @@
 </div>
 <div class="links">
   <a class="link-wrapper" href="<%= new_student_session_path %>">
-    <p>Log in</p>
+    <p>Sign in</p>
   </a>
 </div>

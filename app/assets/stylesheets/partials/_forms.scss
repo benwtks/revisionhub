@@ -19,7 +19,7 @@ input.check_boxes{
   margin-right: 5px;
 }
 
-.input, .form-divider, .g-recaptcha {
+.input, .form-divider {
   margin-bottom: $form-section-bottom-margin;
 }
 
@@ -102,11 +102,4 @@ input.button:focus, input.btn:focus {
     width: 100%;
     float: none;
   }
-
-@media (max-width: 470px) {
-  .g-recaptcha {
-    transform: scale(0.77);
-    transform-origin: 0;
-  }
-}
 }
