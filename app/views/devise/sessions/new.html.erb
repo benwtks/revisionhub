@@ -6,9 +6,7 @@
     <div class="form-inputs">
       <%= f.input :login, required: false, autofocus: true, placeholder: "Username or email address", label: false %>
       <%= f.input :password, required: false, placeholder: "Password", label: false %>
-      <div class="checkbox">
-        <%= f.input :remember_me, class: "check_boxes", as: :boolean if devise_mapping.rememberable? %>
-      </div>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions">

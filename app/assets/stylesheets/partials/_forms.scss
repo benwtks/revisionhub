@@ -6,7 +6,7 @@
   color: $button-text-colour;
 }
 
-input:not(.check_boxes), textarea {
+input:not(.check_boxes):not(.boolean), textarea {
   width: $input-width;
   display: block;
 }
