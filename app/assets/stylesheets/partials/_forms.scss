@@ -19,7 +19,7 @@ input.check_boxes{
   margin-right: 5px;
 }
 
-.input, .form-divider {
+.input, .form-divider, .g-recaptcha {
   margin-bottom: $form-section-bottom-margin;
 }
 
@@ -74,4 +74,25 @@ input.string:focus, input.password:focus, textarea:focus, select:focus {
 input.button:focus, input.btn:focus {
   outline: none !important;
   border: 0;
+}
+
+.links {
+  width: 100%;
+}
+
+.link-wrapper{
+  display: block;
+  height: 50px;
+  border-top: $border;
+  text-align: center;
+
+  &.left, &.right {
+    width: 50%;
+  }
+
+  &.left {
+    width: 50%;
+    border-right: $border;
+    box-sizing: border-box;
+  }
 }

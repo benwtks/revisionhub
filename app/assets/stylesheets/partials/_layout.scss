@@ -14,7 +14,7 @@
 }
 
 .page-wrapper, .devise-wrapper, .general-form-wrapper {
-  padding: $wrapper-padding-top 0 50px 0;
+  padding: $wrapper-padding-top 0 50px 0; 
   position: relative;
 }
 
@@ -22,7 +22,10 @@
   width: $devise-width;
 
   .section-wrapper {
-    padding: $devise-section-padding;
+    padding: 0;
+    .form {
+      padding: $devise-form-padding;
+    }
   }
 }
 

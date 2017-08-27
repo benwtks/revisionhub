@@ -1,12 +1,14 @@
 body {
   background-color: $background;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
 }
 
 ul {
   padding: 0;
 }
 
-.section-wrapper {
+.section-wrapper:not(:last-of-type) {
   margin-bottom: $section-bottom-padding;
 }
 
