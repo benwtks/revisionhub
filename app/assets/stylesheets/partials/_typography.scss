@@ -18,8 +18,13 @@ h2 {
 
 body {
   color: $normal-colour;
-  font-family: $body-font-family;
-  font-weight: 600;
+}
+
+* {
+  font-family: $body-font-family; 
+  font-weight: 500;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
 }
 
 a {
