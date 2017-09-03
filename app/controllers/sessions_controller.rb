@@ -47,7 +47,7 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:date, :duration, :topic_id)
+    params.require(:session).permit(:date, :duration, :topic_id, :duration)
   end
 
   def find_sessions
