@@ -1,4 +1,4 @@
-= simple_form_for @grade do |f|
+= simple_form_for [@subject, @grade] do |f|
   .form-divider
     = f.input :grade
     = f.input :percentage
