@@ -3,6 +3,10 @@ module ApplicationHelper
     content_tag(:span, tag.name, class: ["tag", "#{tag.tagColour.colour.camelize(:lower)}"])
   end
 
+  def formatted_date(d)
+    d.date.strftime("%e %B, %Y")
+  end
+
   def nat_lang(n)
     if n == 1
       return "once"
