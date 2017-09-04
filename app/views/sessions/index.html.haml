@@ -4,7 +4,7 @@
   - @sessions.each do |session|
     .session
       .session-details
-        %p= session_date(session)
+        %p= formatted_date(session)
         %h2.name= session_link(session)
         = render 'tags', tags: session.topic.topicTags
         %ul.options
