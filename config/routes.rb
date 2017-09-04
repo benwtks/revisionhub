@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   get '/log', to: 'sessions#index'
   resources :sessions
-  resources :grades
   resources :subject_tags
   resources :topic_tags
 
@@ -26,5 +25,6 @@ Rails.application.routes.draw do
 
   resources :subjects do
     resources :topics
+    resources :grades
   end
 end
