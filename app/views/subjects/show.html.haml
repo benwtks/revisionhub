@@ -9,10 +9,10 @@
     .right
       %ul.options
         %li= link_to "Edit", edit_subject_path
+        %li= link_to "Add topic", new_subject_topic_path(@subject)
         - if current_student.premium?
-          %li= link_to "Add topic", new_subject_topic_path(@subject)
           %li= link_to "Grades", subject_grades_path(@subject)
-        %li= link_to "Add grade", new_subject_grade_path(@subject)
+          %li= link_to "Add grade", new_subject_grade_path(@subject)
         %li= link_to "Delete", subject_path(@subject), method: :delete, data: { confirm: "Are you sure?" }
   - if @subject.topics.blank?
     .subject-section-wrapper
