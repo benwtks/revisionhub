@@ -1,0 +1,14 @@
+= simple_form_for @grade do |f|
+  .form-divider
+    = f.input :grade
+    = f.input :percentage
+  .form-divider
+    = f.label :date, class: "inline"
+    = f.date_select :date, as: :date,
+      discard_year: true,
+      order: [:day, :month],
+      label: false
+  .form-divider
+    = f.label :topic_id, class: "inline"
+    = f.collection_select(:topic_id, @topics, :id, :name, include_blank: "No topic")
+  = f.button :submit
