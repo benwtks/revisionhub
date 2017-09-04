@@ -1,10 +1,11 @@
 class GradesController < ApplicationController
   before_action :authenticate_student!
-  before_action :find_topics, only: [:edit, :update, :new, :create]
+  before_action :find_subject, only: [:index, :edit, :update, :new, :create, :destroy]
   before_action :find_grade, only: [:edit, :update, :destroy]
+  before_action :find_topics, only: [:edit, :update, :new, :create]
 
   def index
-    @grades = current_student.grades
+    @grades = @subject.grades.order("date ASC, created_at DESC")
   end
 
   def edit
@@ -19,15 +20,11 @@ class GradesController < ApplicationController
   end
 
   def new
-    if @topics.blank?
-      redirect_to root_path
-    else
-      @grade = current_student.grades.build
-    end
+    @grade = @subject.grades.build
   end
 
   def create
-    @grade= current_student.grades.build(grade_params)
+    @grade= @subject.grades.build(grade_params)
 
     if @grade.save
       render 'index', notice: "Grade successfully added"
@@ -47,11 +44,15 @@ class GradesController < ApplicationController
     params.require(:grade).permit(:grade, :percentage, :date, :topic_id)
   end
 
-  def find_topics
-    @topics = current_student.topics
+  def find_subject
+    @subject = Subject.find(params[:subject_id])
   end
 
   def find_grade
-    @grade = Grade.find([:id])
+    @grade = @subject.grades.find(params[:id])
+  end
+
+  def find_topics
+    @topics = @subject.topics
   end
 end
