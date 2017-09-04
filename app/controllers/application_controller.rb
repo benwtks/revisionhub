@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_premium_student(student)
+    unless student.premium?
+      redirect_to root_path, alert: "You need a premium account to do that"
+    end
+  end
+
   def find_tag_colours
     @tag_colours = TagColour.all
   end

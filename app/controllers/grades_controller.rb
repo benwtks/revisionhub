@@ -4,6 +4,11 @@ class GradesController < ApplicationController
   before_action :find_grade, only: [:edit, :update, :destroy]
   before_action :find_topics, only: [:edit, :update, :new, :create]
 
+  before_action only: [:index, :update, :create, :destroy, :edit, :new] do |c|
+    c.authenticate_subject_rights @subject
+    c.authenticate_premium_student current_student
+  end
+
   def index
     @grades = @subject.grades.order("date ASC, created_at DESC")
   end
