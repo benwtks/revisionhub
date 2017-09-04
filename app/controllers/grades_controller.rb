@@ -32,7 +32,7 @@ class GradesController < ApplicationController
     @grade= @subject.grades.build(grade_params)
 
     if @grade.save
-      render 'index', notice: "Grade successfully added"
+      redirect_to subject_grades_path(@subject), notice: "Grade successfully added"
     else
       render 'new'
     end
