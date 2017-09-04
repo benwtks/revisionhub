@@ -20,7 +20,7 @@ class Student < ApplicationRecord
   validates :username, uniqueness: true,
                        presence: true
   validates :first_name, :last_name ,presence: true,
-                                     length: { in: 3..10 }
+                                     length: { in: 2..10 }
   validates_format_of :first_name, :last_name, with: /^[a-zA-Z]*$/, multiline: true
   validates_format_of :username, with: /^[a-z0-9_\.]*$/, multiline: true
   validate :validate_username
