@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_action :authenticate_student!
   before_action :find_sessions, only: [:index, :create]
   before_action :find_session, only: [:edit, :update, :destroy]
+  before_action :find_subjects, only: [:edit, :update, :new, :create]
   before_action :find_topics, only: [:edit, :update, :new, :create]
 
   def index
@@ -60,5 +61,9 @@ class SessionsController < ApplicationController
 
   def find_topics
     @topics = current_student.topics
+  end
+
+  def find_subjects
+    @subjects = current_student.subjects
   end
 end

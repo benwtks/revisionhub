@@ -1,7 +1,7 @@
 = simple_form_for @session do |f|
   .form-divider
     = f.label :topic_id, class: "inline"
-    = f.collection_select(:topic_id, @topics, :id, :name)
+    = f.grouped_collection_select(:topic_id, @subjects, :topics, :name, :id, :name)
   .form-divider
     = f.label :date, class: "inline"
     = f.date_select :date, as: :date,
