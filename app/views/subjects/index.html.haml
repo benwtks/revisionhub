@@ -2,7 +2,7 @@
 
 .greeting
   %h1= greeting(@name)
-  %p Here are your subjects
+  %p= statistic(current_student)
 
 - unless @subjects.blank?
   - @subjects.each do |subject|

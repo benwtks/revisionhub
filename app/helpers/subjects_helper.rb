@@ -22,4 +22,8 @@ module SubjectsHelper
   def greeting(name)
     return "Good #{time_of_day}, #{name}"
   end
+
+  def statistic(student)
+    return "You've revised #{nat_lang(student.hours)} this week"
+  end
 end

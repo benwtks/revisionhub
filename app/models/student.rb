@@ -47,5 +47,9 @@ class Student < ApplicationRecord
     if Student.where(email: username).exists?
       errors.add(:username, :invalid)
     end
-end
+  end
+
+  def hours
+    return sessions.where(date: Chronic.parse('monday', context: :past) .. Time.now).count
+  end
 end

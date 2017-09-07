@@ -65,3 +65,6 @@ gem 'to_words'
 
 # specifying ruby version to keep heroku happy
 ruby "2.3.1"
+
+# Chronic gem for referencing times
+gem 'chronic', '~> 0.10.2'
