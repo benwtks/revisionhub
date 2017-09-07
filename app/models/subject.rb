@@ -11,10 +11,14 @@ class Subject < ApplicationRecord
 
   default_scope -> { order("created_at ASC") }
 
-  def session_count
+  def no_sessions(range="all")
     i = 0
     topics.each do |topic|
-      i += topic.sessions.count
+      if range == "week"
+        i += topic.sessions.where(date: Chronic.parse('monday', context: :past) .. Time.now).count
+      elsif range == "all"
+        i += topic.sessions.count
+      end
     end
 
     return i

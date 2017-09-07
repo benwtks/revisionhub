@@ -49,7 +49,11 @@ class Student < ApplicationRecord
     end
   end
 
-  def hours
-    return sessions.where(date: Chronic.parse('monday', context: :past) .. Time.now).count
+  def no_sessions(range="all")
+    if range == "week"
+      return sessions.where(date: Chronic.parse('monday', context: :past) .. Time.now).count
+    elsif range == "all"
+      return sessions.count
+    end
   end
 end
