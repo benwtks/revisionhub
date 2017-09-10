@@ -4,7 +4,7 @@
   .grade-wrapper
     - @grades.each do |g|
       .grade
-        %span= g.grade
+        %span{class: g.colour.camelize(:lower)}= g.grade
         %p= formatted_date(g)
         %ul.options
           %li= link_to "Edit", edit_subject_grade_path(g.subject, g)

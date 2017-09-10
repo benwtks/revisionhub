@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904200442) do
+ActiveRecord::Schema.define(version: 20170910134244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170904200442) do
     t.uuid     "topic_id"
     t.integer  "student_id"
     t.uuid     "subject_id"
+    t.string   "colour"
     t.index ["subject_id"], name: "index_grades_on_subject_id", using: :btree
     t.index ["topic_id"], name: "index_grades_on_topic_id", using: :btree
   end
@@ -63,10 +64,10 @@ ActiveRecord::Schema.define(version: 20170904200442) do
 
   create_table "subject_tags", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "student_id"
-    t.integer  "tagColour_id"
+    t.string   "colour"
   end
 
   create_table "subject_tags_subjects", id: false, force: :cascade do |t|
@@ -86,18 +87,12 @@ ActiveRecord::Schema.define(version: 20170904200442) do
     t.integer  "student_id"
   end
 
-  create_table "tag_colours", force: :cascade do |t|
-    t.string   "colour"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "topic_tags", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "student_id"
-    t.integer  "tagColour_id"
+    t.string   "colour"
   end
 
   create_table "topic_tags_topics", id: false, force: :cascade do |t|

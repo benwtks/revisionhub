@@ -11,4 +11,7 @@
   .form-divider
     = f.label :topic_id, class: "inline"
     = f.collection_select(:topic_id, @topics, :id, :name, include_blank: "No topic")
+  .form-divider
+    = f.label :colour, class: "inline"
+    = f.collection_select(:colour, @colours, :to_s, :to_s)
   = f.button :submit

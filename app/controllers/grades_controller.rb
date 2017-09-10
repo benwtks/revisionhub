@@ -3,6 +3,7 @@ class GradesController < ApplicationController
   before_action :find_subject, only: [:index, :edit, :update, :new, :create, :destroy]
   before_action :find_grade, only: [:edit, :update, :destroy]
   before_action :find_topics, only: [:edit, :update, :new, :create]
+  before_action :find_colours, only: [:edit, :update, :new, :create]
 
   before_action only: [:index, :update, :create, :destroy, :edit, :new] do |c|
     c.authenticate_subject_rights @subject
@@ -18,7 +19,7 @@ class GradesController < ApplicationController
 
   def update
     if @grade.update(grade_params)
-      redirect_to grades_path, notice: "Grade successfully edited"
+      redirect_to subject_grades_path(@subject), notice: "Grade successfully edited"
     else
       render 'edit'
     end
@@ -40,17 +41,13 @@ class GradesController < ApplicationController
 
   def destroy
     @grade.destroy
-    redirect_to grades_path, notice: "Grade successfully deleted"
+    redirect_to subject_grades_path(@subject), notice: "Grade successfully deleted"
   end
 
   private
 
   def grade_params
-    params.require(:grade).permit(:grade, :percentage, :date, :topic_id)
-  end
-
-  def find_subject
-    @subject = Subject.find(params[:subject_id])
+    params.require(:grade).permit(:grade, :percentage, :date, :topic_id, :colour)
   end
 
   def find_grade
@@ -59,5 +56,9 @@ class GradesController < ApplicationController
 
   def find_topics
     @topics = @subject.topics
+  end
+
+  def find_colours
+    @colours = ["Green", "Orange", "Red"]
   end
 end

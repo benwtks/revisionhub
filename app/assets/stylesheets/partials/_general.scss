@@ -2,6 +2,10 @@ body {
   background-color: $background;
 }
 
+.turbolinks-progress-bar {
+  background: $red;
+}
+
 ul {
   padding: 0;
 }
@@ -99,9 +103,9 @@ a:not(.section-wrapper) {
 
 // What I'd like to have: @include tag-colours(red, blue, purple, orange, green, yellow)
 
-@include tag-colour(blue, $blue-tag);
-@include tag-colour(red, $red-tag);
-@include tag-colour(purple, $purple-tag);
-@include tag-colour(green, $green-tag);
-@include tag-colour(orange, $orange-tag);
-@include tag-colour(yellow, $yellow-tag);
+@include background-colour(blue, $blue-element);
+@include background-colour(red, $red-element);
+@include background-colour(purple, $purple-element);
+@include background-colour(green, $green-element);
+@include background-colour(orange, $orange-element);
+@include background-colour(yellow, $yellow-element);
