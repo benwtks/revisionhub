@@ -1,6 +1,6 @@
 module ApplicationHelper
   def render_tag(tag)
-    content_tag(:span, tag.name, class: ["tag", "#{tag.tagColour.colour.camelize(:lower)}"])
+    content_tag(:span, tag.name, class: ["tag", "#{tag.colour}"])
   end
 
   def formatted_date(d)

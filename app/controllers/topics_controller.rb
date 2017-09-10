@@ -41,10 +41,6 @@ class TopicsController < ApplicationController
 
   private
 
-  def find_subject
-    @subject = Subject.find(params[:subject_id])
-  end
-
   def find_topic
     @topic = @subject.topics.find(params[:id])
   end

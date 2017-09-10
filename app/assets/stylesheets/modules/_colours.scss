@@ -4,17 +4,17 @@ $grey: #DEE0E2;
 $bold-colour: #585961;
 $normal-colour: #66676F;
 
-$red-tag: #EA6E64;
-$blue-tag: #66B7EF;
-$purple-tag: #C68DDC;
-$orange-tag: #ECAA5D;
-$green-tag: #84CA64;
-$yellow-tag: #EED065;
+$red-element: #EA6E64;
+$blue-element: #66B7EF;
+$purple-element: #C68DDC;
+$orange-element: #ECAA5D;
+$green-element: #84CA64;
+$yellow-element: #EED065;
 
 
-@mixin tag-colour($colour, $colour-tag){
-  .tag.#{$colour}{
-    background-color: $colour-tag;
+@mixin background-colour($colour, $colour-element){
+  .#{$colour}{
+    background-color: $colour-element;
   }
 }
 

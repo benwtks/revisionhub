@@ -19,6 +19,6 @@ class TopicTagsController < ApplicationController
   private
 
   def topic_tag_params
-    params.require(:topic_tag).permit(:name, :tagColour_id)
+    params.require(:topic_tag).permit(:name, :colour)
   end
 end

@@ -19,7 +19,11 @@ class ApplicationController < ActionController::Base
   end
 
   def find_tag_colours
-    @tag_colours = TagColour.all
+    @tag_colours = ["Blue", "Green", "Purple", "Red", "Yellow", "Orange"]
+  end
+
+  def find_subject
+    @subject = Subject.find(params[:subject_id])
   end
 
   def redirect_to_https
