@@ -68,3 +68,6 @@ ruby "2.3.1"
 
 # Chronic gem for referencing times
 gem 'chronic', '~> 0.10.2'
+
+# make the app boot faster
+gem 'bootsnap', require: false
