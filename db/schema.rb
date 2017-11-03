@@ -17,100 +17,100 @@ ActiveRecord::Schema.define(version: 20170910134244) do
   enable_extension "uuid-ossp"
 
   create_table "grades", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "grade"
-    t.integer  "percentage"
-    t.date     "date"
+    t.string "grade"
+    t.integer "percentage"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid     "topic_id"
-    t.integer  "student_id"
-    t.uuid     "subject_id"
-    t.string   "colour"
-    t.index ["subject_id"], name: "index_grades_on_subject_id", using: :btree
-    t.index ["topic_id"], name: "index_grades_on_topic_id", using: :btree
+    t.uuid "topic_id"
+    t.integer "student_id"
+    t.uuid "subject_id"
+    t.string "colour"
+    t.index ["subject_id"], name: "index_grades_on_subject_id"
+    t.index ["topic_id"], name: "index_grades_on_topic_id"
   end
 
   create_table "sessions", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.date     "date"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
-    t.uuid     "topic_id"
-    t.string   "duration"
-    t.index ["student_id"], name: "index_sessions_on_student_id", using: :btree
-    t.index ["topic_id"], name: "index_sessions_on_topic_id", using: :btree
+    t.integer "student_id"
+    t.uuid "topic_id"
+    t.string "duration"
+    t.index ["student_id"], name: "index_sessions_on_student_id"
+    t.index ["topic_id"], name: "index_sessions_on_topic_id"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "username"
-    t.boolean  "premium",                default: false
-    t.index ["email"], name: "index_students_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
+    t.boolean "premium", default: false
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
   create_table "subject_tags", force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
-    t.string   "colour"
+    t.integer "student_id"
+    t.string "colour"
   end
 
   create_table "subject_tags_subjects", id: false, force: :cascade do |t|
-    t.integer  "subjectTag_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.uuid     "subject_id"
-    t.index ["subjectTag_id"], name: "index_subject_tags_subjects_on_subjectTag_id", using: :btree
-    t.index ["subject_id"], name: "index_subject_tags_subjects_on_subject_id", using: :btree
+    t.integer "subjectTag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid "subject_id"
+    t.index ["subjectTag_id"], name: "index_subject_tags_subjects_on_subjectTag_id"
+    t.index ["subject_id"], name: "index_subject_tags_subjects_on_subject_id"
   end
 
   create_table "subjects", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "teacher"
+    t.string "teacher"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "name"
-    t.integer  "student_id"
+    t.string "name"
+    t.integer "student_id"
   end
 
   create_table "topic_tags", force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
-    t.string   "colour"
+    t.integer "student_id"
+    t.string "colour"
   end
 
   create_table "topic_tags_topics", id: false, force: :cascade do |t|
-    t.integer  "topicTag_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.uuid     "topic_id"
-    t.index ["topicTag_id"], name: "index_topic_tags_topics_on_topicTag_id", using: :btree
-    t.index ["topic_id"], name: "index_topic_tags_topics_on_topic_id", using: :btree
+    t.integer "topicTag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid "topic_id"
+    t.index ["topicTag_id"], name: "index_topic_tags_topics_on_topicTag_id"
+    t.index ["topic_id"], name: "index_topic_tags_topics_on_topic_id"
   end
 
   create_table "topics", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
-    t.uuid     "subject_id"
-    t.index ["subject_id"], name: "index_topics_on_subject_id", using: :btree
+    t.integer "student_id"
+    t.uuid "subject_id"
+    t.index ["subject_id"], name: "index_topics_on_subject_id"
   end
 
   add_foreign_key "sessions", "students"

@@ -52,19 +52,19 @@ group :development do
   gem 'brakeman'
 end
 
-gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'haml', git: 'https://github.com/haml/haml'
 # gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'simple_form'
 gem "devise", '~> 4.2.0'
 
 # required to fix temp issue with certain gems (such as sass-rails)
-gem 'sprockets', '3.6.3'
+gem 'sprockets', '~> 3.0'
 
 # For natural language
 gem 'to_words'
 
 # specifying ruby version to keep heroku happy
-ruby "2.3.1"
+ruby "2.4.2"
 
 # Chronic gem for referencing times
 gem 'chronic', '~> 0.10.2'
