@@ -8,5 +8,9 @@
       discard_year: true,
       order: [:day, :month],
       label: false
-    = f.select :duration
+  .form-divider
+    = f.label :duration, class: "inline"
+    = f.select :hours, options_for_select(0..3)
+    %span=":"
+    = f.select :minutes, options_for_select(1..59)
   = f.button :submit

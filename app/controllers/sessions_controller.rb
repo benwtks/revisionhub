@@ -32,6 +32,7 @@ class SessionsController < ApplicationController
 
   def create
     @session = current_student.sessions.build(session_params)
+    @session[:duration] = (60 * @session.hours.to_i) + @session.minutes.to_i
 
     if @session.save
       render 'index', notice: "Session successfully created"
@@ -48,7 +49,7 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:date, :duration, :topic_id, :duration)
+    params.require(:session).permit(:date, :topic_id, :hours, :minutes)
   end
 
   def find_sessions
