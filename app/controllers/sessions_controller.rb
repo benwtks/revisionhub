@@ -12,6 +12,8 @@ class SessionsController < ApplicationController
   end
 
   def edit
+    @session.minutes = @session.duration % 60
+    @session.hours = (@session.duration - @session.minutes) / 60
   end
 
   def update
@@ -32,7 +34,7 @@ class SessionsController < ApplicationController
 
   def create
     @session = current_student.sessions.build(session_params)
-    @session[:duration] = (60 * @session.hours.to_i) + @session.minutes.to_i
+    @session[:duration] = (60 * @session.hours) + @session.minutes
 
     if @session.save
       render 'index', notice: "Session successfully created"
