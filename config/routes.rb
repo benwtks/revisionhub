@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :students, controllers: { registrations: 'registrations' }, path: '',
-                        path_names: { sign_in: 'signin', sign_out: 'signout', sign_up: 'signup', password: 'forgot',
-                                      confirmation: 'confirm'}
+                        path_names: { sign_in: 'signin',
+                                      sign_out: 'signout',
+                                      sign_up: 'signup',
+                                      password: 'forgot',
+                                      confirmation: 'confirm' }
 
   get '/log', to: 'sessions#index'
   resources :sessions
