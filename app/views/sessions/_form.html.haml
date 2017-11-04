@@ -11,6 +11,7 @@
   .form-divider
     = f.label :duration, class: "inline"
     = f.select :hours, options_for_select(0..3)
-    %span=":"
+    %span="hrs"
     = f.select :minutes, options_for_select(1..59)
+    %span="mins"
   = f.button :submit
