@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   before_action :find_session, only: [:edit, :update, :destroy]
   before_action :find_subjects, only: [:edit, :update, :new, :create]
   before_action :find_topics, only: [:edit, :update, :new, :create]
-
+ 
   def index
     if @sessions.empty?
       redirect_to new_session_path
