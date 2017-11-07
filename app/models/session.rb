@@ -6,10 +6,16 @@ class Session < ApplicationRecord
 
   attr_accessor :hours
   attr_accessor :minutes
+  before_save :assign_duration
 
   def duration_hours_minutes
     minutes = duration.to_i % 60
     hours = (duration.to_i - minutes.to_i) / 60
     return [hours, minutes]
   end
+
+  def assign_duration
+    self.duration = (60 * self.hours.to_i) + self.minutes.to_i
+  end
+
 end

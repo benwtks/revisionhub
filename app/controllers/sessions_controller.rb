@@ -18,8 +18,6 @@ class SessionsController < ApplicationController
 
   def update
     if @session.update(session_params)
-      @session[:duration] = (60 * @session.hours.to_i) + @session.minutes.to_i
-
       redirect_to sessions_path, notice: "Session successfully edited"
     else
       render 'edit'
@@ -36,7 +34,6 @@ class SessionsController < ApplicationController
 
   def create
     @session = current_student.sessions.build(session_params)
-    @session[:duration] = (60 * @session.hours.to_i) + @session.minutes.to_i
 
     if @session.save
       render 'index', notice: "Session successfully created"
