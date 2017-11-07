@@ -12,12 +12,14 @@ class SessionsController < ApplicationController
   end
 
   def edit
-    @session.minutes = @session.duration.to_i % 60
-    @session.hours = (@session.duration.to_i - @session.minutes.to_i) / 60
+    @session.hours = @session.duration_hours_minutes[0]
+    @session.minutes = @session.duration_hours_minutes[1]
   end
 
   def update
     if @session.update(session_params)
+      @session[:duration] = (60 * @session.hours.to_i) + @session.minutes.to_i
+
       redirect_to sessions_path, notice: "Session successfully edited"
     else
       render 'edit'
