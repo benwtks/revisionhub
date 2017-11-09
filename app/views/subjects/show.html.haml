@@ -27,10 +27,9 @@
             %li= link_to "Edit", edit_subject_topic_path(@subject, topic)
             %li= link_to "Delete", subject_topic_path(@subject, topic), method: :delete, data: { confirm: "Are you sure?" }
         .right
-          - unless topic.sessions.empty?
-            .topic-data-wrapper
-              %p Sessions revised:
-              %span.topic-data= topic.sessions.count
-            .topic-data-wrapper
-              %p Percentage:
-              %span.topic-data= topic.session_percentage
+          .topic-data-wrapper
+            %p Sessions revised:
+            %span.topic-data= topic.sessions.count
+          .topic-data-wrapper
+            %p Percentage:
+            %span.topic-data= topic.session_percentage

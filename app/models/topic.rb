@@ -9,7 +9,11 @@ class Topic < ApplicationRecord
                    length: { in: 3..40 }
 
   def session_percentage
-    percentage = (sessions.count.round(2) / subject.no_sessions.round(2)) * 100
-    "#{percentage.round(2)}%"
+    unless sessions.empty?
+      percentage = (sessions.count.round(2) / subject.no_sessions.round(2)) * 100    else
+      percentage = 0.00
+    end
+
+    return "#{percentage.round(2)}%"
   end
 end
