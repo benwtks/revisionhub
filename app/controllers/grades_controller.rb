@@ -11,7 +11,11 @@ class GradesController < ApplicationController
   end
 
   def index
-    @grades = @subject.grades.order("date ASC, created_at DESC")
+    if @grades.empty?
+      redirect_to new_grade_path
+    else
+      @grades = @subject.grades.order("date ASC, created_at DESC")
+    end
   end
 
   def edit
