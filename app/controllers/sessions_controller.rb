@@ -25,6 +25,10 @@ class SessionsController < ApplicationController
   end
 
   def new
+    # Setting default values for duration
+    @hours = 1
+    @minutes = 0
+
     if @topics.blank?
       redirect_to root_path
     else
