@@ -2,6 +2,12 @@ body {
   background-color: $background;
 }
 
+@media (min-width: 1040px) {
+  body {
+    width: calc(100vw - 34px); // stops the page shifting when there isn't a scrollbar
+  }
+}
+
 .turbolinks-progress-bar {
   background: $red;
 }
