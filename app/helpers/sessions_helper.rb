@@ -12,6 +12,6 @@ module SessionsHelper
   end
 
   def formatted_duration(session)
-    return "#{session.duration_hours_minutes[0]} hrs, #{session.duration_hours_minutes[1]} mins"
+    return "#{session.duration_hours} hrs, #{session.duration_minutes} mins"
   end
 end

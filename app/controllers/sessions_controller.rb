@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
   end
 
   def edit
-    @session.hours = @session.duration_hours_minutes[0]
-    @session.minutes = @session.duration_hours_minutes[1]
+    @hours = @session.duration_hours
+    @minutes = @session.duration_minutes
   end
 
   def update
