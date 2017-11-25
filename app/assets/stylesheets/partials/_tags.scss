@@ -1,0 +1,35 @@
+.tags {
+  margin-bottom: -20px;
+}
+
+.tag {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.tag, .name {
+  vertical-align: super;
+}
+
+.name {
+  margin-right: 10px;
+}
+
+.name, .tags {
+  display: inline-block;
+}
+
+// What I'd like to have: @include tag-colours(red, blue, purple, orange, green, yellow)
+
+@include background-colour(blue, $blue-element);
+@include background-colour(red, $red-element);
+@include background-colour(purple, $purple-element);
+@include background-colour(green, $green-element);
+@include background-colour(orange, $orange-element);
+@include background-colour(yellow, $yellow-element);

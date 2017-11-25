@@ -2,13 +2,14 @@ class SubjectsController < ApplicationController
   before_action :authenticate_student!
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
   before_action :find_subject_tags, only: [:edit, :update, :create, :new]
+  before_action :find_filter, only: [:index, :show]
 
   before_action only: [:show, :update, :destroy, :edit] do |c|
     c.authenticate_subject_rights @subject
   end
 
   def index
-    @subjects = current_student.subjects.order("name ASC")
+    @subjects = current_student.subjects.filter(params[:filter]).order("name ASC")
     @name = current_student.first_name
 
     if @subjects.blank?
@@ -17,7 +18,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @topics = @subject.topics.order("name ASC")
+    @topics = @subject.topics.filter(params[:filter]).order("name ASC")
   end
 
   def edit
@@ -58,6 +59,10 @@ class SubjectsController < ApplicationController
 
   def find_subject_tags
     @subject_tags = current_student.subjectTags
+  end
+
+  def find_filter
+    @filter = params[:filter] if params[:filter].present?
   end
 
   def subject_params

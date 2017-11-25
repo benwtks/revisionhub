@@ -6,5 +6,6 @@ class SubjectTag < ApplicationRecord
   default_scope -> { order("created_at ASC") }
 
   validates :name, presence: true,
+                   uniqueness: true,
                    length: { in: 2..20 }
 end

@@ -1,4 +1,9 @@
+- subject ||= @subject
+
 - unless tags.empty?
   .tags
     - tags.order("name ASC").each do |t|
-      = render_tag(t)
+      - if type == "topicTags"
+        = link_to t.name, subject_path(subject, filter: t.name), class: ["tag", t.colour]
+      - elsif type == "subjectTags"
+        = link_to t.name, root_path(filter: t.name), class: ["tag", t.colour]

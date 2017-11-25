@@ -11,6 +11,10 @@ class Subject < ApplicationRecord
 
   default_scope -> { order("created_at ASC") }
 
+  scope :filter, ->(name){
+    joins(:subjectTags).where(subject_tags: { name: name }) if name.present?
+  }
+
   def no_sessions(range="all")
     i = 0
     topics.each do |topic|

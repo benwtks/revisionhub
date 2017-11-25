@@ -11,10 +11,19 @@ $orange-element: #ECAA5D;
 $green-element: #84CA64;
 $yellow-element: #EED065;
 
-
 @mixin background-colour($colour, $colour-element){
-  .#{$colour}{
+  a.#{$colour}{
     background-color: $colour-element;
+    border: 1px solid $colour-element;
+
+    &, &:hover {
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: $colour-element;
+    }
   }
 }
 
@@ -50,3 +59,5 @@ $nav-underline-colour: $grey;
 $link-colour: $red;
 
 $link-wrapper-hover-background: $red;
+
+$filter-colour: $red;

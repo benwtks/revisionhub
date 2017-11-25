@@ -8,6 +8,10 @@ class Topic < ApplicationRecord
                    uniqueness: { scope: "subject_id" },
                    length: { in: 3..40 }
 
+  scope :filter, ->(name){
+    joins(:topicTags).where(topic_tags: { name: name }) if name.present?
+  }
+
   def session_percentage
     unless sessions.empty?
       percentage = (sessions.count.round(2) / subject.no_sessions.round(2)) * 100    else

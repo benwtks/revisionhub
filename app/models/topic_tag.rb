@@ -4,5 +4,6 @@ class TopicTag < ApplicationRecord
   belongs_to :tagColour
 
   validates :name, presence: true,
+                   uniqueness: true,
                    length: { in: 2..20 }
 end

@@ -4,10 +4,15 @@
   .subject-section-wrapper
     .left
       %h1.name= @subject.name.capitalize
-      = render "tags", tags: @subject.subjectTags
+      = render "tags", tags: @subject.subjectTags, type: "subjectTags"
       %h3= @subject.teacher
     .right
+      - if @filter.present?
+        .filter
+          %p Filtering by #{@filter}
       %ul.options
+        - if @filter.present?
+          %li= link_to "Clear filter", subject_path(@subject)
         %li= link_to "Edit", edit_subject_path
         %li= link_to "Add topic", new_subject_topic_path(@subject)
         - if current_student.premium?
@@ -22,7 +27,7 @@
       .subject-section-wrapper
         .left
           %h2.name= topic.name.capitalize
-          = render "tags", tags: topic.topicTags
+          = render "tags", tags: topic.topicTags, type: "topicTags"
           %ul.options
             %li= link_to "Edit", edit_subject_topic_path(@subject, topic)
             %li= link_to "Delete", subject_topic_path(@subject, topic), method: :delete, data: { confirm: "Are you sure?" }

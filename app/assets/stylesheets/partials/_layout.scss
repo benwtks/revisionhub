@@ -91,8 +91,17 @@ ul.options li {
   display: inline-block;
 }
 
-.greeting {
-  margin-bottom: 100px;
+.top-section {
+  margin-bottom: 200px;
+
+  ul.options {
+    text-align: right;
+  }
+}
+
+.filter {
+  text-align: right;
+  color: $filter-colour;
 }
 
 @media (max-width: 1440px) {
@@ -120,7 +129,7 @@ ul.options li {
 }
 
 @media (max-width: 1070px) {
-  .greeting {
+  .greeting, .top-section .filter {
     text-align: center;
   }
 }

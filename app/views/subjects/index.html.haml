@@ -1,14 +1,21 @@
 - @title = "Dashboard"
 
-.greeting
-  %h1= greeting(@name)
-  %p= statistic(current_student)
+.top-section
+  .greeting.left
+    %h1= greeting(@name)
+    %p= statistic(current_student)
+  - if @filter.present?
+    .right
+      %p.filter Filtering by #{@filter}
+      %ul.options
+        %li= link_to "Clear filter", root_path
 
 - unless @subjects.blank?
   - @subjects.each do |subject|
-    %a.section-wrapper{ href: subject_path(subject) }
+    .section-wrapper.dashboard-subject
       .left
-        %p.important.name= subject.name.capitalize
-        = render "tags", tags: subject.subjectTags
+        %a{href: subject_path(subject)}
+          %p.important.name= subject.name.capitalize
+        = render "tags", tags: subject.subjectTags, type: "subjectTags"
       .right
         %p= no_sessions(subject)
