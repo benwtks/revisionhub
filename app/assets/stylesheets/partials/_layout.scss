@@ -112,7 +112,7 @@ ul.options li {
 
 @media (max-width: 1360px) {
   .page-wrapper, .wrapper {
-    width: $page-width-small-viewport;
+   width: $page-width-small-viewport;
   }
 }
 
@@ -125,6 +125,15 @@ ul.options li {
   }
   .link-wrapper.right {
     float: right;
+  }
+
+  .filter {
+    text-align: left;
+    margin-top: 60px;
+  }
+
+  .top-section ul.options {
+    text-align: center;
   }
 }
 
