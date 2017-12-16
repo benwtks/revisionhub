@@ -12,7 +12,8 @@ $green-element: #84CA64;
 $yellow-element: #EED065;
 
 @mixin background-colour($colour, $colour-element){
-  a.#{$colour}{
+  a.#{$colour},
+  span.#{$colour} {
     background-color: $colour-element;
     border: 1px solid $colour-element;
 
