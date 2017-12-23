@@ -5,8 +5,15 @@
 
 .logo {
   float: left;
-  font-size: 25px; // only temp
-  a { color: $logo-colour; } // only temp
+  svg {
+    fill: $logo-default-colour;
+    height: 50px;
+    width: 195px;
+    margin: 16px 0 16px 0;
+
+    &, &:hover { transition: all 0.3s; }
+    &:hover { fill: $red; }
+  }
 
   &.center {
     width: 100%;
@@ -14,10 +21,11 @@
   }
 }
 
-header.hero .logo a { color: #fff; } // only temp
-
 nav {
   float: right;
+  ul {
+    padding: 19px 0 19px 0;
+  }
 }
 
 nav ul li {

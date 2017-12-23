@@ -11,6 +11,8 @@ $orange-element: #ECAA5D;
 $green-element: #84CA64;
 $yellow-element: #EED065;
 
+$logo-default-colour: #353535;
+
 @mixin background-colour($colour, $colour-element){
   a.#{$colour},
   span.#{$colour} {

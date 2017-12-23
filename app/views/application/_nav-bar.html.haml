@@ -1,6 +1,7 @@
 .nav-bar
   .wrapper
-    %h1.logo{class: ("center" if @devise_page)}= link_to "RevisionHub", root_path
+    %a.logo{href: root_path, class: ("center" if @devise_page)}
+      = inline_svg('logo')
     - unless @devise_page
       %nav
         %ul
