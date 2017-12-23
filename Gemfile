@@ -58,7 +58,7 @@ gem 'simple_form'
 gem "devise", '~> 4.2.0'
 
 # required to fix temp issue with certain gems (such as sass-rails)
-gem 'sprockets', '~> 3.0'
+gem 'sprockets', '~> 3.5', '>= 3.5.2'
 
 # For natural language
 gem 'to_words'
