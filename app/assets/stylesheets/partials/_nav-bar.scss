@@ -7,8 +7,8 @@
   float: left;
   svg {
     fill: $logo-default-colour;
-    height: 50px;
-    width: 195px;
+    height: 44px;
+    width: 182px;
     margin: 16px 0 16px 0;
 
     &, &:hover { transition: all 0.3s; }
@@ -23,9 +23,6 @@
 
 nav {
   float: right;
-  ul {
-    padding: 19px 0 19px 0;
-  }
 }
 
 nav ul li {
