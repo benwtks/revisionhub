@@ -1,14 +1,26 @@
 header.hero {
-  background-color: #fff;
   background-image: image-url(image_path("mountains.png"));
-  background-position: cover;
-  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
   text-align: center;
-  border-bottom: $border;
+  padding: 200px 0 100;
+  margin-top: -200px;
+}
+
+header.hero, .content-wrapper {
+  transform: skew(0deg, -10deg);
+}
+
+.hero-wrapper, .content {
+  transform: skew(0deg, 10deg);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-text {
-  width: $page-width;
   text-align: center;
   margin: 0 auto;
   line-height: $header-line-height;
@@ -20,31 +32,5 @@ header.hero {
 
   h1, p {
     color: #fff;
-  }
-}
-
-.hero-divider {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  svg {
-    bottom: -5px;
-    width: 102%;
-    left: -2%;
-    path {
-      fill: $background;
-      stroke: $background;
-      stroke-width: 5px;
-    }
-  }
-  &, svg {
-    position: absolute;
-  }
-}
-
-@media (max-width: 1420px) {
-  .hero-text {
-    width: $page-width-small-viewport;
   }
 }

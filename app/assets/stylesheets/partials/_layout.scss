@@ -2,13 +2,14 @@
 .wrapper,
 .devise-wrapper,
 .general-form-wrapper,
-.page-wrapper {
+.page-wrapper,
+.content-wrapper {
   margin: 0 auto;
   overflow-x: hidden;
   overflow: visible;
 }
 
-.page-wrapper, .wrapper {
+.page-wrapper, .wrapper, .content-wrapper, .hero-text {
   width: $page-width;
   transition: width 0.2s;
 }
@@ -158,5 +159,11 @@ ul.options li {
 @media (min-width: $fixed-page-width-point) {
   .page-wrapper, .wrapper {
     width: $page-width-massive-viewport;
+  }
+}
+
+@media (max-width: 1420px) {
+  .hero-text, .content-wrapper {
+    width: $page-width-small-viewport;
   }
 }
