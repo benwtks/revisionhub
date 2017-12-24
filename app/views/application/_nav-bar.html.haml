@@ -1,6 +1,6 @@
 .nav-bar
   .wrapper
-    %a.logo{href: root_path, class: ("center" if @devise_page)}
+    %a.logo{href: root_path, class: [("center" if @devise_page), ("home" if @home)]}
       = inline_svg('logo')
     - unless @devise_page
       %nav
