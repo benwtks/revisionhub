@@ -16,6 +16,10 @@ class Session < ApplicationRecord
     return (duration.to_i - minutes.to_i) / 60
   end
 
+  def duration_split
+    return [self.duration_hours, self.duration_minutes]
+  end
+
   def assign_duration
     self.duration = (60 * self.hours.to_i) + self.minutes.to_i
   end
