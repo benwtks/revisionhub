@@ -56,4 +56,23 @@ class Student < ApplicationRecord
       return sessions.count
     end
   end
+
+  def session_duration_total(range="all")
+    cumulative_hours = 0
+    cumulative_minutes = 0
+
+    if range == "week"
+      sessions.where(date: Chronic.parse('monday', context: :past) .. Time.now).each do |session|
+        cumulative_hours += session.duration_hours
+        cumulative_minutes += session.duration_minutes
+      end
+    elsif range == "all"
+      sessions.each do |session|
+        cumulative_hours += session.duration_hours
+        cumulative_minutes += session.duration_minutes
+      end
+    end
+
+    return [cumulative_hours, cumulative_minutes]
+  end
 end

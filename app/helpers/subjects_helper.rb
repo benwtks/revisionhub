@@ -24,6 +24,6 @@ module SubjectsHelper
   end
 
   def statistic(student)
-    return "Hello!!!!!!! You've revised () hours"
+    return student.session_duration_total(range="week")
   end
 end
