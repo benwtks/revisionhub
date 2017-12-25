@@ -43,7 +43,7 @@ label:not(.boolean):not(.inline) {
   padding-bottom: $label-padding-bottom;
 }
 
-.string:not(div):not(label), input.password, textarea, select {
+.string:not(div):not(label), input.password, textarea, select, input.integer {
   border-radius: $string-border-radius;
   border: $border;
   padding: $string-padding;
