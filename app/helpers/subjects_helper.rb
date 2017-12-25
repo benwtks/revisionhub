@@ -1,6 +1,7 @@
 module SubjectsHelper
   def sessions_duration(subject)
-    return subject.session_duration_total('week')
+    duration = formatted_duration(subject.session_duration_total('week'), conjunctive: true)
+    return "#{duration} this week"
   end
 
   def time_of_day
@@ -24,6 +25,7 @@ module SubjectsHelper
   end
 
   def statistic(student)
-    return student.session_duration_total(range="week")
+    duration =  formatted_duration(student.session_duration_total(range="week"), conjunctive: true)
+    return "You have revised for #{duration} this week"
   end
 end
