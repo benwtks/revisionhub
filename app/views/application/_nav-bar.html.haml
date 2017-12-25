@@ -1,4 +1,4 @@
-.nav-bar{class: ("home" if @home)}
+.nav-bar{class: [("home" if @home), ("clone" if clone == true)]}
   .wrapper
     %a.logo{href: root_path, class: ("center" if @devise_page)}
       = inline_svg('logo')
