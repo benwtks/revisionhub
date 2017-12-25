@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
   before_action :find_session, only: [:edit, :update, :destroy]
   before_action :find_subjects, only: [:edit, :update, :new, :create]
   before_action :find_topics, only: [:edit, :update, :new, :create]
+
+  before_action only: [:edit, :update, :destroy, :edit] do |c|
+    c.authenticate_session_rights @session
+  end
  
   def index
     if @sessions.empty?

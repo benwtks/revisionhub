@@ -7,8 +7,16 @@ class ApplicationController < ActionController::Base
   protected
 
   def authenticate_subject_rights(subject)
-    unless subject.student == current_student
-      redirect_to root_path, alert: "Subject doesn't belong to you"
+    authenticate_rights(subject, "Subject doesn't belong to you")
+  end
+
+  def authenticate_session_rights(session)
+    authenticate_rights(session, "Session doesn't belong to you")
+  end
+
+  def authenticate_rights(model, message)
+    unless model.student == current_student
+      redirect_to root_path, alert: message
     end
   end
 
