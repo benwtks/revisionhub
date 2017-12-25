@@ -27,4 +27,25 @@ class Subject < ApplicationRecord
 
     return i
   end
+
+  def session_duration_total(range="all")
+    cumulative_hours = 0
+    cumulative_minutes = 0
+
+    topics.each do |topic|
+      if range == "week"
+        topic.sessions.where(date: Chronic.parse('monday', context: :past) .. Time.now).each do |session|
+          cumulative_hours += session.duration_hours
+          cumulative_minutes += session.duration_minutes
+        end
+      elsif range == "all"
+        topic.sessions.each do |session|
+          cumulative_hours += session.duration_hours
+          cumulative_minutes += session.duration_minutes
+        end
+      end
+    end
+
+    return [cumulative_hours, cumulative_minutes]
+  end
 end

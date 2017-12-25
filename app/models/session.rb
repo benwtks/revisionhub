@@ -19,5 +19,4 @@ class Session < ApplicationRecord
   def assign_duration
     self.duration = (60 * self.hours.to_i) + self.minutes.to_i
   end
-
 end

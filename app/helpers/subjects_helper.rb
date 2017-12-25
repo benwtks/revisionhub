@@ -1,6 +1,6 @@
 module SubjectsHelper
-  def no_sessions(subject)
-    return "Revised #{nat_lang(subject.no_sessions('week'))} this week"
+  def sessions_duration(subject)
+    return subject.session_duration_total('week')
   end
 
   def time_of_day
@@ -24,6 +24,6 @@ module SubjectsHelper
   end
 
   def statistic(student)
-    return "You've revised #{nat_lang(student.no_sessions('week'))} this week"
+    return "Hello!!!!!!! You've revised () hours"
   end
 end

@@ -18,4 +18,4 @@
           %p.important.name= subject.name.capitalize
         = render "tags", tags: subject.subjectTags, type: "subjectTags"
       .right
-        %p= no_sessions(subject)
+        %p= sessions_duration(subject)
