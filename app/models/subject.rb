@@ -49,8 +49,16 @@ class Subject < ApplicationRecord
     return [cumulative_hours, cumulative_minutes]
   end
 
-  def target_data
+  def target_progress
     duration = self.session_duration_total('week')
-    return "#{duration[0]}/#{self.target}"
+    return duration[0].round(5)/self.target.round(5)
+  end
+
+  def target_amount_to_offset
+    return 1 - self.target_progress
+  end
+
+  def target_data
+    return "#{(self.target_progress * 100).round(0)}%"
   end
 end
