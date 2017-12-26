@@ -70,3 +70,9 @@
   padding: 50px;
   box-sizing: border-box;
 }
+
+.target {
+  svg {
+    transform: rotate(135deg);
+  }
+}
