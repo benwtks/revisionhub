@@ -26,12 +26,10 @@ module ApplicationHelper
       end
     end
     
-    if duration[1] > 0
-      if duration[1] == 1
-        minutes = "1 min"
-      else
-        minutes = "#{duration[1]} mins"
-      end
+    if duration[1] == 1
+      minutes = "1 min"
+    else
+      minutes = "#{duration[1]} mins"
     end
 
     if conjunctive && duration[0] > 0 && duration[1] > 0
