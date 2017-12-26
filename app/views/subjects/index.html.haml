@@ -12,7 +12,8 @@
           %li= link_to "Clear filter", root_path
   .targets
     - @subjects.each do |subject|
-      = render 'target', subject: subject
+      - if subject.target.present?
+        = render 'target', subject: subject
 
 - unless @subjects.blank?
   - @subjects.each do |subject|
