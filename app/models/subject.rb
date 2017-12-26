@@ -51,11 +51,16 @@ class Subject < ApplicationRecord
 
   def target_progress
     duration = self.session_duration_total('week')
+
     return duration[0].round(5)/self.target.round(5)
   end
 
   def target_amount_to_offset
-    return 1 - self.target_progress
+    if self.target_progress > 1
+      return 0
+    else
+      return 1 - self.target_progress
+    end
   end
 
   def target_data
