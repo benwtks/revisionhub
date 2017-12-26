@@ -48,4 +48,9 @@ class Subject < ApplicationRecord
 
     return [cumulative_hours, cumulative_minutes]
   end
+
+  def target_data
+    duration = self.session_duration_total('week')
+    return "#{duration[0]}/#{self.target}"
+  end
 end

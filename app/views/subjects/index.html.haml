@@ -1,14 +1,18 @@
 - @title = "Dashboard"
 
 .top-section
-  .greeting.left
-    %h1= greeting(@name)
-    %p= statistic(current_student)
-  - if @filter.present?
-    .right
-      %p.filter Filtering by #{@filter}
-      %ul.options
-        %li= link_to "Clear filter", root_path
+  .top
+    .greeting.left
+      %h1= greeting(@name)
+      %p= statistic(current_student)
+    - if @filter.present?
+      .right
+        %p.filter Filtering by #{@filter}
+        %ul.options
+          %li= link_to "Clear filter", root_path
+  .targets
+    - @subjects.each do |subject|
+      = render 'target', subject: subject
 
 - unless @subjects.blank?
   - @subjects.each do |subject|
