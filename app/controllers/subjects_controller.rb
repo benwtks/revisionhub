@@ -11,6 +11,7 @@ class SubjectsController < ApplicationController
   def index
     @subjects = current_student.subjects.filter(params[:filter]).order("name ASC")
     @name = current_student.first_name
+    @subjects_with_targets = @subjects.where('target > ?', 0)
 
     if @subjects.blank?
       redirect_to new_subject_path
