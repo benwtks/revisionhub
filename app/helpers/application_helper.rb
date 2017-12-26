@@ -34,10 +34,12 @@ module ApplicationHelper
       end
     end
 
-    if conjunctive
+    if conjunctive && duration[0] > 0 && duration[1] > 0
       return "#{hours} and #{minutes}"
-    else
+    elsif !conjunctive && duration[0] > 0 && duration[1] > 0
       return "#{hours}, #{minutes}"
+    else
+      return "#{hours} #{minutes}"
     end
   end
 end
