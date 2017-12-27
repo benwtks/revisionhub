@@ -109,6 +109,26 @@ ul.options li {
   color: $filter-colour;
 }
 
+.target {
+  position: relative;
+  display: inline-block;
+
+  svg {
+    transform: rotate(135deg);
+  }
+  .target-content {
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+   .target-subject {
+      color: $red;
+    }
+  }
+}
+
 @media (max-width: 1440px) {
   .page-wrapper, .wrapper, {
     width: $page-width-medium-viewport;
