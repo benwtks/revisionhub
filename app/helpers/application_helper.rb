@@ -18,18 +18,28 @@ module ApplicationHelper
    end
 
    def formatted_duration(duration, conjunctive=false)
-    if duration[0] > 0
-      if duration[0] == 1
-        hours = "1 hr"
+     # duration[0] is the hours of the duration
+     # duration[1] is the minutes of the duration
+
+     if duration[0] > 0
+       if duration[0] == 1
+         hours = "1 hr"
+       else
+         hours = "#{duration[0]} hrs"
+       end
+     end
+
+    if duration[1] > 0
+      if duration[1] == 1
+        # if there are hours and 1 minute
+        minutes = "1 min"
       else
-        hours = "#{duration[0]} hrs"
+        # if there are hours and multiple minutes
+        minutes = "#{duration[1]} mins"
       end
-    end
-    
-    if duration[1] == 1
-      minutes = "1 min"
-    else
-      minutes = "#{duration[1]} mins"
+    elsif duration[1] == 0 && duration[0] <= 0
+      # if there isn't any duration
+      minutes = "0 mins"
     end
 
     if conjunctive && duration[0] > 0 && duration[1] > 0
