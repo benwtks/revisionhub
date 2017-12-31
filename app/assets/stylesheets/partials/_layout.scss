@@ -97,7 +97,9 @@ ul.options li {
 }
 
 .top-section {
-  margin-bottom: 100px;
+  &, .top {
+    margin-bottom: 100px;
+  }
 
   ul.options {
     text-align: right;

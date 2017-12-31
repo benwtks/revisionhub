@@ -37,9 +37,9 @@ body.down .nav-bar.clone {
   float: left;
   svg {
     fill: $logo-default-colour;
-    height: 44px;
+    height: 40px;
     width: 182px;
-    margin: 16px 0 16px 0;
+    margin: 10px 0 10px 0;
 
     &, &:hover { transition: all 0.3s; }
     &:hover { fill: $red; }
