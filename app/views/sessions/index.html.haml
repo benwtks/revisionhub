@@ -7,7 +7,7 @@
     - Session.where(date: day).each do |session|
       .session
         .session-details
-          %p #{formatted_duration(session.duration_split)} on #{formatted_date(session.date)}
+          %p #{formatted_duration(session.duration_split)}
           %h2.name= session_link(session)
           = render 'tags', tags: session.topic.topicTags, type: "topicTags", subject: session.topic.subject
           %ul.options
