@@ -30,8 +30,6 @@ class Subject < ApplicationRecord
 
   def session_duration_total(range="all")
     cumulative_total = 0
-    cumulative_hours = 0
-    cumulative_minutes = 0
 
     topics.each do |topic|
       if range == "week"
