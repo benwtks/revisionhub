@@ -1,4 +1,4 @@
-.nav-bar{class: [("home" if @home), ("clone" if clone == true)]}
+.nav-bar{class: [("home" if @page == "home"), ("clone" if clone == true)]}
   .wrapper
     %a.logo{href: root_path, class: ("center" if @devise_page)}
       = inline_svg('logo')
@@ -6,14 +6,14 @@
       %nav
         %ul
           - unless student_signed_in?
-            %li= link_to "Home", root_path
+            %li{class: ("current-page" if @page == current)}= link_to "Home", root_path
             %li= link_to "Blog", blog_path
             %li= link_to "Pricing", pricing_path
             %li= link_to "Sign up", new_student_registration_path
             %li= link_to "Sign in", new_student_session_path
           - if student_signed_in?
-            %li= link_to "Dashboard", root_path
-            %li= link_to "Add Subject", new_subject_path
-            %li= link_to "Sessions", sessions_path
-            %li= link_to "Log a session", new_session_path
+            %li{class: ("current-page" if @page == "dashboard")}= link_to "Dashboard", root_path
+            %li{class: ("current-page" if @page == "new subject")}= link_to "Add Subject", new_subject_path
+            %li{class: ("current-page" if @page == "sessions")}= link_to "Sessions", sessions_path
+            %li{class: ("current-page" if @page == "new session")}= link_to "Log a session", new_session_path
             %li= link_to "Sign out", destroy_student_session_path, method: :delete

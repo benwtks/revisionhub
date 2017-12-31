@@ -39,9 +39,9 @@ body.down .nav-bar.clone {
     fill: $logo-default-colour;
     height: 40px;
     width: 182px;
-    margin: 10px 0 10px 0;
+    margin: 21px 0 21px 0;
 
-    &, &:hover { transition: all 0.3s; }
+    &, &:hover, { transition: all 0.3s; }
     &:hover { fill: $red; }
   }
 
@@ -73,7 +73,8 @@ nav ul li {
   }
 }
 
-nav li a:hover::after {
+nav li a:hover::after,
+nav li.current-page a::after {
   margin-top: 0;
   opacity: 1;
 }
