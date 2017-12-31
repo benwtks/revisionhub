@@ -12,7 +12,7 @@
     %link{rel: "canonical", href: "http://www.revisionhub.uk"}
     %link{rel: "icon", href: "#{image_path("favicon.png")}"}
   %body
-    - if @home
+    - if @page == "home"
       - @page_wrapper = false
 
     - if @page_wrapper == nil
@@ -33,7 +33,7 @@
       .alert-wrapper
         %p.alert= alert
 
-    - unless @home
+    - unless @page == "home"
       %header
         = render 'nav-bar'
 

@@ -6,7 +6,7 @@
       %nav
         %ul
           - unless student_signed_in?
-            %li{class: ("current-page" if @page == current)}= link_to "Home", root_path
+            %li{class: ("current-page" if @page == "home")}= link_to "Home", root_path
             %li= link_to "Blog", blog_path
             %li= link_to "Pricing", pricing_path
             %li= link_to "Sign up", new_student_registration_path
