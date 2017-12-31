@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_action :authenticate_student!
-  before_action :find_sessions, only: [:index, :create]
+  before_action :find_sessions_and_dates, only: [:index, :create]
   before_action :find_session, only: [:edit, :update, :destroy]
   before_action :find_subjects, only: [:edit, :update, :new, :create]
   before_action :find_topics, only: [:edit, :update, :new, :create]
@@ -10,8 +10,6 @@ class SessionsController < ApplicationController
   end
  
   def index
-    @dates = @sessions.map{|x| x[:date]}.uniq
-
     if @sessions.empty?
       redirect_to new_session_path
     end
@@ -43,7 +41,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @session = current_student.sessions.build(session_params)
+    @session = @sessions.build(session_params)
 
     if @session.save
       render 'index', notice: "Session successfully created"
@@ -63,8 +61,9 @@ class SessionsController < ApplicationController
     params.require(:session).permit(:date, :topic_id, :hours, :minutes)
   end
 
-  def find_sessions
+  def find_sessions_and_dates
     @sessions = current_student.sessions
+    @dates = @sessions.map{|x| x[:date]}.uniq
   end
 
   def find_session
