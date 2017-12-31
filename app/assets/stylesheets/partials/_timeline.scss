@@ -1,15 +1,25 @@
 .session {
-  margin-bottom: $session-bottom-padding;
   background-color: $session-background-colour;
   border: $border;
   border-radius: $border-radius;
   padding: $session-padding;
 }
 
+.date {
+  background-color: $background;
+  z-index: 20;
+  position: relative;
+  padding: 15px 0 15px 0;
+}
+
+.session, .date {
+  width: -webkit-fill-available;
+  margin-bottom: $session-bottom-margin;
+}
+
 .timeline-wrapper::before {
   content: '';
   position: absolute;
-  top: 30;
   left: 40px;
   height: 100%;
   width: $timeline-width;

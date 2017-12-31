@@ -1,12 +1,15 @@
 - @title = "Session log"
 
 .timeline-wrapper
-  - @sessions.each do |session|
-    .session
-      .session-details
-        %p #{formatted_duration(session.duration_split)} on #{formatted_date(session)}
-        %h2.name= session_link(session)
-        = render 'tags', tags: session.topic.topicTags, type: "topicTags", subject: session.topic.subject
-        %ul.options
-          %li= link_to "Edit", edit_session_path(session)
-          %li= link_to "Delete", session_path(session), method: :delete, data: { confirm: "Are you sure?" }
+  - @dates.each do |day|
+    .date
+      %h2= formatted_date(day)
+    - Session.where(date: day).each do |session|
+      .session
+        .session-details
+          %p #{formatted_duration(session.duration_split)} on #{formatted_date(session.date)}
+          %h2.name= session_link(session)
+          = render 'tags', tags: session.topic.topicTags, type: "topicTags", subject: session.topic.subject
+          %ul.options
+            %li= link_to "Edit", edit_session_path(session)
+            %li= link_to "Delete", session_path(session), method: :delete, data: { confirm: "Are you sure?" }

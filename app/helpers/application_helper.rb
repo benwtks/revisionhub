@@ -1,6 +1,6 @@
 module ApplicationHelper
   def formatted_date(d)
-    d.date.strftime("%A %e %B %Y")
+    d.strftime("%A %e %B %Y")
   end
 
   def nat_lang(n)

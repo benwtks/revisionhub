@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
   end
  
   def index
+    @dates = @sessions.map{|x| x[:date]}
+
     if @sessions.empty?
       redirect_to new_session_path
     end
