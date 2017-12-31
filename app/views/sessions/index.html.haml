@@ -2,7 +2,7 @@
 
 .timeline-wrapper
   - @dates.each do |day|
-    .date
+    .session-group-date
       %h2= formatted_date(day)
     - Session.where(date: day).each do |session|
       .session
