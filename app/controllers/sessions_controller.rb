@@ -66,7 +66,7 @@ class SessionsController < ApplicationController
 
   def find_sessions_and_dates
     @sessions = current_student.sessions
-    @dates = @sessions.map{|x| x[:date]}.uniq.paginate(:page => params[:page], per_page: 3)
+    @dates = @sessions.map{|x| x[:date]}.uniq.paginate(:page => params[:page], per_page: 7)
   end
 
   def find_session
