@@ -1,0 +1,6 @@
+$('.timeline-wrapper').append('<%= j render(@dates) %>')
+<% if @products.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@dates) %>')
+<% else %>
+    $('pagination').remove()
+<% end %>
