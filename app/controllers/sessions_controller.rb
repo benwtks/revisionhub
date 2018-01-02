@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_action :authenticate_student!
-  before_action :find_sessions_and_dates, only: [:index, :create]
+  before_action :find_sessions_and_dates, only: :index
   before_action :find_session, only: [:edit, :update, :destroy]
   before_action :find_subjects, only: [:edit, :update, :new, :create]
   before_action :find_topics, only: [:edit, :update, :new, :create]
@@ -41,9 +41,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @session = @sessions.build(session_params)
+    @session = current_student.sessions.build(session_params)
 
     if @session.save
+      find_sessions_and_dates
       render 'index', notice: "Session successfully created"
     else
       render 'new'

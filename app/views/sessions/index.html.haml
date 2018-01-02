@@ -5,7 +5,7 @@
   - @dates.each do |day|
     .session-group-date
       %h2 Revision on #{formatted_date(day)}
-    - @session.where(date: day).each do |session|
+    - @sessions.where(date: day).each do |session|
       .session
         .session-details
           %p #{formatted_duration(session.duration_split)}
