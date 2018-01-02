@@ -26,6 +26,7 @@
     transform: translateY(-100%);
     padding: $home-header-clone-top-padding 0;
     transition: 0.2s transform cubic-bezier(.3,.73,.3,.74);
+    z-index: 1000;
   }
 }
 

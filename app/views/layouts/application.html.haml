@@ -35,6 +35,7 @@
 
     - unless @page == "home"
       %header
+        = render 'nav-bar', clone: true
         = render 'nav-bar'
 
     - if @wrapper
