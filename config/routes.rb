@@ -8,7 +8,6 @@ Rails.application.routes.draw do
                                       password: 'forgot',
                                       confirmation: 'confirm' }
 
-  get '/log', to: 'sessions#index'
   get '/blog', to: 'pages#blog'
   get '/pricing', to: 'pages#pricing'
   resources :sessions
