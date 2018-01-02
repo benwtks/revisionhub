@@ -42,6 +42,9 @@ group :development, :test do
   gem 'byebug'
 end
 
+# Pages for infinite scrolling
+gem 'will_paginate', '~> 3.1.0'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

@@ -75,3 +75,13 @@ a:not(.section-wrapper) {
 .notice-wrapper {
   background-color: $notice-background-colour;
 }
+
+.pagination {
+  z-index: 20;
+  position: relative;
+  width: max-content;
+  background: #fff;
+  padding: 20px;
+  border-radius: $border-radius;
+  border: $border;
+}

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
+  require 'will_paginate/array'
   before_action :authenticate_student!
-  before_action :find_sessions_and_dates, only: :index
   before_action :find_session, only: [:edit, :update, :destroy]
   before_action :find_subjects, only: [:edit, :update, :new, :create]
   before_action :find_topics, only: [:edit, :update, :new, :create]
@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
   end
  
   def index
+    find_sessions_and_dates
+
     if @sessions.empty?
       redirect_to new_session_path
     end
@@ -64,7 +66,7 @@ class SessionsController < ApplicationController
 
   def find_sessions_and_dates
     @sessions = current_student.sessions
-    @dates = @sessions.map{|x| x[:date]}.uniq
+    @dates = @sessions.map{|x| x[:date]}.uniq.paginate(:page => params[:page], per_page: 7)
   end
 
   def find_session
