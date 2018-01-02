@@ -2,4 +2,6 @@
 - @page = "sessions"
 
 .timeline-wrapper
-  = render 'dates'
+  .dates
+    = render 'dates'
+  = will_paginate @dates

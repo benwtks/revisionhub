@@ -1,6 +1,7 @@
-$('.timeline-wrapper').append('<%= j render 'dates' %>')
+$('.dates').append('<%= j render 'dates' %>')
+
 <% if @dates.next_page %>
-    $('.pagination').replaceWith('<%= j will_paginate(@dates) %>')
+  $('.pagination').replaceWith('<%= j will_paginate(@dates) %>')
 <% else %>
-    $('pagination').remove()
+  $('.pagination').remove()
 <% end %>
