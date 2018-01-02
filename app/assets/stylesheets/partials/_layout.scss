@@ -92,7 +92,7 @@ ul.options li {
   margin-right: 10px;
 }
 
-.topic-data-wrapper p, .topic-data {
+.topic-data-wrapper p, .topic-data, .target {
   display: inline-block;
 }
 
@@ -113,7 +113,6 @@ ul.options li {
 
 .target {
   position: relative;
-  display: inline-block;
 
   svg {
     transform: rotate(135deg);
