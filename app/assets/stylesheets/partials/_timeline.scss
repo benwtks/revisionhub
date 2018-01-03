@@ -3,6 +3,11 @@
   border: $border;
   border-radius: $border-radius;
   padding: $session-padding;
+  box-shadow: $timeline-session-box-shadow;
+}
+
+.session-group {
+  margin-bottom: $session-group-bottom-margin;
 }
 
 .session-group-date {
@@ -17,14 +22,14 @@
   margin-bottom: $session-bottom-margin;
 }
 
-.timeline-wrapper::before {
+.session-group::before {
   content: '';
   position: absolute;
   left: 40px;
   height: 100%;
   width: $timeline-width;
   background: $timeline-colour;
-  margin-top: 50px;
+  margin-top: 100px;
   border-radius: 2px;
   z-index: 1;
 }
