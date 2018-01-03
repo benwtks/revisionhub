@@ -6,11 +6,15 @@
     .greeting.left
       %h1= greeting(@name)
       %p= statistic(current_student)
-    - if @filter.present?
-      .right
+    .right
+      - if @filter.present?
         %p.filter Filtering by #{@filter}
         %ul.options
           %li= link_to "Clear filter", root_path
+      - else
+        %p.filter Not currently filtering
+        %ul.options
+          %li Click a tag to filter
   .targets
     - @subjects_with_targets.each do |subject|
       = render 'target', subject: subject
