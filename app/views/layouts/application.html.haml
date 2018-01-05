@@ -15,13 +15,7 @@
     - if @page_wrapper || @devise_page || @form
       - @wrapper = true
 
-    - if notice
-      .notice-wrapper
-        %p.notice= notice
-    - elsif alert
-      - @alert = true
-      .alert-wrapper
-        %p.alert= alert
+    = render 'notice_and_alert'
 
     - unless @page == "home"
       %header
