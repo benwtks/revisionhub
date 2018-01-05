@@ -15,5 +15,9 @@ module RevisionHub
     config.generators do |generator|
         generator.orm :active_record, primary_key_type: :uuid
     end
+
+    config.to_prepare do
+        Devise::SessionsController.layout "devise"
+    end
   end
 end

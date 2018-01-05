@@ -1,0 +1,9 @@
+%html
+  %head
+    = render 'head'
+  %body
+    
+    %header
+    .devise-wrapper 
+      .section-wrapper
+        = yield
