@@ -5,8 +5,7 @@
   .form-divider
     = f.label :date, class: "inline"
     = f.date_select :date, as: :date,
-      discard_year: true,
-      order: [:day, :month],
+      order: [:day, :month, :year],
       label: false
   .form-divider
     = f.label :duration, class: "inline"
