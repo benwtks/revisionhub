@@ -1,0 +1,11 @@
+- if @title.blank?
+  %title= "Revisionhub"
+- else
+  %title= "Revisionhub: " + @title
+= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+= javascript_include_tag 'application', 'data-turbolinks-track' => true
+= csrf_meta_tags
+%meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+%meta{name: "theme-color", content: "#242931"}
+%link{rel: "canonical", href: "http://www.revisionhub.uk"}
+%link{rel: "icon", href: "#{image_path("favicon.png")}"}
