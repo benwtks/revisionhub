@@ -1,7 +1,7 @@
 <script>
-  $(document).ready( function() {
+  $(document).on("turbolinks:load", function() {
     <% subjects.each do |subject| %>
-        $('<%= j ".target.#{subject.hyphenated_name}" %>').addClass('animated-target');
+      $('<%= j ".target.#{subject.hyphenated_name}" %>').addClass('animated-target');
     <% end %>
   });
 </script>
@@ -9,6 +9,7 @@
 <style>
   <% subjects.each do |subject| %>
     .target.<%= subject.hyphenated_name %>.animated-target circle.ui-filled{
+      stroke-dashoffset: 324.75;
       animation: <%= "target-load-#{subject.hyphenated_name}" %> 1s forwards linear;
     }
 
