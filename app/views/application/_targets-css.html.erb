@@ -1,0 +1,12 @@
+<style>
+  <% subjects.each do |subject| %> 
+    @keyframes target-load-<%= subject.name.downcase %> {
+      from {
+        stroke-dashoffset: 400;
+      }
+      to {
+        stroke-dashoffset: <%= subject.target_amount_to_offset * 324.75 %>;
+      }
+    }
+  <% end %>
+</style>

@@ -1,7 +1,7 @@
-.target
-  %svg{:class => "#{subject}", :height => "180", :version => "1.1", :width => "180", :xmlns => "http://www.w3.org/2000/svg"}
+.target{class: subject.name.downcase}
+  %svg{:height => "180", :version => "1.1", :width => "180", :xmlns => "http://www.w3.org/2000/svg"}
     %circle{:cx => "90", :cy => "90", :fill => "none", :r => "69", :stroke => "#e1e1e1", "stroke-dasharray" => "324.75,649.5", "stroke-linecap" => "round", "stroke-width" => "20"}
-    %circle.ui-filled{:cx => "90", :cy => "90", :fill => "none", :r => "69", :stroke => "#ff4747", "stroke-dasharray" => "324.75,649.5", "stroke-dashoffset" => "324.75", "stroke-linecap" => "round", "stroke-width" => "20.5", :style => "stroke-dashoffset: #{subject.target_amount_to_offset * 324.75};"}
+    %circle.ui-filled{:cx => "90", :cy => "90", :fill => "none", :r => "69", :stroke => "#ff4747", "stroke-dasharray" => "324.75,649.5", "stroke-dashoffset" => "324.75", "stroke-linecap" => "round", "stroke-width" => "20.5", :style => "stroke-dashoffset: #{subject.target_amount_to_offset * 324.75};animation: target-load-#{subject.name.downcase} 1s forwards linear;"}
   .target-content
     %p.target-subject= subject.name
     %p.target-data= subject.target_data

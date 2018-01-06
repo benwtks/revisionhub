@@ -9,3 +9,6 @@
 %meta{name: "theme-color", content: "#242931"}
 %link{rel: "canonical", href: "http://www.revisionhub.uk"}
 %link{rel: "icon", href: "#{image_path("favicon.png")}"}
+
+- if @page == "dashboard"
+  = render 'targets-css', subjects: @subjects_with_targets
