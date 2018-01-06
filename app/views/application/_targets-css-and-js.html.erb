@@ -2,13 +2,11 @@
   $(document).on("turbolinks:before-cache", function() {
     <% subjects.each do |subject| %>
       $('<%= j ".target.#{subject.hyphenated_name}" %>').removeClass('animated-target');
-      console.log("hopefully the target has had the class removed because the cache has just been taken");
     <% end %>
   });
   $(document).on("turbolinks:load", function() {
     <% subjects.each do |subject| %>
       $('<%= j ".target.#{subject.hyphenated_name}" %>').addClass('animated-target');
-      console.log("turboloads:load fired");
     <% end %>
   });
 </script>
