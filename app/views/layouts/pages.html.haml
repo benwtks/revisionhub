@@ -1,4 +1,10 @@
 %html
   %head
-    = render 'hhtml
+    = render 'head'
   %body
+    = render 'notice_and_alert'
+
+    = render 'nav-bar', clone: true
+    = render 'nav-bar'
+
+    = yield

@@ -2,24 +2,16 @@
   %head
     = render 'head'
   %body
-    - if @page == "home"
-      - @page_wrapper = false
-
     - if @page_wrapper == nil
       - @page_wrapper = true
 
-    - if @form
-      - @single_section_page = true
-      - @page_wrapper = false
-
-    - if @page_wrapper || @devise_page || @form
+    - if @page_wrapper || @devise_page
       - @wrapper = true
 
     = render 'notice_and_alert'
 
-    - unless @page == "home"
-      %header
-        = render 'nav-bar'
+    %header
+      = render 'nav-bar'
 
     - if @wrapper
       %div{class: [("devise-wrapper" if @devise_page), ("general-form-wrapper" if @form), ("page-wrapper" if @page_wrapper)]}
