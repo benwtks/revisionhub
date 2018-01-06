@@ -1,5 +1,17 @@
+<script>
+  $(document).ready( function() {
+    <% subjects.each do |subject| %>
+        $('<%= j ".target.#{subject.hyphenated_name}" %>').addClass('animated-target');
+    <% end %>
+  });
+</script>
+
 <style>
-  <% subjects.each do |subject| %> 
+  <% subjects.each do |subject| %>
+    .target.<%= subject.hyphenated_name %>.animated-target circle.ui-filled{
+      animation: <%= "target-load-#{subject.hyphenated_name}" %> 1s forwards linear;
+    }
+
     @keyframes target-load-<%= subject.hyphenated_name %> {
       from {
         stroke-dashoffset: 400;
