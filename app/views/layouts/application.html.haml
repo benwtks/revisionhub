@@ -22,7 +22,7 @@
         = render 'nav-bar'
 
     - if @wrapper
-      %div{class: [("devise-wrapper" if @devise_page), ("general-form-wrapper" if @form), ("page-wrapper" if @page_wrapper)]}
+      %div{class: ["devise-wrapper" if @devise_page), ("general-form-wrapper" if @form), ("page-wrapper" if @page_wrapper)]}
         - if @single_section_page
           .section-wrapper
             = yield
