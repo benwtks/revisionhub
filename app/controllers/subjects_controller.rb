@@ -1,4 +1,6 @@
 class SubjectsController < ApplicationController
+  layout "form", only: [:edit, :new]
+
   before_action :authenticate_student!
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
   before_action :find_subject_tags, only: [:edit, :update, :create, :new]

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout "form", only: [:edit, :new]
+
   require 'will_paginate/array'
   before_action :authenticate_student!
   before_action :find_session, only: [:edit, :update, :destroy]

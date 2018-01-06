@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  layout "form", only: [:edit, :new]
+
   before_action :authenticate_student!
   before_action :find_subject, only: [:edit, :update, :new, :destroy, :create]
   before_action :find_topic, only: [:edit, :update, :destroy]

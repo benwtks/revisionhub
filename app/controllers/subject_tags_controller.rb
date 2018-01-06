@@ -1,9 +1,12 @@
 class SubjectTagsController < ApplicationController
+  layout "form", only: [:edit, :new]
+
   before_action :authenticate_student!
   before_action :find_tag_colours, only: :new
 
   def new
     @subject_tag = current_student.subjectTags.build
+    render layout: "form"
   end
 
   def create

@@ -1,4 +1,6 @@
 class GradesController < ApplicationController
+  layout "form", only: [:edit, :new]
+
   before_action :authenticate_student!
   before_action :find_subject, only: [:index, :edit, :update, :new, :create, :destroy]
   before_action :find_grade, only: [:edit, :update, :destroy]
