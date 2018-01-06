@@ -15,6 +15,16 @@ class Subject < ApplicationRecord
     joins(:subjectTags).where(subject_tags: { name: name }) if name.present?
   }
 
+  def hyphenated_name
+    words = self.name.downcase.split(" ")
+    hyphenated = "#{words[0]}"
+    words.drop(1).each do |word|
+      hyphenated += "-#{word}"
+    end
+
+    return hyphenated
+  end
+
   def no_sessions(range="all")
     i = 0
     topics.each do |topic|
