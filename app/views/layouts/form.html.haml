@@ -1,0 +1,12 @@
+%html
+  %head
+    = render 'head'
+  %body
+    = render 'notice_and_alert'
+
+    %header
+      = render 'nav-bar'
+
+    .general-form-wrapper
+      .section-wrapper
+        = yield
