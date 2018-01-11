@@ -9,7 +9,7 @@
       label: false
   .form-divider
     = f.label :duration, class: "inline"
-    = f.select :hours, options_for_select(0..5, @hours)
+    = f.select :hours, options_for_select(0..15, @hours)
     %span="hrs"
     = f.select :minutes, options_for_select(0..59, @minutes)
     %span="mins"
