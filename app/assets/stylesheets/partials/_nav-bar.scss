@@ -6,6 +6,20 @@
   top: 0;
   z-index: 10;
 
+  &:not(.home):not(.devise), &.clone {
+    background: #fff;
+    position: absolute;
+    border-bottom: $border;
+    padding: 0;
+    box-shadow: $header-box-shadow;
+  }
+
+  &.clone {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: 0.2s transform cubic-bezier(.3,.73,.3,.74);
+    z-index: 1000;
+  }
   nav ul li a:hover {
     color: $nav-hover-colour;
   }
@@ -18,16 +32,10 @@
   &:not(.clone).home .logo svg {
     fill: #fff;
   }
+}
 
-  &.clone {
-    position: fixed;
-    background: #fff;
-    border-bottom: $border;
-    transform: translateY(-100%);
-    padding: $home-header-clone-top-padding 0;
-    transition: 0.2s transform cubic-bezier(.3,.73,.3,.74);
-    z-index: 1000;
-  }
+header:not(.devise-header):not(.hero) {
+  margin-bottom: 70px;
 }
 
 body.down .nav-bar.clone {
@@ -37,7 +45,8 @@ body.down .nav-bar.clone {
 .logo {
   float: left;
   svg {
-    fill: $logo-default-colour;
+    //fill: $logo-default-colour;
+    fill: $red;
     height: 40px;
     width: 182px;
     margin: 21px 0 21px 0;
@@ -60,12 +69,17 @@ nav ul li {
   color: $nav-colour;
   &:not(:first-of-type) {
     padding-left: 50px;
-  } 
+  }
+
+  & a:hover:after {
+    background-color: $red;
+  }
+
   & a::after {
     content: '';
     display: block;
-    width: 85%;
-    margin: 0 auto;
+    width: 60%;
+    //margin: 0 auto;
     height: 2px;
     opacity: 0;
     margin-top: 5px;
@@ -81,7 +95,7 @@ nav li.current-page a::after {
 }
 
 nav li a, nav li a:hover,
-nav li a::after, nav li a:hover::after {
+nav li a::after, nav li a:hover:after {
   transition: all 0.2s;
 }
 
