@@ -67,7 +67,7 @@ gem 'sprockets', '~> 3.5', '>= 3.5.2'
 gem 'to_words'
 
 # specifying ruby version to keep heroku happy
-ruby "2.4.2"
+ruby "2.5.0"
 
 # Chronic gem for referencing times
 gem 'chronic', '~> 0.10.2'
