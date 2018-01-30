@@ -1,0 +1,17 @@
+.top {
+    animation: main-load 1.5s forwards  ease-in-out;
+}
+
+@keyframes main-load {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    80% {
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
