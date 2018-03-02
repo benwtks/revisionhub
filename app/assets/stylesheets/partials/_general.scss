@@ -6,14 +6,6 @@ body, .content {
   background: $red;
 }
 
-.target circle {
-  stroke: $target-outer-stroke;
-}
-
-.target circle.ui-filled {
-  stroke: $target-filled-stroke;
-}
-
 ul {
   padding: 0;
 }
@@ -83,7 +75,7 @@ a:not(.section-wrapper) {
   background-color: $notice-background-colour;
 }
 
-.session, .section-wrapper, .subject-wrapper {
+.session {
   box-shadow: $section-box-shadow;
 }
 
