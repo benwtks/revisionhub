@@ -1,13 +1,11 @@
 <script>
+  var subjects = <%= j subjects.map{|x| x[:name].join(",") %>
+
   $(document).on("turbolinks:before-cache", function() {
-    <% subjects.each do |subject| %>
-    $('<%= j ".target.#{subject.hyphenated_name}" %>').removeClass('animated-target');
-    <% end %>
+    $(subjects).removeClass('animated-target');
   });
   $(document).on("turbolinks:load", function() {
-    <% subjects.each do |subject| %>
-    $('<%= j ".target.#{subject.hyphenated_name}" %>').addClass('animated-target');
-    <% end %>
+    $(subjects).addClass('animated-target');
   });
   $(document).on("turbolinks:render", function() {
     $('.top').removeClass('initial-animate');

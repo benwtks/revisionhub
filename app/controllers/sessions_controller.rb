@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   before_action only: [:edit, :update, :destroy, :edit] do |c|
     c.authenticate_session_rights @session
   end
- 
+
   def index
     find_sessions_and_dates
 
