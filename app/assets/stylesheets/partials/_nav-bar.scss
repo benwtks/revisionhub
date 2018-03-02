@@ -60,16 +60,26 @@ nav ul li {
   color: $nav-colour;
   &:not(:first-of-type) {
     padding-left: 50px;
-  } 
+  }
   & a::after {
     content: '';
     display: block;
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
     height: 2px;
     opacity: 0;
     margin-top: 5px;
     border-radius: 2px;
+    background-color: $nav-underline-colour;
+  }
+}
+
+nav ul li.current-page {
+  & a::after{
+    background-color: $nav-underline-hover-colour;
+  }
+
+  &:hover a::after {
     background-color: $nav-underline-colour;
   }
 }

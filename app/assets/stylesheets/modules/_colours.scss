@@ -1,5 +1,6 @@
 $pale-blue: #f5f8fa;
 $red: #ff4747;
+$pale-red: lighten($red, 20%);
 $grey: #DEE0E2;
 $bold-colour: #585961;
 $normal-colour: #66676F;
@@ -57,7 +58,8 @@ $session-background-colour: #fff;
 $focus-colour: $red;
 
 $nav-hover-colour: $red;
-$nav-underline-colour: $grey;
+$nav-underline-colour: $pale-red;
+$nav-underline-hover-colour: $grey;
 
 $link-colour: $red;
 
