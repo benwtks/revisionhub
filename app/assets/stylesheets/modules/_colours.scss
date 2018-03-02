@@ -12,6 +12,10 @@ $orange-element: #ECAA5D;
 $green-element: #84CA64;
 $yellow-element: #EED065;
 
+$green-feature-gradient: linear-gradient(135deg, #95dc74 0%,#a6e686 100%);
+$blue-feature-gradient: linear-gradient(135deg, #83ccff 0%,#abdcff 100%);
+$purple-feature-gradient: linear-gradient(135deg, #dba8ef 0%,#edc1ff 100%);
+
 $logo-default-colour: #353535;
 
 @mixin background-colour($colour, $colour-element){

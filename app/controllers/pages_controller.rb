@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   layout "pages"
 
   def home
-    redirect_to new_student_session_path
+    #redirect_to new_student_session_path
   end
 
   def blog

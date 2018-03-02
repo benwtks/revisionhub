@@ -30,13 +30,13 @@
   box-shadow: $box-shadow;
 
   .feature-text, .feature-illustration {
-    height: 100%;
     width: 50%;
     display: inline-block;
+    border-radius: $border-radius;
   }
 
   &:not(:first-of-type) {
-    margin-top: 100px;
+    margin-top: 150px;
   }
 }
 
@@ -44,29 +44,40 @@
 .feature.second .feature-text,
 .feature.third .feature-illustration {
   float: right;
-  border-radius: 0 10px 10px 0;
 }
 
 .feature.first .feature-text,
 .feature.second .feature-illustration
 .feature.third .feature-text {
   float: left;
-  border-radius: 10px 0 0 10px;
 }
 
 .feature.first .feature-illustration {
-  background-color: $green-element;
+  background: $green-feature-gradient;
 }
 
 .feature.second .feature-illustration {
-  background-color: $blue-element;
+  background: $blue-feature-gradient;
+  box-shadow: $feature-illustration-shadow-left;
 }
 
 .feature.third .feature-illustration {
-  background-color: $purple-element;
+  background: $purple-feature-gradient;
 }
 
 .feature-text {
   padding: 50px;
   box-sizing: border-box;
+}
+
+.feature.first .feature-illustration,
+.feature.third .feature-illustration {
+  box-shadow: $feature-illustration-shadow-right;
+}
+
+.feature-illustration {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: $feature-illustration-height;
 }
