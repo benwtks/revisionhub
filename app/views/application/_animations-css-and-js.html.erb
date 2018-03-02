@@ -1,11 +1,9 @@
 <script>
-  var subjects = <%= j subjects.map{|x| x[:name].join(",") %>
-
   $(document).on("turbolinks:before-cache", function() {
-    $(subjects).removeClass('animated-target');
+    $('<%= j @target_classes %>').removeClass('animated-target');
   });
   $(document).on("turbolinks:load", function() {
-    $(subjects).addClass('animated-target');
+    $('<%= j @target_classes %>').addClass('animated-target');
   });
   $(document).on("turbolinks:render", function() {
     $('.top').removeClass('initial-animate');
