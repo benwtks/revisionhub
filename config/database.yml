@@ -15,7 +15,6 @@ default: &default
   pool: 5
   username: revisionhubadmin
   password: password
-  host: localhost
 
 development:
   <<: *default
