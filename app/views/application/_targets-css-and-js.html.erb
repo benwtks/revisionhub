@@ -1,13 +1,16 @@
 <script>
   $(document).on("turbolinks:before-cache", function() {
     <% subjects.each do |subject| %>
-      $('<%= j ".target.#{subject.hyphenated_name}" %>').removeClass('animated-target');
+    $('<%= j ".target.#{subject.hyphenated_name}" %>').removeClass('animated-target');
     <% end %>
   });
   $(document).on("turbolinks:load", function() {
     <% subjects.each do |subject| %>
-      $('<%= j ".target.#{subject.hyphenated_name}" %>').addClass('animated-target');
+    $('<%= j ".target.#{subject.hyphenated_name}" %>').addClass('animated-target');
     <% end %>
+  });
+  $(document).on("turbolinks:render", function() {
+    $('.top').removeClass('initial-animate');
   });
 </script>
 
