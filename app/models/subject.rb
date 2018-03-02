@@ -60,8 +60,8 @@ class Subject < ApplicationRecord
   end
 
   def target_progress
-    duration = self.session_duration_total('week')[2].round(5)
-    target_in_mins = (self.target * 60).round(5)
+    duration = self.session_duration_total('week')[2].to_f
+    target_in_mins = (self.target.to_f * 60)
 
     return duration/target_in_mins
   end
