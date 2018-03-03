@@ -70,7 +70,7 @@ class Subject < ApplicationRecord
     if self.target_progress > 1
       return 0
     else
-      return 1 - self.target_progress
+      return (1 - self.target_progress) * 324.75
     end
   end
 

@@ -13,8 +13,8 @@
 <style>
   <% subjects.each do |subject| %>
     .target.<%= subject.hyphenated_name %>.animated-target circle.ui-filled{
-      stroke-dashoffset: 324.75;
-      animation: <%= "target-load-#{subject.hyphenated_name}" %> 1s forwards linear;
+      stroke-dashoffset: <%= subject.target_amount_to_offset %>;
+      animation: <%= "target-load-#{subject.hyphenated_name}" %> <%= (324.75 - subject.target_amount_to_offset)/162.325 %>s forwards linear;
     }
 
     @keyframes target-load-<%= subject.hyphenated_name %> {
@@ -22,7 +22,7 @@
         stroke-dashoffset: 400;
       }
       to {
-        stroke-dashoffset: <%= subject.target_amount_to_offset * 324.75 %>;
+        stroke-dashoffset: <%= subject.target_amount_to_offset %>;
       }
     }
   <% end %>
