@@ -1,0 +1,118 @@
+@media (max-width: 1440px) {
+  .page-wrapper, .wrapper, {
+    width: $page-width-medium-viewport;
+  }
+}
+
+@media (max-width: 1360px) {
+  .page-wrapper, .wrapper {
+   width: $page-width-small-viewport;
+  }
+}
+
+@media (max-width: 1050px) {
+  .left, .right {
+    float: none;
+  }
+  .link-wrapper.left {
+    float: left;
+  }
+  .link-wrapper.right {
+    float: right;
+  }
+
+  .filter {
+    text-align: left;
+    margin-top: 60px;
+  }
+
+  .top-section ul.options {
+    text-align: center;
+  }
+
+  nav ul li a::after {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1070px) {
+  .greeting, .top-section .filter {
+    text-align: center;
+  }
+
+  .targets {
+    justify-content: center;
+  }
+
+  .nav-bar.clone {
+    display: none;
+  }
+
+  nav, .logo {
+    float: none;
+  }
+  .nav-bar {
+    text-align: center;
+  }
+}
+
+@media (max-width: $devise-width-resize-point) {
+  .devise-wrapper {
+    width: $page-width-small-viewport;
+  }
+}
+
+@media (max-width: $general-form-width-resize-point) {
+  .general-form-wrapper {
+    width: $page-width-small-viewport;
+  }
+}
+
+@media (min-width: $fixed-page-width-point) {
+  .page-wrapper, .wrapper {
+    width: $page-width-massive-viewport;
+  }
+}
+
+@media (max-width: 1420px) {
+  .hero-text, .content-wrapper {
+    width: $page-width-small-viewport;
+  }
+}
+
+@media (max-width: 620px) {
+    .target svg circle {
+        stroke-width: 32;
+    }
+
+    .target svg {
+        transform: scale(0.6) rotate(135deg);
+    }
+
+    .target .target-content {
+        top: unset;
+    }
+}
+
+@media (max-width: 830px) {
+  nav ul li {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    &:not(:first-of-type) {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .link-wrapper {
+    &.left {
+      border-right: none;
+    }
+    &.left, &.right {
+      width: 100%;
+      float: none;
+    }
+  }
+}

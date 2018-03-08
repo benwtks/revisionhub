@@ -115,15 +115,3 @@ input.button:focus, input.btn:focus {
     box-sizing: border-box;
   }
 }
-
-@media (max-width: 500px) {
-  .link-wrapper {
-    &.left {
-      border-right: none;
-    }
-    &.left, &.right {
-      width: 100%;
-      float: none;
-    }
-  }
-}

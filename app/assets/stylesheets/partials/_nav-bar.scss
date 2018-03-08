@@ -95,23 +95,3 @@ nav li a, nav li a:hover,
 nav li a::after, nav li a:hover::after {
   transition: all 0.2s;
 }
-
-@media (max-width: 1070px) {
-  nav, .logo {
-    float: none;
-  }
-  .nav-bar {
-    text-align: center;
-  }
-}
-
-@media (max-width: 830px) {
-  nav ul li {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    &:not(:first-of-type) {
-      padding-left: 0;
-    }
-  }
-}
