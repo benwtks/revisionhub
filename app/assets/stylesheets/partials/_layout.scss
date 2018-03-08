@@ -192,3 +192,17 @@ ul.options li {
     width: $page-width-small-viewport;
   }
 }
+
+@media (max-width: 620px) {
+    .target svg circle {
+        stroke-width: 32;
+    }
+
+    .target svg {
+        transform: scale(0.6) rotate(135deg);
+    }
+
+    .target .target-content {
+        top: unset;
+    }
+}
