@@ -6,10 +6,18 @@ class PagesController < ApplicationController
   end
 
   def blog
-    redirect_to root_path, notice: "Coming soon!"
+    redirect_to root_path, notice: "Blog coming soon!"
   end
 
   def pricing
-    redirect_to root_path, notice: "Plus memberships coming soon!"
+    redirect_to root_path, notice: "Pricing coming soon!"
+  end
+
+  def features
+    redirect_to root_path, notice: "Features page coming soon!"
+  end
+
+  def demo
+    redirect_to root_path, notice: "Demo coming soon!"
   end
 end

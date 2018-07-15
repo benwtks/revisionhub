@@ -53,8 +53,8 @@ body.down .nav-bar.clone {
   }
 }
 
-nav {
-  float: right;
+nav ul:first-of-type{
+  margin-left: 100px;
 }
 
 nav ul li {

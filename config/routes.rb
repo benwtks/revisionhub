@@ -9,7 +9,10 @@ Rails.application.routes.draw do
                                       confirmation: 'confirm' }
 
   get '/blog', to: 'pages#blog'
+  get '/demo', to: 'pages#demo'
+  get '/features', to: 'pages#features'
   get '/pricing', to: 'pages#pricing'
+
   resources :sessions
   resources :subject_tags
   resources :topic_tags
