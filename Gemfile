@@ -55,6 +55,8 @@ group :development do
   gem 'brakeman'
 end
 
+gem 'rails_12factor', group: :production
+
 gem 'haml', git: 'https://github.com/haml/haml'
 # gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'simple_form'
