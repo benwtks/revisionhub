@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     @subject = Subject.find(params[:subject_id])
   end
 
-  def redirect_to_https
-    redirect_to protocol: "https://" unless (request.ssl? || request.local?)
-  end
+  # def redirect_to_https
+  #   redirect_to protocol: "https://" unless (request.ssl? || request.local?)
+  # end
 end
