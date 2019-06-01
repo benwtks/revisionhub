@@ -4,29 +4,31 @@
   .hero-wrapper
     = render 'nav-bar'
     .hero-text
-      %h1 Boost your grades and secure your future
+      %h1 Improve your revision
       %p Throw away your revision timetables and meet Revisionhub, the more efficient way to revise. Revisionhub offers the tools you need to better your marks, ensuring you study the right topics at the right time, while motivating you along the way. Spend less time timetabling every detail of your life, spend more time studying.
 .content
   .content-wrapper
-    .overview
-      .overview-illustration
-        = inline_svg('illustration1')
-      .overview-text
-        %h1 Everything in one place
-        %p With Revisionhub, everything is collected into one convenient place. This includes your notes, records of how many hours you have revised, grades and even a record of which past papers you have completed so that you don't do any twice and can motivate yourself to do more.
-    .features
-      .feature.first
-        .feature-illustration
-        .feature-text
-          %h1 Revision log
-          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a nulla vel arcu blandit porta sit amet vitae
-      .feature.second
-        .feature-illustration
-        .feature-text
-          %h1 Grades
-          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a nulla vel arcu blandit porta sit amet vitae
-      .feature.third
-        .feature-illustration
-        .feature-text
-          %h1 Integrations
-          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a nulla vel arcu blandit porta sit amet vitae
+    .feature
+      .feature-illustration
+        = inline_svg('laptop')
+      .feature-text
+        %h1 Timeline your revision
+        %p Timeline your revision with records of each topic you have revised and for how long. Link these with grades, past papers and notes about each session.
+    .feature
+      .feature-illustration
+        = inline_svg('books')
+      .feature-text
+        %h1 Analyse your revision
+        %p Gain an insight into your revision with targets, charts, streaks and information about which topics you've been focusing on.
+    .feature.progress-section
+      .feature-illustration
+        = inline_svg('steps')
+      .feature-text
+        %h1 Track your grades
+        %p Record your grades along with each test or past paper you complete, allowing you to see your progress and where you need to improve
+    .feature
+      .feature-illustration
+        = inline_svg('integrations')
+      .feature-text
+        %h1 Everything connected
+        %p Bring everything together into one place so you can focus on your revision with your grades, notes, revision videos, and records of your productivity all collected together
