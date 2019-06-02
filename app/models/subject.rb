@@ -9,9 +9,9 @@ class Subject < ApplicationRecord
   validates :teacher, presence: true,
                       length: { in: 2..50 }
 
-  default_scope -> { order("created_at ASC") }
+  default_scope -> { order("name ASC") }
 
-  scope :filter, ->(name){
+  scope :tagfilter, ->(name) {
     joins(:subjectTags).where(subject_tags: { name: name }) if name.present?
   }
 

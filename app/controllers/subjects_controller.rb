@@ -11,7 +11,7 @@ class SubjectsController < ApplicationController
   end
 
   def index
-    @subjects = current_student.subjects.filter(@filter).order("name ASC")
+    @subjects = current_student.subjects.tagfilter(@filter).order("name ASC")
     @target_classes = @subjects.map{|x| ".target.#{x.hyphenated_name}"}.join(", ")
     @name = current_student.first_name
     @subjects_with_targets = @subjects.where('target > ?', 0)
@@ -22,7 +22,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @topics = @subject.topics.filter(@filter).order("name ASC")
+    @topics = @subject.topics.tagfilter(@filter).order("name ASC")
   end
 
   def edit
