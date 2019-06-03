@@ -44,7 +44,7 @@ body.down .nav-bar.clone {
     margin: 21px 0 21px 0;
 
     &, &:hover, { transition: all 0.3s; }
-    &:hover { fill: $red; }
+    &:hover { fill: $logo-hover-colour; }
   }
 
   &.center {

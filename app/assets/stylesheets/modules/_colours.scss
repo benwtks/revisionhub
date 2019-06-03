@@ -1,6 +1,9 @@
 $pale-blue: #f5f8fa;
-$red: #ff4747;
-$pale-red: lighten($red, 20%);
+$rh-blue: #3956E8;
+$rh-purple: #5232B3;
+$rh-dark-purple: #2B2A54;
+$rh-pale-blue: lighten($rh-blue, 20%);
+
 $grey: #DEE0E2;
 $bold-colour: #585961;
 $normal-colour: #66676F;
@@ -19,7 +22,8 @@ $blue-feature-text: #81aff2;
 $purple-feature-gradient: linear-gradient(135deg, #dba8ef 0%, #d0c1ff 100%);
 $purple-feature-text: #cd55ff;
 
-$logo-default-colour: #353535;
+$logo-default-colour: $rh-dark-purple;
+$logo-hover-colour: $rh-blue;
 
 @mixin background-colour($colour, $colour-element){
   a.#{$colour},
@@ -40,14 +44,12 @@ $logo-default-colour: #353535;
 
 $border-colour: $grey;
 
-$logo-colour: $red;
-
 $background: $pale-blue;
 
 $nav-colour: $bold-colour;
 $section-background-colour: #fff;
 
-$button-background-colour: $red;
+$button-background-colour: $rh-purple;
 $button-text-colour: #fff;
 
 $notice-background-colour: #30B955;
@@ -55,21 +57,21 @@ $alert-background-colour: #dc4e4e;
 
 $select-background-colour: $pale-blue;
 
-$h1-colour: $red;
+$h1-colour: $rh-blue;
 
-$timeline-h2-colour: $red;
+$timeline-h2-colour: $rh-purple;
 $timeline-colour: $grey;
-$session-colour: $red;
+$session-colour: $rh-purple;
 $session-background-colour: #fff;
 
-$focus-colour: $red;
+$focus-colour: $rh-blue;
 
-$nav-hover-colour: $red;
-$nav-underline-colour: $pale-red;
+$nav-hover-colour: $rh-blue;
+$nav-underline-colour: $rh-pale-blue;
 $nav-underline-hover-colour: $grey;
 
-$link-colour: $red;
+$link-colour: $rh-blue;
 
-$link-wrapper-hover-background: $red;
+$link-wrapper-hover-background: $rh-blue;
 
-$filter-colour: $red;
+$filter-colour: $rh-blue;
