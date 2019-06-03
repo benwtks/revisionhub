@@ -105,31 +105,3 @@ ul.options li {
     text-align: right;
   }
 }
-
-.filter {
-  text-align: right;
-  color: $filter-colour;
-}
-
-.target {
-  position: relative;
-
-  svg {
-    transform: rotate(135deg);
-
-    circle.ui-filled {
-      stroke: $target-colour;
-    }
-  }
-  .target-content {
-    position: absolute;
-    text-align: center;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-   .target-subject {
-      color: $rh-purple;
-    }
-  }
-}

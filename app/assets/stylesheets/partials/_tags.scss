@@ -33,3 +33,8 @@
 @include background-colour(green, $green-element);
 @include background-colour(orange, $orange-element);
 @include background-colour(yellow, $yellow-element);
+
+.filter {
+  text-align: right;
+  color: $filter-colour;
+}
