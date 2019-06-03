@@ -75,6 +75,10 @@ nav ul li {
   }
 }
 
+nav ul {
+  float: right;
+}
+
 nav ul li.current-page {
   & a::after{
     background-color: $nav-underline-hover-colour;
