@@ -116,6 +116,10 @@ ul.options li {
 
   svg {
     transform: rotate(135deg);
+
+    circle.ui-filled {
+      stroke: $target-colour;
+    }
   }
   .target-content {
     position: absolute;
