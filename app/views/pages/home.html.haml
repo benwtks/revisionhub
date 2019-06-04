@@ -4,31 +4,38 @@
   .hero-wrapper
     = render 'nav-bar'
     .hero-text
-      %h1 Improve your revision
-      %p Throw away your revision timetables and meet Revisionhub, the more efficient way to revise. Revisionhub offers the tools you need to better your marks, ensuring you study the right topics at the right time, while motivating you along the way. Spend less time timetabling every detail of your life, spend more time studying.
+      %h1 Manage your revision and boost your grades
+      %p Throw away your revision timetables and meet Revisionhub, the more efficient way to revise. Revisionhub offers the tools you need to better your marks, ensuring you study the right topics at the right time, while motivating you along the way.
 .content
-  .content-wrapper
+  .row
     .feature
       .feature-illustration
         = inline_svg('laptop')
       .feature-text
-        %h1 Timeline your revision
-        %p Timeline your revision with records of each topic you have revised and for how long. Link these with grades, past papers and notes about each session.
+        %div
+          %h1 Timeline your revision
+          %p Timeline your revision with records of each topic you have revised and for how long. Link these with grades, past papers and notes about each session.
+  .row
     .feature
+      .feature-text
+        %div
+          %h1 Analyse your revision
+          %p Gain an insight into your revision with targets, charts, streaks and information about which topics you've been focusing on.
       .feature-illustration
         = inline_svg('books')
-      .feature-text
-        %h1 Analyse your revision
-        %p Gain an insight into your revision with targets, charts, streaks and information about which topics you've been focusing on.
+  .row.steps
     .feature.progress-section
       .feature-illustration
         = inline_svg('steps')
       .feature-text
-        %h1 Track your grades
-        %p Record your grades along with each test or past paper you complete, allowing you to see your progress and where you need to improve
+        %div
+          %h1 Track your grades
+          %p Record your grades along with each test or past paper you complete, allowing you to see your progress and where you need to improve
+  .row
     .feature
+      .feature-text
+        %div
+          %h1 Everything connected
+          %p Bring everything together into one place so you can focus on your revision with your grades, notes, revision videos, and records of your productivity all collected together
       .feature-illustration
         = inline_svg('integrations')
-      .feature-text
-        %h1 Everything connected
-        %p Bring everything together into one place so you can focus on your revision with your grades, notes, revision videos, and records of your productivity all collected together
