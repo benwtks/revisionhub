@@ -19,10 +19,13 @@ header.hero {
   padding: $hero-text-padding;
 
   h1 {
-    padding: 50px;
+    padding: 0 0 50px 0;
+    font-size: 35px;
+    color: #fff;
   }
 
-  h1, p {
-    color: #fff;
+  p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.8);
   }
 }

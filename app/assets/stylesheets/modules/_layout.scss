@@ -1,4 +1,5 @@
 $page-width: 70%;
+$page-max-width: 1200px;
 $page-width-massive-viewport: 1700px;
 $page-width-medium-viewport: 75%;
 $page-width-small-viewport: 90%;
@@ -16,7 +17,7 @@ $subject-section-wrapper-padding: 30px;
 
 $section-bottom-padding: 50px;
 
-$header-line-height: 44px;
+$header-line-height: 35px;
 $header-and-wrapper-top-padding: 50px;
 
 $wrapper-padding-top: 100px;
@@ -36,7 +37,7 @@ $session-bottom-margin: 50px;
 $session-padding: 15px 0 15px 0;
 $session-group-bottom-margin: 100px;
 
-$hero-text-padding: 200px 0;
+$hero-text-padding: 200px 0 200px 0;
 
 $grade-width: 150px;
 $grade-height: 300px;

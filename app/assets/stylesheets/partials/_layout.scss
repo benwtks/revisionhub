@@ -3,14 +3,15 @@
 .devise-wrapper,
 .general-form-wrapper,
 .page-wrapper,
-.content-wrapper {
+.feature {
   margin: 0 auto;
   overflow-x: hidden;
   overflow: visible;
 }
 
-.page-wrapper, .wrapper, .content-wrapper, .hero-text {
+.page-wrapper, .wrapper, .feature, .hero-text {
   width: $page-width;
+  max-width: $page-max-width;
   transition: width 0.2s;
 }
 
@@ -104,8 +105,4 @@ ul.options li {
   ul.options {
     text-align: right;
   }
-}
-
-.content {
-  padding-top: 100px;
 }
