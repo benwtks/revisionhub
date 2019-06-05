@@ -2,8 +2,11 @@
   height: 350px;
 }
 
-.feature, .feature-text, .feature-title {
+.feature, .feature-title, .feature-illustration, .feature-text {
   display: flex;
+}
+
+.feature-title, .feature-illustration, .feature-text {
   align-items: center;
 }
 
@@ -62,5 +65,5 @@
 
 .feature-title img {
   height: 45px;
-  padding-right: 15px;
+  margin-right: 20px;
 }
