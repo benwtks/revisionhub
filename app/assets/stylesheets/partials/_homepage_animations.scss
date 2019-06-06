@@ -8,5 +8,29 @@
 
 .book:hover {
   transform: rotateX(15deg) rotateY(8deg) translate(-40px);
-  // transform: translate(-30px);
+}
+
+.step, .step:hover,
+#a-grade .top-surface, #a-grade:hover .top-surface,
+#b-grade .top-surface, #b-grade:hover .top-surface,
+#c-grade .top-surface, #c-grade:hover .top-surface {
+  transition: all 0.25s ease-in-out;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+}
+
+$grade-hover-lighten: 5%;
+
+#a-grade:hover .top-surface {
+    fill: lighten(#3956e8, $grade-hover-lighten) !important;
+}
+
+#b-grade:hover .top-surface {
+  fill: lighten(#5232b3, $grade-hover-lighten) !important;
+}
+
+#c-grade:hover .top-surface {
+  fill: lighten(#2b2a54, $grade-hover-lighten) !important;
 }
