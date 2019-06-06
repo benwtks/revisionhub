@@ -1,0 +1,12 @@
+.feature-illustration svg {
+  overflow: overlay;
+}
+
+.book, .book:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.book:hover {
+  transform: rotateX(15deg) rotateY(8deg) translate(-40px);
+  // transform: translate(-30px);
+}
