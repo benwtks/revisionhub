@@ -34,3 +34,13 @@ $grade-hover-lighten: 5%;
 #c-grade:hover .top-surface {
   fill: lighten(#2b2a54, $grade-hover-lighten) !important;
 }
+
+g#outer-elements {
+  animation: spin 170s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
