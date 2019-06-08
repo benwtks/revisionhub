@@ -3,7 +3,7 @@ class Subject < ApplicationRecord
   has_many :topics, dependent: :destroy
   has_many :grades
   has_and_belongs_to_many :subjectTags
-  validates :name, length: { in: 2..30 },
+  validates :name, length: { in: 2..60 },
                    presence: true,
                    uniqueness: { scope: "student_id" }
   validates :teacher, presence: true,
