@@ -6,6 +6,22 @@
   top: 0;
   z-index: 10;
 
+  .wrapper, .wrapper nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wrapper {
+    height: 70px;
+  }
+
+  .wrapper nav {
+    width: 100%;
+
+    ul { margin: 0; }
+  }
+
   nav ul li a:hover {
     color: $nav-hover-colour;
   }
@@ -35,13 +51,19 @@ body.down .nav-bar.clone {
   transform: translateY(0);
 }
 
+.nav-bar.home .logo {
+  margin-right: 70px;
+}
+
+.nav-bar:not(.home) nav {
+  justify-content: flex-end;
+}
+
 .logo {
-  float: left;
+
   svg {
     fill: $logo-default-colour;
-    height: 40px;
-    width: 182px;
-    margin: 21px 0 21px 0;
+    height: 35px;
 
     &, &:hover, { transition: all 0.3s; }
     &:hover { fill: $logo-hover-colour; }
@@ -51,10 +73,6 @@ body.down .nav-bar.clone {
     width: 100%;
     text-align: center;
   }
-}
-
-nav ul:first-of-type{
-  margin-left: 100px;
 }
 
 nav ul li {
@@ -73,10 +91,6 @@ nav ul li {
     border-radius: 2px;
     background-color: $nav-underline-colour;
   }
-}
-
-nav ul {
-  float: right;
 }
 
 nav ul li.current-page {

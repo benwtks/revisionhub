@@ -14,12 +14,12 @@
             %li{class: ("current-page" if @page == "new session")}= link_to "Log a session", new_session_path
             %li= link_to "Sign out", destroy_student_session_path, method: :delete
         - elsif !student_signed_in?
-          %ul.left
+          %ul.group1
             %li{class: ("current-page" if @page == "home")}= link_to "Home", root_path
             %li= link_to "Features", features_path
             %li= link_to "Pricing", pricing_path
             %li= link_to "Blog", blog_path
-          %ul.right
+          %ul.group2
             %li= link_to "Support", root_path
             %li= link_to "Sign in", new_student_session_path
             %li= link_to "Sign up", new_student_registration_path

@@ -16,15 +16,11 @@
 }
 
 .page-wrapper, .general-form-wrapper {
-  padding: $wrapper-padding-top 0 50px 0;
+  padding: $wrapper-padding-top 0;
 }
 
 .top {
   overflow: auto;
-}
-
-.devise-wrapper {
-  padding: $devise-padding-top 0 50px 0;
 }
 
 .page-wrapper, .devise-wrapper, .general-form-wrapper {
