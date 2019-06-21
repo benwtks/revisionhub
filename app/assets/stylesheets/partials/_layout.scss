@@ -3,13 +3,14 @@
 .devise-wrapper,
 .general-form-wrapper,
 .page-wrapper,
-.feature {
+.feature,
+.footer-wrapper {
   margin: 0 auto;
   overflow-x: hidden;
   overflow: visible;
 }
 
-.page-wrapper, .wrapper, .feature, .hero-text {
+.page-wrapper, .wrapper, .feature, .hero-text, .footer-wrapper {
   width: $page-width;
   max-width: $page-max-width;
   transition: width 0.2s;

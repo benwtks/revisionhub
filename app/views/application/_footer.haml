@@ -1,0 +1,11 @@
+- devise ||= false
+
+%footer
+  .footer-wrapper
+    %a.logo{href: root_path, class: ("center" if devise)}
+      = inline_svg('logo')
+    %nav
+      %ul
+        %li= link_to "Support", root_path
+        %li= link_to "Sign in", new_student_session_path
+        %li= link_to "Sign up", new_student_registration_path

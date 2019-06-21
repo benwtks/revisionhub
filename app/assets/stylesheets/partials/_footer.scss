@@ -1,0 +1,12 @@
+footer .footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+
+footer {
+  background-color: #fff;
+  line-height: $header-line-height;
+  border-top: $separator-border;
+}
