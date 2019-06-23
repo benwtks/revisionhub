@@ -60,7 +60,7 @@ gem 'rails_12factor', group: :production
 gem 'haml', git: 'https://github.com/haml/haml'
 # gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'simple_form'
-gem "devise", '~> 4.4.0'
+gem "devise", '~> 4.6.0'
 
 # required to fix temp issue with certain gems (such as sass-rails)
 gem 'sprockets', '~> 3.5', '>= 3.5.2'
