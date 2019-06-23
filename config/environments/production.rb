@@ -67,7 +67,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: 'caec734dbe5f0477dc8bfc48ae2ad5b2-29b7488f-28fc7f5c',
-    domain: 'https://api.eu.mailgun.net/v3/accounts.revisionhub.uk',
+    domain: 'accounts.revisionhub.uk',
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
