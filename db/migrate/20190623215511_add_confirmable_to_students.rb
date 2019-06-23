@@ -8,6 +8,6 @@ class AddConfirmableToStudents < ActiveRecord::Migration[5.1]
     add_column :students, :password_reset_token, :string
     add_index :students, :password_reset_token, unique: true
 
-    User.update_all(:confirmed_at => Time.now)
+    Student.update_all(:confirmed_at => Time.now)
   end
 end
