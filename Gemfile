@@ -73,3 +73,5 @@ gem 'chronic', '~> 0.10.2'
 
 # make the app boot faster
 gem 'bootsnap', require: false
+
+gem 'mailgun-ruby', '~> 1.1', require: true
