@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  if Rails.env.development?
+    Rails.application.routes.default_url_options[:host] = "localhost:3000"
+  elsif Rails.env.production?
+    Rails.application.routes.default_url_options[:host] = "revisionhub.uk"
+  end
+
   devise_for :students, controllers: { registrations: 'registrations' }, path: '',
                         path_names: { sign_in: 'signin',
                                       sign_out: 'signout',
