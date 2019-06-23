@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.default_host = 'www.revisionhub.uk'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -69,7 +71,7 @@ Rails.application.configure do
     api_key: 'caec734dbe5f0477dc8bfc48ae2ad5b2-29b7488f-28fc7f5c',
     domain: 'accounts.revisionhub.uk',
   }
-  
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
