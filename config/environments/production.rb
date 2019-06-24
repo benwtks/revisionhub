@@ -64,6 +64,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: 'caec734dbe5f0477dc8bfc48ae2ad5b2-29b7488f-28fc7f5c',
+    api_host: 'api.eu.mailgun.net',  
     domain: 'accounts.revisionhub.uk',
   }
 
