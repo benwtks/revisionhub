@@ -18,6 +18,7 @@ module RevisionHub
 
     config.to_prepare do
         Devise::SessionsController.layout "devise"
+        Devise::Mailer.layout "mailer"
     end
   end
 end
