@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     Rails.application.routes.default_url_options[:host] = "revisionhub.uk"
   end
 
-  devise_for :students, controllers: { registrations: 'registrations' }, path: '',
+  devise_for :students, controllers: { registrations: 'registrations',
+                                        passwords: 'passwords',
+                                        confirmations: 'confirmations' }, path: '',
                         path_names: { sign_in: 'signin',
                                       sign_out: 'signout',
                                       sign_up: 'signup',
