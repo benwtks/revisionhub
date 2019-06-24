@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   devise_scope :student do
     match '/sessions/student', to: 'devise/sessions#create', via: :post
+    match '/confirm', to: 'devise/sessions#create', via: :post, alert: "Email confirmed"
   end
 
   authenticated :student do
