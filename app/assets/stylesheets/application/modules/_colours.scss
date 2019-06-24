@@ -1,10 +1,5 @@
-$rh-blue: #3956E8;
-$rh-purple: #5232B3;
-$rh-dark-purple: #2B2A54;
 $rh-pale-blue: lighten($rh-blue, 20%);
-$pale-blue: #f5f8fa;
 
-$grey: #DEE0E2;
 $bold-colour: #585961;
 $normal-colour: #66676F;
 
@@ -15,7 +10,6 @@ $orange-element: #ECAA5D;
 $green-element: #84CA64;
 $yellow-element: #EED065;
 
-$logo-default-colour: $rh-dark-purple;
 $logo-hover-colour: $rh-blue;
 
 @mixin background-colour($colour, $colour-element){
@@ -35,15 +29,8 @@ $logo-hover-colour: $rh-blue;
   }
 }
 
-$border-colour: $grey;
-
-$background: $pale-blue;
-
 $nav-colour: $bold-colour;
 $section-background-colour: #fff;
-
-$button-background-colour: $rh-blue;
-$button-text-colour: #fff;
 
 $notice-background-colour: #30B955;
 $alert-background-colour: #dc4e4e;
