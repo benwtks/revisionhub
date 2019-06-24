@@ -8,7 +8,7 @@ class ConfirmationsController < Devise::ConfirmationsController
       root_path
     else
       puts "case 2"
-      new_student_session_path(resource_name)
+      new_student_session_path
     end
   end
 end
