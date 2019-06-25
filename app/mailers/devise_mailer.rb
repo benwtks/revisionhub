@@ -4,6 +4,6 @@ class DeviseMailer < Devise::Mailer
   protected
 
   def logoAttachment
-    attachments.inline["mailer-logo.jpg"] = File.read("#{Rails.root}/app/assets/images/mailer-logo.jpg")
+    attachments.inline["mailer-logo.png"] = File.read("#{Rails.root}/app/assets/images/mailer-logo.png")
   end
 end
