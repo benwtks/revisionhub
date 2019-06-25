@@ -74,6 +74,8 @@ gem 'chronic', '~> 0.10.2'
 # make the app boot faster
 gem 'bootsnap', require: false
 
-# For email
-gem 'mailgun-ruby', '~> 1.1', require: true
-gem 'premailer-rails' 
+group :production do
+  # For email
+  gem 'mailgun-ruby', '~> 1.1', require: true
+  gem 'premailer-rails' 
+end
