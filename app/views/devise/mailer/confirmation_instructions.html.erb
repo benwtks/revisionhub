@@ -3,11 +3,15 @@
 <table class="body-wrap" id="table_c8c0_0"><tr id="tr_c8c0_0"><td id="td_c8c0_0" valign="top"></td>
     <td class="container" width="600" id="td_c8c0_1" valign="top">
       <div class="content" id="div_c8c0_0">
+        <table width="100%" id="table_c8c0_3">
+        <tr>
+          <td align="center" class="aligncenter content-block" valign="top">
+            <%= image_tag(attachments['mailer-logo.png'].url, class: 'logo') %>
+          </td>
+        </tr>
+        </table>
         <table class="main" width="100%" cellpadding="0" cellspacing="0" itemprop="action" itemscope itemtype="http://schema.org/ConfirmAction" id="table_c8c0_1" bgcolor="#fff"><tr id="tr_c8c0_1"><td class="content-wrap" id="td_c8c0_2" valign="top">
               <meta itemprop="name" content="Confirm Email" id="meta_c8c0_0" /><table width="100%" cellpadding="0" cellspacing="0" id="table_c8c0_2">
-                <tr clas="logo"><td valign="top">
-                  <%= image_tag(attachments['mailer-logo.jpg'].url,  class: 'logo') %>
-                </td></tr>
                 <tr id="tr_c8c0_2"><td class="content-block" id="td_c8c0_3" valign="top">
                     Hi <%= @resource.first_name %>,
                   </td>
@@ -25,16 +29,3 @@
     <td id="td_c8c0_7" valign="top"></td>
   </tr>
 </table>
-
-<script>
-  {
-    "@context": "http://schema.org",
-    "@type": "EmailMessage",
-    "potentialAction": {
-      "@type": "ConfirmAction",
-      "url": "<% confirmation_url %>",
-      "name": "Confirm email"
-    },
-    "description": "Confirm email"
-  }
-</script>
