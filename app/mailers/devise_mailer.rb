@@ -1,6 +1,6 @@
 class DeviseMailer < Devise::Mailer
-  before_action logoAttachment
-  
+  before_action :logoAttachment
+
   protected
 
   def logoAttachment

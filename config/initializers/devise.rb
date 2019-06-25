@@ -15,7 +15,7 @@ Devise.setup do |config|
   config.mailer_sender = 'Revisionhub noreply@accounts.revisionhub.uk'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = 'DeviseMailer'
 
   config.scoped_views = true
 
