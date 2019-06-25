@@ -10,22 +10,21 @@
     <%= f.full_error :reset_password_token %>
 
     <div class="form-inputs">
-      <%= f.input :password, placeholder: "New password", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation, placeholder: "Confirm your new password", required: true %>
+      <%= f.input :password, placeholder: "New password", label: false, required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, placeholder: "Confirm your new password", label: false, required: true %>
     </div>
 
     <div class="form-actions">
       <%= f.button :submit, "Change my password" %>
     </div>
   <% end %>
+</div>
 
-
-  <div class="links">
-    <a class="link-wrapper left" href="<%= new_student_registration_path %>">
-      <p>Sign up</p>
-    </a>
-    <a class="link-wrapper right" href="<%= new_password_path(resource_name) %>">
-      <p>Forgot your password?</p>
-    </a>
-  </div>
+<div class="links">
+  <a class="link-wrapper left" href="<%= new_student_registration_path %>">
+    <p>Sign up</p>
+  </a>
+  <a class="link-wrapper right" href="<%= new_password_path(resource_name) %>">
+    <p>Forgot your password?</p>
+  </a>
 </div>
