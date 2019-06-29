@@ -96,19 +96,17 @@ input.button:focus, input.btn:focus {
 
 .links {
   width: 100%;
-}
-
-.link-wrapper{
-  display: block;
   height: 50px;
   border-top: $border;
-  text-align: center;
+  display: flex;
 
-  &.left, &.right {
-    width: 50%;
+  a {
+    display: block;
+    text-align: center;
+    flex: 1;
   }
 
-  &.left {
+  a:not(:last-of-type) {
     border-right: $border;
     box-sizing: border-box;
   }
