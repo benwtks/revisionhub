@@ -36,7 +36,7 @@ class GradesController < ApplicationController
   end
 
   def create
-    @grade= @subject.grades.build(grade_params)
+    @grade = @subject.grades.build(grade_params)
 
     if @grade.save
       redirect_to subject_grades_path(@subject), notice: "Grade successfully added"
