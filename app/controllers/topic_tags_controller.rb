@@ -1,27 +1,10 @@
-class TopicTagsController < ApplicationController
-  layout "form", only: [:edit, :new]
-
-  before_action :authenticate_student!
-  before_action :find_tag_colours, only: :new
-
+class TopicTagsController < TagsController
   def new
     @topic_tag = current_student.topicTags.build
-    render layout: "form"
   end
 
   def create
-    @topic_tag = current_student.topicTags.build(topic_tag_params)
-
-    if @topic_tag.save
-      redirect_to root_path, notice: "Topic tag successfully created"
-    else
-      render 'new'
-    end
-  end
-
-  private
-
-  def topic_tag_params
-    params.require(:topic_tag).permit(:name, :colour)
+    @topic_tag = current_student.topicTags.build(tag_params(:topic_tag))
+    redirect_after_submission(@topic_tag, "Topic tag successfully created")
   end
 end

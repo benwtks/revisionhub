@@ -1,27 +1,10 @@
-class SubjectTagsController < ApplicationController
-  layout "form", only: [:edit, :new]
-
-  before_action :authenticate_student!
-  before_action :find_tag_colours, only: :new
-
+class SubjectTagsController < TagsController
   def new
     @subject_tag = current_student.subjectTags.build
-    render layout: "form"
   end
 
   def create
-    @subject_tag = current_student.subjectTags.build(subject_tag_params)
-
-    if @subject_tag.save
-      redirect_to root_path, notice: "Subject tag successfully created"
-    else
-      render 'new'
-    end
-  end
-
-  private
-
-  def subject_tag_params
-    params.require(:subject_tag).permit(:name, :colour)
+    @subject_tag = current_student.subjectTags.build(tag_params(:subject_tag))
+    redirect_after_submission(@subject_tag, "Subject tag successfully created")
   end
 end

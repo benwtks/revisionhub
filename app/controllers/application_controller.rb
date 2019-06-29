@@ -26,10 +26,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def find_tag_colours
-    @tag_colours = ["Blue", "Green", "Purple", "Red", "Yellow", "Orange"]
-  end
-
   def find_subject
     @subject = Subject.find(params[:subject_id])
   end
