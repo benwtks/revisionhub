@@ -96,17 +96,20 @@ input.button:focus, input.btn:focus {
 
 .links {
   width: 100%;
-  height: 50px;
-  border-top: $border;
   display: flex;
+  border-top: $border;
+}
 
-  a {
-    display: block;
-    text-align: center;
-    flex: 1;
-  }
+.reg-link-wrapper {
+  height: 50px;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
 
-  a:not(:last-of-type) {
+  a { width: 100%; }
+
+  &:not(:last-of-type) {
     border-right: $border;
     box-sizing: border-box;
   }
