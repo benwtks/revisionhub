@@ -1,4 +1,4 @@
-class TopicTagsController < TagsController
+class Tags::TopicTagsController < Tags::ApplicationController
   def new
     @topic_tag = current_student.topicTags.build
   end

@@ -1,4 +1,4 @@
-class TagsController < ApplicationController
+class Tags::ApplicationController < ApplicationController
   layout "form", only: [:edit, :new]
 
   before_action :authenticate_student!

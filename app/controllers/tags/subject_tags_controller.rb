@@ -1,4 +1,4 @@
-class SubjectTagsController < TagsController
+class Tags::SubjectTagsController < Tags::ApplicationController
   def new
     @subject_tag = current_student.subjectTags.build
   end

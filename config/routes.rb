@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   get '/pricing', to: 'pages#pricing'
 
   resources :sessions
-  resources :subject_tags
-  resources :topic_tags
+
+  scope module: 'tags' do
+    resources :subject_tags, :topic_tags
+  end
 
   devise_scope :student do
     match '/sessions/student', to: 'devise/sessions#create', via: :post
